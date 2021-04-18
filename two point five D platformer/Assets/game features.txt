@@ -1,0 +1,21 @@
+GAME INSPIRATION: 
+    1) Playdead's Inside(graphics, smooth mechanics, 2.5D, ambience)
+    2) Vector (movement, parkour)
+    3) Shadoww fight 2 (fight)
+
+movement/game mechanics
+    - 2.5D
+    - smooth animations
+    - parkour/climbing
+    - smooth interaction with environment
+    - walking and jogging blend based upon joystick(on left of screen) magnitude
+    - sprinting mode activated by button(on right of screen)
+    - jump and slide buttons also there on right
+    - movement mechanics should be smooth and *REALISTIC* af, requires a lot of blendy animations and transitions
+    - in fight mode, the buttons change to punch and kick and direction of move is chosen based upon joystick direction
+    - smooth camera movement/zoom
+    - ragdoll features:
+        1) super amazing ragdoll
+        2) ragdoll activated on death, tripping, and when about to fall while moving on incline(use deadly physics)
+        3) smooth transitions between ragdoll state to getting up (different animations based upon player lying on which side) to idle
+        4) self balancing ragdoll physics(deadly knowledge about joints required)
