@@ -19,3 +19,8 @@ movement/game mechanics
         2) ragdoll activated on death, tripping, and when about to fall while moving on incline(use deadly physics)
         3) smooth transitions between ragdoll state to getting up (different animations based upon player lying on which side) to idle
         4) self balancing ragdoll physics(deadly knowledge about joints required)
+
+game features:
+    - low poly setup
+    - motion only x and y axis only, NPCs etc can move in z axis also
+    - evening and night environment
