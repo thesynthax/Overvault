@@ -5,14 +5,14 @@
 using UnityEngine;
 
 /** About PlayerMovement
-* ->
+* -> 
 */
 
 public class PlayerMovement : MonoBehaviour
 {
     private StateManager stateMgr;
     private UserInput uInput;
-
+	
     public void Init(UserInput ui, StateManager st)
     {
         stateMgr = st;
@@ -53,8 +53,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool(AnimVars.OnGround, onGround);
         anim.SetInteger(AnimVars.FacingDir, facingDir);
         anim.SetBool(AnimVars.InputActive, inputActive);
+		anim.SetBool(AnimVars.SuddenChange, true);
     }
-
+	
     public void OnAnimMove(bool onGround, float time, Animator anim, Rigidbody rBody)
 	{
 		if (onGround && time > 0f)
