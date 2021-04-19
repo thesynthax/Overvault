@@ -12,9 +12,10 @@ public class UserInput : MonoBehaviour
 {
     public StateManager stateMgr;
 	public PlayerMovement pMove;
+    public JoystickControl joystick;
 
-	public float horizontal { get; private set; }
-	public float vertical { get; private set; }
+	private float horizontal { get; set; }
+	private float vertical { get; set; }
 	public bool jump { get; private set; }
 	public bool walk { get; private set; }
 	public bool sprint { get; private set; }
@@ -22,17 +23,31 @@ public class UserInput : MonoBehaviour
     private void Start()
 	{
 		stateMgr.Init();
-		//pMove.Init(this, stateMgr);
+		pMove.Init(this, stateMgr);
 
 		if (Camera.main)
 			stateMgr.mainCam = Camera.main.transform;
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
-		//UpdateInputs(stateMgr.mainCam, ref stateMgr.moveDir);
+		UpdateInputs(ref stateMgr.AxisDir, ref stateMgr.inputActive);
 
 		stateMgr.Tick();
-		//pMove.Tick();
+		pMove.Tick();
 	}
+    private void OnAnimatorMove() 
+    {
+        pMove.OnAnimMove(stateMgr.charStates.onGround, Time.deltaTime, stateMgr.anim, stateMgr.rBody);
+    }
+
+    private void UpdateInputs(ref Vector2 axisDir, ref bool inputActive)
+    {
+        horizontal = joystick.Horizontal();
+        vertical = joystick.Vertical();
+
+        axisDir = new Vector2(horizontal, vertical);
+
+        inputActive = horizontal != 0 ? true : false;
+    }
 }

@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour
     [Header("References")]
 	public Transform modelPlaceholder;
 	public GameObject modelInit;
+    public GameObject modelRootBone;
 	[Space]
 	public Animator anim;
 	public CapsuleCollider coll;
@@ -25,16 +26,14 @@ public class StateManager : MonoBehaviour
 	[Space]
 	[HideInInspector] public Transform mainCam;
 	[Header("Variables")]
-	public Vector3 moveDir;
-	public float fwd;
-	public float turn;
+    public Vector2 AxisDir = Vector2.zero;
+    public int facingDir;
+    public bool inputActive;
 	[Space]
 	[SerializeField] private int _curState;
 	[SerializeField] private bool _onGround;
 
 	[Header("Constants")]
-	public float moveTurnSpeed = 360f;
-	public float idleTurnSpeed = 180f;
 	public float jumpForce = 8f;
 	public float groundDistance = 0.634f;
 	public LayerMask ground;
@@ -59,6 +58,7 @@ public class StateManager : MonoBehaviour
 		activeModel.transform.localEulerAngles = Vector3.zero;
 		activeModel.transform.localPosition = Vector3.zero;
 		activeModel.transform.localScale = Vector3.one;
+        modelRootBone = modelPlaceholder.GetChild(0).GetChild(2).gameObject;
 	}
 
 	private void SetupComponents()
@@ -72,7 +72,6 @@ public class StateManager : MonoBehaviour
 
 		rBody.useGravity = true;
 		rBody.isKinematic = false;
-		rBody.constraints = RigidbodyConstraints.FreezeRotation;
 	}
 
 	private void UpdateCharStateNames()
@@ -83,18 +82,7 @@ public class StateManager : MonoBehaviour
 
     private void UpdateStates()
 	{
-		/* if (fwd == 0)
-		{
-			charStates.curState = 1;
-		}
-		else if (fwd > 0 && !uInput.sprint)
-		{
-			charStates.curState = 2;
-		}
-		else if (fwd > 0 && uInput.sprint)
-		{
-			charStates.curState = 3;
-		} */
+		
 	}
 
 	private bool RequirementsCleared()

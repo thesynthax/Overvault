@@ -20,6 +20,16 @@ movement/game mechanics
         3) smooth transitions between ragdoll state to getting up (different animations based upon player lying on which side) to idle
         4) self balancing ragdoll physics(deadly knowledge about joints required)
 
+smooth movement features:
+    - blend tree which consists of walk(0.5, -0.5 for left) and jog(0.9, -0.9 for left). (*) is the parameter "Horizontal"
+    - if horizontal joystick changes slowly towards same direction as where the player is looking, then blendtree activate.
+    - if horizontal joystick changes to range (0.4,0.6) or (-0.4,-0.6) suddenly, then transition directly to "idle to walk" then to blendtree
+    - if horizontal joystick changes to range (0.6,0.7) or (-0.6,-0.7) suddenly, then transition directly to "idle to jog(slow)" then to blendtree
+    - if horizontal joystick changes to range (0.7,0.99 or (-0.7,-0.99) suddenly, then transition directly to "idle to jog" then to blendtree
+    - if horizontal joystick changes to range (0,0.2) or (0,-0.2) towards opposite direction as where the player is looking, then transition to backward walk. If the magnitude increases, then transition from backward walk to 180deg turn to walk, then to blendtree.
+    - if horizontal joystick changes to 0.5 or -0.5 suddenly in the opposite direction as where the player is looking, transition to 180deg turn to walk, then to blendtree.
+    - if horizontal joystick changes to 0.9 or -0.9 suddenly in the opposite direction as where the player is looking, transition to 180deg turn to jog, then to blendtree.
+
 game features:
     - low poly setup
     - motion only x and y axis only, NPCs etc can move in z axis also

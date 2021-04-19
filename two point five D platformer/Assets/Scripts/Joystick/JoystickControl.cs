@@ -12,8 +12,8 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
     private void Start()
     {
-        bgImg = GetComponent<Image>();
-        joystickImg = transform.GetChild(0).GetComponent<Image>();
+        bgImg = transform.GetChild(0).GetComponent<Image>();
+        joystickImg = bgImg.transform.GetChild(0).GetComponent<Image>();
     }
     public virtual void OnPointerDown(PointerEventData ped)
     {
