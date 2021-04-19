@@ -1,7 +1,7 @@
 GAME INSPIRATION: 
     1) Playdead's Inside(graphics, smooth mechanics, 2.5D, ambience)
     2) Vector (movement, parkour)
-    3) Shadoww fight 2 (fight)
+    3) Shadow fight 2 (fight)
 
 movement/game mechanics
     - 2.5D
@@ -24,3 +24,5 @@ game features:
     - low poly setup
     - motion only x and y axis only, NPCs etc can move in z axis also
     - evening and night environment
+    - Joystick and three buttons setup
+    - 
