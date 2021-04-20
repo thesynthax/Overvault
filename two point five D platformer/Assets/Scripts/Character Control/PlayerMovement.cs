@@ -5,13 +5,15 @@
 using UnityEngine;
 
 /** About PlayerMovement
-* -> 
+* -> Converts variables into game mechanics
 */
 
 public class PlayerMovement : MonoBehaviour
 {
     private StateManager stateMgr;
     private UserInput uInput;
+
+	private float previousValue = 0f;
 	
     public void Init(UserInput ui, StateManager st)
     {
@@ -23,14 +25,20 @@ public class PlayerMovement : MonoBehaviour
     {
         stateMgr.facingDir = FacingDir(stateMgr.modelRootBone.transform.localEulerAngles);
         stateMgr.charStates.onGround = OnGround();
-        Animate(stateMgr.anim, stateMgr.inputActive,stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
-        Move(stateMgr.AxisDir.x);
-    }
+        Animate(stateMgr.anim, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
 
-    public void Move(float horz)
-    {
-        
-    }
+		float currentValue = stateMgr.AxisDir.x;
+		stateMgr.suddenChange = suddenChange(previousValue, currentValue);
+		previousValue = currentValue;
+	}
+
+	private bool suddenChange(float previousValue, float currentValue)
+	{
+		if (Mathf.Abs(currentValue - previousValue) >= 0.025f)
+			return true;
+		else
+			return false;
+	}
 
     private int FacingDir(Vector3 rootRotation)
     {
@@ -46,14 +54,14 @@ public class PlayerMovement : MonoBehaviour
         return facingDir;
     }
 
-    public void Animate(Animator anim, bool inputActive, float horz, float vert, bool onGround, int facingDir)
+    public void Animate(Animator anim, bool inputActive, bool suddenChange, float horz, float vert, bool onGround, int facingDir)
     {
         anim.SetFloat(AnimVars.Horizontal, horz, 0.01f, Time.deltaTime);
         anim.SetFloat(AnimVars.Vertical, vert, 0.01f, Time.deltaTime);
         anim.SetBool(AnimVars.OnGround, onGround);
         anim.SetInteger(AnimVars.FacingDir, facingDir);
         anim.SetBool(AnimVars.InputActive, inputActive);
-		anim.SetBool(AnimVars.SuddenChange, true);
+		anim.SetBool(AnimVars.SuddenChange, suddenChange);
     }
 	
     public void OnAnimMove(bool onGround, float time, Animator anim, Rigidbody rBody)

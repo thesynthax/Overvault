@@ -20,4 +20,25 @@ public static class AnimVars
 	public static string SuddenChange = "SuddenChange";
 	public static string FacingDir = "FacingDir";
 	public static string InputActive = "InputActive";
+
+
+	public static string Idle = "idle";
+	public static string IdleMirror = "idle mirror";
+	public static string WalkBwdLeft = "walk bwd left";
+	public static string WalkBwdRight = "walk bwd right";
+	public static string WalkTurn = "walk turn";
+	public static string WalkTurnMirror = "walk turn mirror";
+	public static string Walk = "walk";
+	public static string WalkMirror = "walk mirror";
+	public static string IdleTurnLeft = "idle turn left";
+	public static string IdleTurnRight = "idle turn right";
+	public static string StartJog = "start jog"; 
+	public static string StartJogMirror = "start jog mirror";
+	public static string Jog = "jog";
+	public static string JogMirror = "jog mirror";
+	public static string StopJog = "stop jog"; 
+	public static string StopJogMirror = "stop jog mirror";
+	public static string JogTurnMirror = "jog turn mirror"; 
+	public static string JogTurn = "jog turn";
+
 }

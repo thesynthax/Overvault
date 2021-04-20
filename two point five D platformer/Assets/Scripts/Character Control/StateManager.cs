@@ -29,6 +29,7 @@ public class StateManager : MonoBehaviour
     public Vector2 AxisDir = Vector2.zero;
     public int facingDir;
     public bool inputActive;
+	public bool suddenChange;
 	[Space]
 	[SerializeField] private int _curState;
 	[SerializeField] private bool _onGround;
@@ -82,7 +83,12 @@ public class StateManager : MonoBehaviour
 
     private void UpdateStates()
 	{
-		
+		if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Idle) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.IdleMirror))
+			charStates.curState = 0;
+		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Walk) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkBwdLeft) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkBwdRight) | anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkTurnMirror))
+			charStates.curState = 1;
+		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Jog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogTurnMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopJog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopJogMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartJog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartJogMirror))
+			charStates.curState = 2;
 	}
 
 	private bool RequirementsCleared()
