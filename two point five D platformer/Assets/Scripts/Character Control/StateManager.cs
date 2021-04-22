@@ -30,6 +30,7 @@ public class StateManager : MonoBehaviour
     public int facingDir;
     public bool inputActive;
 	public bool suddenChange;
+	public bool sprint;
 	[Space]
 	[SerializeField] private int _curState;
 	[SerializeField] private bool _onGround;

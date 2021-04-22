@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         stateMgr.facingDir = FacingDir(stateMgr.modelRootBone.transform.localEulerAngles);
         stateMgr.charStates.onGround = OnGround();
-        Animate(stateMgr.anim, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
+        Animate(stateMgr.anim, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
 
 		float currentValue = stateMgr.AxisDir.x;
 		stateMgr.suddenChange = suddenChange(previousValue, currentValue);
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         return facingDir;
     }
 
-    public void Animate(Animator anim, bool inputActive, bool suddenChange, float horz, float vert, bool onGround, int facingDir)
+    public void Animate(Animator anim, bool sprint, bool inputActive, bool suddenChange, float horz, float vert, bool onGround, int facingDir)
     {
         anim.SetFloat(AnimVars.Horizontal, horz, 0.01f, Time.deltaTime);
         anim.SetFloat(AnimVars.Vertical, vert, 0.01f, Time.deltaTime);
@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger(AnimVars.FacingDir, facingDir);
         anim.SetBool(AnimVars.InputActive, inputActive);
 		anim.SetBool(AnimVars.SuddenChange, suddenChange);
+		anim.SetBool(AnimVars.Sprint, sprint);
     }
 	
     public void OnAnimMove(bool onGround, float time, Animator anim, Rigidbody rBody)

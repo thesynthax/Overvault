@@ -1,8 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+/**
+*   Copyright (c) 2021 - 3021 Aansutons Inc.
+*/
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+
+/** About JoystickControl
+* -> Handles all the Joystick control logic
+*/
 
 public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {   

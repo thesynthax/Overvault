@@ -16,7 +16,7 @@ MonoBehaviour:
   geometryLayerID: 1
   geometryTag: Untagged
   geometryRenderQueue: 3000
-  _RenderPipeline: 0
+  _RenderPipeline: 1
   _RenderingMode: 1
   ditheringFactor: 0
   sharedMeshSides: 24
@@ -31,3 +31,4 @@ MonoBehaviour:
   pluginVersion: 1890
   _DummyMaterial: {fileID: 2100000, guid: 37b47685ceff1bd49a56d012686bcf56, type: 2}
   _BeamShader: {fileID: 4800000, guid: 965a26078c7650444af6b179ab95f002, type: 3}
+  m_CachedFadeOutCamera: {fileID: 0}
