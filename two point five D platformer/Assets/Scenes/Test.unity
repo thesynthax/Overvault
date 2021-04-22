@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1409563838}
-  m_IndirectSpecularColor: {r: 0.17988598, g: 0.22012265, b: 0.27714422, a: 1}
+  m_IndirectSpecularColor: {r: 0.17986967, g: 0.22009188, b: 0.2770694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -283,8 +283,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201901317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.39, y: -0.36, z: -18.94}
-  m_LocalScale: {x: 14.959, y: 1, z: 5.1734}
+  m_LocalPosition: {x: 28.39, y: 0.09, z: -18.94}
+  m_LocalScale: {x: 14.959, y: 0.032112, z: 5.1734}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -764,7 +764,7 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 67
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -774,7 +774,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: ea4882d2f3c114842ae4f725c8cd7084, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1

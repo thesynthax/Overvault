@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 		stateMgr.suddenChange = suddenChange(previousValue, currentValue);
 		previousValue = currentValue;
 	}
-
+	
 	private bool suddenChange(float previousValue, float currentValue)
 	{
 		if (Mathf.Abs(currentValue - previousValue) >= 0.025f)
