@@ -13,7 +13,11 @@ using UnityEngine.UI;
 public class ButtonsControl : MonoBehaviour
 {
     private GameObject sprintButton;
-    public bool Sprint()
+    private GameObject jumpButton;
+
+    [HideInInspector] public jump jumpScript;
+
+    private void Start()
     {
         foreach (Transform child in transform.GetComponentInChildren<Transform>())
         {
@@ -21,8 +25,16 @@ public class ButtonsControl : MonoBehaviour
             {
                 sprintButton = child.gameObject;
             }
+            if (child.name.Equals("Jump"))
+            {
+                jumpButton = child.gameObject;
+                jumpScript = jumpButton.GetComponent<jump>();
+            }
         }
-        
+    }
+
+    public bool Sprint()
+    {
         Toggle sprintToggle = sprintButton.GetComponent<Toggle>();
         bool pressed = sprintToggle.isOn || Input.GetKey(KeyCode.LeftShift);
 

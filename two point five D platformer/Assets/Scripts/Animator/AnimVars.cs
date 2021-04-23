@@ -20,6 +20,8 @@ public static class AnimVars
 	public static string SuddenChange = "SuddenChange";
 	public static string FacingDir = "FacingDir";
 	public static string InputActive = "InputActive";
+	public static string Jump = "Jump";
+	public static string VaultDistance = "VaultDistance";
 
 
 	public static string Idle = "idle";

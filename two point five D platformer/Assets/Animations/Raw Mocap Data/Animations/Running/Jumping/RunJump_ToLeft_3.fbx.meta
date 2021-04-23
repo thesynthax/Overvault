@@ -474,6 +474,9 @@ ModelImporter:
   - first:
       41386430: 2186277476908879412
     second: ImportLogs
+  - first:
+      74: 2724411758528483610
+    second: sprint vault 4
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -509,6 +512,35 @@ ModelImporter:
       takeName: _28_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_3
       internalID: 0
       firstFrame: 250
+      lastFrame: 305
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: -0.02
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 242
+    - serializedVersion: 16
+      name: sprint vault 4
+      takeName: _28_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_3
+      internalID: 0
+      firstFrame: 256
       lastFrame: 305
       wrapMode: 0
       orientationOffsetY: 0

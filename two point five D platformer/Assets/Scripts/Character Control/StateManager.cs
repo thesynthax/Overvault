@@ -31,6 +31,7 @@ public class StateManager : MonoBehaviour
     public bool inputActive;
 	public bool suddenChange;
 	public bool sprint;
+	public bool jump;
 	[Space]
 	[SerializeField] private int _curState;
 	[SerializeField] private bool _onGround;
@@ -38,7 +39,15 @@ public class StateManager : MonoBehaviour
 	[Header("Constants")]
 	public float jumpForce = 8f;
 	public float groundDistance = 0.634f;
+	public float longVaultDistance = 4.9f;
+	public float longMediumVaultDistance = 4.3f;
+	public float mediumLongVaultDistance = 3.8f;
+	public float mediumVaultDistance = 3.3f;
+	public float shortVaultDistance = 2.6f;
+	public float veryShortVaultDistance = 1.6f;
+	public float nearestVaultDistance = 0.9f;
 	public LayerMask ground;
+	public LayerMask obstacles;
 	//Private
 	private GameObject activeModel;
     public void Init()
@@ -72,7 +81,7 @@ public class StateManager : MonoBehaviour
 		anim.cullingMode = AnimatorCullingMode.AlwaysAnimate;
 		Destroy(modelAnim);
 
-		rBody.useGravity = true;
+		//rBody.useGravity = false;
 		rBody.isKinematic = false;
 	}
 
@@ -92,6 +101,8 @@ public class StateManager : MonoBehaviour
 			charStates.curState = 2;
 		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Sprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintTurnMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopSprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopSprintMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartSprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartSprintMirror))
 			charStates.curState = 3;
+		else
+			charStates.curState = 4;
 	}
 
 	private bool RequirementsCleared()
