@@ -148,3 +148,76 @@ Total: 3.802300 ms (FindLiveObjects: 0.467600 ms CreateObjectMapping: 0.270700 m
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008983 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.826 seconds
+Platform modules already initialized, skipping
+Switching build target platform(5) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2613 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.5 MB.
+System memory in use after: 156.4 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 3340.
+Total: 9.020900 ms (FindLiveObjects: 0.654900 ms CreateObjectMapping: 5.083800 ms MarkObjects: 2.833000 ms  DeleteObjects: 0.445100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 4408.011730 seconds.
+  path: Assets/Prefab/Joystick.prefab
+  artifactKey: Guid(c17c0ee17980c824d9588ba0e5c4daa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Joystick.prefab using Guid(c17c0ee17980c824d9588ba0e5c4daa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b0330b72f78febd59f0af0db28d85e8') in 0.278325 seconds
+  Import took 0.452885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.715858 seconds.
+  path: Assets/Prefab/Buttons.prefab
+  artifactKey: Guid(579cd466b99bbc2408cc3bbb3791cbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Buttons.prefab using Guid(579cd466b99bbc2408cc3bbb3791cbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9fe3116ad9ccafaf285bbde865b81f9') in 0.211856 seconds
+  Import took 0.240704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.308088 seconds.
+  path: Assets/Prefab/ybot.prefab
+  artifactKey: Guid(2aebdf84bf6ad754b812730bb4aeed04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/ybot.prefab using Guid(2aebdf84bf6ad754b812730bb4aeed04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76c7e7200509166a07bfa6704dde5918') in 3.104846 seconds
+  Import took 3.149817 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 502.602892 seconds.
+  path: Assets/Prefab/obs_vault_low.prefab
+  artifactKey: Guid(78308ebb1110b76448589bfe3a367066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/obs_vault_low.prefab using Guid(78308ebb1110b76448589bfe3a367066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9eeac4b7b48226a62bfdeb7e5863fc') in 0.040282 seconds
+  Import took 0.076809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 505.751256 seconds.
+  path: Assets/Prefab/obs_vault_low.prefab
+  artifactKey: Guid(78308ebb1110b76448589bfe3a367066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/obs_vault_low.prefab using Guid(78308ebb1110b76448589bfe3a367066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8aed857b2d5f898c77d4acfb8b75606') in 0.062722 seconds
+  Import took 0.115985 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.032245 seconds.
+  path: Assets/Prefab/obs_vault_low.prefab
+  artifactKey: Guid(78308ebb1110b76448589bfe3a367066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/obs_vault_low.prefab using Guid(78308ebb1110b76448589bfe3a367066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8aed857b2d5f898c77d4acfb8b75606') in 0.018606 seconds
+  Import took 0.041375 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
