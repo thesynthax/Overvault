@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger(AnimVars.FacingDir, facingDir);
         anim.SetBool(AnimVars.InputActive, inputActive);
 		anim.SetBool(AnimVars.SuddenChange, suddenChange);
-		anim.SetBool(AnimVars.Sprint, sprint);
+		anim.SetBool(AnimVars.sprint, sprint);
     }
 	
     public void OnAnimMove(bool onGround, float time, Animator anim, Rigidbody rBody)

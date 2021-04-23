@@ -90,6 +90,8 @@ public class StateManager : MonoBehaviour
 			charStates.curState = 1;
 		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Jog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogTurnMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopJog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopJogMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartJog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartJogMirror))
 			charStates.curState = 2;
+		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Sprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintTurnMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopSprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopSprintMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartSprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartSprintMirror))
+			charStates.curState = 3;
 	}
 
 	private bool RequirementsCleared()
