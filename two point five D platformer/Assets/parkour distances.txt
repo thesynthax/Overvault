@@ -5,3 +5,13 @@ for sprint
 3.3 - 2.6 sprint vault medium
 2.6 - 1.6 sprint vault short
 1.6 - 0.9 sprint vault very short
+
+
+
+
+5.17 long 
+4.63 long med
+4.02 med long
+3.12 medium
+2.52 short
+1.93 very short

@@ -53,11 +53,11 @@ public class UserInput : MonoBehaviour
 		jump = buttons.jumpScript.pressed || Input.GetKey(KeyCode.Space);
 	}
 
-	// public void ClearLog()
-	// {
-	// 	var assembly = Assembly.GetAssembly(typeof(UnityEditor.Editor));
-	// 	var type = assembly.GetType("UnityEditor.LogEntries");
-	// 	var method = type.GetMethod("Clear");
-	// 	method.Invoke(new object(), null);
-	// }
+	/* public void ClearLog()
+	{
+		var assembly = Assembly.GetAssembly(typeof(UnityEditor.Editor));
+		var type = assembly.GetType("UnityEditor.LogEntries");
+		var method = type.GetMethod("Clear");
+		method.Invoke(new object(), null);
+	} */
 }
