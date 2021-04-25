@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		zeroRange, veryShortRange, shortRange, mediumRange, mediumLongRange, longMediumRange, longRange
 	}
-
+	
 	private int Jump()
 	{
 		if (stateMgr.jump || vaultActive) 
