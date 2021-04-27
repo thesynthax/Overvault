@@ -29,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
         stateMgr.charStates.onGround = OnGround();
 		
 		vaultRange = Jump();
-        Animate(stateMgr.anim, vaultRange, stateMgr.jump, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
+        
+		Animate(stateMgr.anim, vaultRange, stateMgr.jump, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
 		
 		if (stateMgr.charStates.curState >= 0 && stateMgr.charStates.curState <= 3)
 		{
@@ -98,6 +99,47 @@ public class PlayerMovement : MonoBehaviour
 		zeroRange, veryShortRange, shortRange, mediumRange, mediumLongRange, longMediumRange, longRange
 	}
 	
+	/* private int Jump()
+	{
+		if (stateMgr.jump || vaultActive)
+		{
+			VaultRange vaultRange = new VaultRange();
+
+			Vector3 origin = transform.position + Vector3.up * 0.3f;
+			RaycastHit hit = new RaycastHit();
+			Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
+
+			float t = 0f;
+
+			if (Physics.Raycast(origin, direction, out hit, 1.5f, stateMgr.obstacles))
+			{
+				vaultActive = true;
+				vaultRange = VaultRange.longRange;
+				Vector3 startPos = transform.position;
+				Vector3 endPos = hit.point;
+				endPos.y -= 0.3f;
+				endPos += direction.normalized * 2f;
+				
+				float speed = (Time.deltaTime * stateMgr.jogVaultSpeed) / stateMgr.jog_vault.length;
+				t += speed;
+
+				if (t > 1)
+				{
+					vaultActive = false;
+				}
+
+				Vector3 targetPos = Vector3.Lerp(startPos, hit.point, t);
+				transform.position = targetPos;
+
+				return (int)vaultRange;
+			}
+			else vaultActive = false;
+		}
+
+		return -1;
+	}
+ */
+	
 	private int Jump()
 	{
 		if (stateMgr.jump || vaultActive) 
@@ -109,8 +151,7 @@ public class PlayerMovement : MonoBehaviour
 			RaycastHit hit = new RaycastHit();
 			Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
 
-			float inputEnterRoom = 1.5f;
-			float inputExitRoom = 0.3f;
+			float inputEnterRoom = stateMgr.inputEnterRoom;
 			float animPlayRoom = 0.1f;
 
 			if (Physics.Raycast(origin, direction, out hit, stateMgr.longVaultDistance + inputEnterRoom, stateMgr.obstacles))
@@ -138,13 +179,8 @@ public class PlayerMovement : MonoBehaviour
 					{
 						if (hit.distance <= stateMgr.mediumLongVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumLongVaultDistance - animPlayRoom)
 							vaultRange = VaultRange.mediumLongRange;
-					}
-					else if (hit.distance <= stateMgr.longMediumVaultDistance && hit.distance >= stateMgr.mediumLongVaultDistance)
-					{
-						if (hit.distance <= stateMgr.mediumLongVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumLongVaultDistance - animPlayRoom)
-							vaultRange = VaultRange.mediumLongRange;
-					}
-					else if (hit.distance <= stateMgr.mediumLongVaultDistance && hit.distance >= stateMgr.mediumVaultDistance)
+				}
+					else if (hit.distance <= stateMgr.longVaultDistance && hit.distance >= stateMgr.mediumVaultDistance)
 					{
 						if (hit.distance <= stateMgr.mediumVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumVaultDistance - animPlayRoom)
 							vaultRange = VaultRange.mediumRange;

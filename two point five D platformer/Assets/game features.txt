@@ -2,6 +2,7 @@ GAME INSPIRATION:
     1) Playdead's Inside(graphics, smooth mechanics, 2.5D, ambience)
     2) Vector (movement, parkour)
     3) Shadow fight 2 (fight)
+    4) GTA 5 (ragdoll)
 
 movement/game mechanics
     - 2.5D

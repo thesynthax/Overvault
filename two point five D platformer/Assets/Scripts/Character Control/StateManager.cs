@@ -46,8 +46,12 @@ public class StateManager : MonoBehaviour
 	public float shortVaultDistance = 2.6f;
 	public float veryShortVaultDistance = 1.6f;
 	public float nearestVaultDistance = 0.9f;
+	public float jogVaultSpeed;
+	public float inputEnterRoom;
 	public LayerMask ground;
 	public LayerMask obstacles;
+	public AnimationClip jog_vault;
+
 	//Private
 	private GameObject activeModel;
     public void Init()

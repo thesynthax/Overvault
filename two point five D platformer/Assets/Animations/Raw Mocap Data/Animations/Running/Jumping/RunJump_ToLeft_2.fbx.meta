@@ -477,6 +477,12 @@ ModelImporter:
   - first:
       74: 948557009045617167
     second: sprint vault medium long
+  - first:
+      74: 4393863775838156768
+    second: sprint vault medium long mirror
+  - first:
+      74: 7038331147440893163
+    second: jog sprint vault 1 mirror
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -557,6 +563,64 @@ ModelImporter:
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
       heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 256
+    - serializedVersion: 16
+      name: sprint vault medium long mirror
+      takeName: _28_B_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_2
+      internalID: 0
+      firstFrame: 260
+      lastFrame: 329
+      wrapMode: 0
+      orientationOffsetY: 180
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 256
+    - serializedVersion: 16
+      name: jog sprint vault 1 mirror
+      takeName: _28_B_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_2
+      internalID: 0
+      firstFrame: 270
+      lastFrame: 329
+      wrapMode: 0
+      orientationOffsetY: 180
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []

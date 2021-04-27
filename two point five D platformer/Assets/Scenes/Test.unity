@@ -2888,6 +2888,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
+      propertyPath: jog_vault
+      value: 
+      objectReference: {fileID: 7400000, guid: cf376201ef529c843962855a51c2b2fb, type: 2}
+    - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
       propertyPath: modelInit
       value: 
       objectReference: {fileID: 919132149155446097, guid: 72119ee65fd6f404089d6c881e326edb, type: 3}
@@ -2896,8 +2900,16 @@ PrefabInstance:
       value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
+      propertyPath: jogVaultSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
       propertyPath: modelRootBone
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
+      propertyPath: inputEnterRoom
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
       propertyPath: obstacles.m_Bits
@@ -2969,6 +2981,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6093389076666357191, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093389076666357208, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
+      propertyPath: m_Antialiasing
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6093389076666357208, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
@@ -3098,19 +3114,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2051552820999862733, guid: 78308ebb1110b76448589bfe3a367066, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2438768987155870637, guid: 78308ebb1110b76448589bfe3a367066, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4802281859350151768, guid: 78308ebb1110b76448589bfe3a367066, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5658847371050727034, guid: 78308ebb1110b76448589bfe3a367066, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8126552454601762334, guid: 78308ebb1110b76448589bfe3a367066, type: 3}
       propertyPath: m_RootOrder
