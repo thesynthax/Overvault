@@ -39,18 +39,18 @@ public class StateManager : MonoBehaviour
 	[Header("Constants")]
 	public float jumpForce = 8f;
 	public float groundDistance = 0.634f;
-	public float longVaultDistance = 4.9f;
-	public float longMediumVaultDistance = 4.3f;
-	public float mediumLongVaultDistance = 3.8f;
-	public float mediumVaultDistance = 3.3f;
-	public float shortVaultDistance = 2.6f;
-	public float veryShortVaultDistance = 1.6f;
-	public float nearestVaultDistance = 0.9f;
-	public float jogVaultSpeed;
+	public float longVaultDistance = 5.17f;
+	public float longMediumVaultDistance = 4.63f;
+	public float mediumLongVaultDistance = 4.02f;
+	public float mediumVaultDistance = 3.12f;
+	public float shortVaultDistance = 2.52f;
+	public float veryShortVaultDistance = 1.93f;
+	public float nearestVaultDistance = 0f;
+	public float sprintVaultSpeed;
 	public float inputEnterRoom;
+	public float animTriggerOffset;
 	public LayerMask ground;
 	public LayerMask obstacles;
-	public AnimationClip jog_vault;
 
 	//Private
 	private GameObject activeModel;

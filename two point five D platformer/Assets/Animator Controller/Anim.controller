@@ -137,7 +137,7 @@ AnimatorStateTransition:
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2037870058581623005}
   m_Solo: 0
-  m_Mute: 0
+  m_Mute: 1
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.20844473
@@ -1738,9 +1738,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.38749984
+  m_TransitionDuration: 0.15822056
   m_TransitionOffset: 0
-  m_ExitTime: 0.2047908
+  m_ExitTime: 0.72003496
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1754,7 +1754,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint vault long medium
-  m_Speed: 1.3
+  m_Speed: 1.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -765895445588548660}
@@ -2029,7 +2029,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint mirror
-  m_Speed: 4
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5880952134343892010}
@@ -2053,7 +2053,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: -847952355058954810, guid: b83dd65081fe1a94cbe930afd43c3eff, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: Horizontal
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -2130,7 +2130,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -40, y: 20, z: 0}
   m_EntryPosition: {x: -40, y: 120, z: 0}
-  m_ExitPosition: {x: 1020, y: 140, z: 0}
+  m_ExitPosition: {x: 1270, y: 90, z: 0}
   m_ParentStateMachinePosition: {x: 1140, y: 270, z: 0}
   m_DefaultState: {fileID: 7845525836270202956}
 --- !u!1101 &-2702462034619016542
@@ -2556,7 +2556,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint vault medium mirror
-  m_Speed: 1.5
+  m_Speed: 1.45
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8868101715368692880}
@@ -2632,7 +2632,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint
-  m_Speed: 4
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6801403042159313025}
@@ -4381,7 +4381,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint vault long medium mirror
-  m_Speed: 1.3
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1162165330998070606}
@@ -5303,9 +5303,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.38749984
+  m_TransitionDuration: 0.15822056
   m_TransitionOffset: 0
-  m_ExitTime: 0.2047908
+  m_ExitTime: 0.72003496
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -5937,7 +5937,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint vault long
-  m_Speed: 1.4
+  m_Speed: 1.35
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3654938310940704944}
@@ -6131,7 +6131,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint vault medium
-  m_Speed: 1.5
+  m_Speed: 1.45
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1265736582948886604}
@@ -6273,7 +6273,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sprint vault long mirror
-  m_Speed: 1.4
+  m_Speed: 1.35
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5218278680599887361}

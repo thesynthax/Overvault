@@ -45,6 +45,31 @@ public class PlayerMovement : MonoBehaviour
 		float currentValue = stateMgr.AxisDir.x;
 		stateMgr.suddenChange = suddenChange(previousValue, currentValue);
 		previousValue = currentValue;
+
+		RaycastHit hit = new RaycastHit();
+		if (Physics.Raycast(transform.position, stateMgr.facingDir == 1 ? transform.forward : -transform.forward, out hit, stateMgr.longVaultDistance + stateMgr.inputEnterRoom, stateMgr.obstacles))
+		{
+			if (hit.distance <= stateMgr.longVaultDistance + stateMgr.inputEnterRoom && hit.distance >= stateMgr.longVaultDistance + stateMgr.animTriggerOffset)
+			{
+				Debug.Log("Long");
+			}
+			else if (hit.distance <= stateMgr.longVaultDistance + stateMgr.animTriggerOffset && hit.distance >= stateMgr.longMediumVaultDistance + stateMgr.animTriggerOffset)
+			{
+				Debug.Log("Long Medium");
+			}
+			else if (hit.distance <= stateMgr.longMediumVaultDistance + stateMgr.animTriggerOffset && hit.distance >= stateMgr.mediumVaultDistance)
+			{
+				Debug.Log("Medium");
+			}
+			else if (hit.distance <= stateMgr.mediumVaultDistance && hit.distance >= stateMgr.shortVaultDistance)
+			{
+				Debug.Log("short");
+			}
+			else if (hit.distance <= stateMgr.shortVaultDistance && hit.distance >= stateMgr.nearestVaultDistance)
+			{
+				Debug.Log("Very Short");
+			} 
+		}
 	}
 	
 	private bool suddenChange(float previousValue, float currentValue)
@@ -99,101 +124,107 @@ public class PlayerMovement : MonoBehaviour
 		zeroRange, veryShortRange, shortRange, mediumRange, mediumLongRange, longMediumRange, longRange
 	}
 	
-	/* private int Jump()
+	private int Jump()
 	{
 		if (stateMgr.jump || vaultActive)
 		{
 			VaultRange vaultRange = new VaultRange();
 
-			Vector3 origin = transform.position + Vector3.up * 0.3f;
-			RaycastHit hit = new RaycastHit();
-			Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
-
-			float t = 0f;
-
-			if (Physics.Raycast(origin, direction, out hit, 1.5f, stateMgr.obstacles))
-			{
-				vaultActive = true;
-				vaultRange = VaultRange.longRange;
-				Vector3 startPos = transform.position;
-				Vector3 endPos = hit.point;
-				endPos.y -= 0.3f;
-				endPos += direction.normalized * 2f;
-				
-				float speed = (Time.deltaTime * stateMgr.jogVaultSpeed) / stateMgr.jog_vault.length;
-				t += speed;
-
-				if (t > 1)
-				{
-					vaultActive = false;
-				}
-
-				Vector3 targetPos = Vector3.Lerp(startPos, hit.point, t);
-				transform.position = targetPos;
-
-				return (int)vaultRange;
-			}
-			else vaultActive = false;
-		}
-
-		return -1;
-	}
- */
-	
-	private int Jump()
-	{
-		if (stateMgr.jump || vaultActive) 
-		{
-			//Debug.Log(vaultActive);
-			VaultRange vaultRange = new VaultRange();
-
-			Vector3 origin = transform.position + Vector3.up * 0.3f;
+			Vector3 origin = transform.position;
 			RaycastHit hit = new RaycastHit();
 			Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
 
 			float inputEnterRoom = stateMgr.inputEnterRoom;
-			float animPlayRoom = 0.1f;
+			float animTriggerOffset = stateMgr.animTriggerOffset;
+
+			float t = 0;
 
 			if (Physics.Raycast(origin, direction, out hit, stateMgr.longVaultDistance + inputEnterRoom, stateMgr.obstacles))
 			{
+				Vector3 startPos = transform.position;
 				
-				//uInput.ClearLog();
 				vaultActive = true;
 				if (stateMgr.charStates.curState == 3)
 				{
-					if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance)
+					/* if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom)
 					{
-						if (hit.distance <= stateMgr.longVaultDistance + animPlayRoom && hit.distance >= stateMgr.longVaultDistance - animPlayRoom)
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.veryShortVaultDistance;
+						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+						if (t > 1)
 						{
-							vaultRange = VaultRange.longRange;
+							vaultActive = false;
 						}
+						vaultRange = VaultRange.veryShortRange;
+						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+						transform.position = targetPos;
+					} */
+
+					if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance + animTriggerOffset)
+					{
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.longVaultDistance;
+						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+						if (t > 1)
+						{
+							vaultActive = false;
+						}
+						vaultRange = VaultRange.longRange;
+						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+						transform.position = targetPos;
 						
 					}
-					//Debug.Log(hit.distance);
-					else if (hit.distance <= stateMgr.longVaultDistance && hit.distance >= stateMgr.longMediumVaultDistance)
+					else if (hit.distance <= stateMgr.longVaultDistance + animTriggerOffset && hit.distance >= stateMgr.longMediumVaultDistance + animTriggerOffset)
 					{
-						if (hit.distance <= stateMgr.longMediumVaultDistance + animPlayRoom && hit.distance >= stateMgr.longMediumVaultDistance - animPlayRoom)
-							vaultRange = VaultRange.longMediumRange;
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.longMediumVaultDistance;
+						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+						if (t > 1)
+						{
+							vaultActive = false;
+						}
+						vaultRange = VaultRange.longMediumRange;
+						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+						transform.position = targetPos;
 					}
-					else if (hit.distance <= stateMgr.longMediumVaultDistance && hit.distance >= stateMgr.mediumLongVaultDistance)
+					else if (hit.distance <= stateMgr.longMediumVaultDistance + animTriggerOffset && hit.distance >= stateMgr.mediumVaultDistance + animTriggerOffset)
 					{
-						if (hit.distance <= stateMgr.mediumLongVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumLongVaultDistance - animPlayRoom)
-							vaultRange = VaultRange.mediumLongRange;
-				}
-					else if (hit.distance <= stateMgr.longVaultDistance && hit.distance >= stateMgr.mediumVaultDistance)
-					{
-						if (hit.distance <= stateMgr.mediumVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumVaultDistance - animPlayRoom)
-							vaultRange = VaultRange.mediumRange;
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.mediumVaultDistance;
+						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+						if (t > 1)
+						{
+							vaultActive = false;
+						}
+						vaultRange = VaultRange.mediumRange;
+						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+						transform.position = targetPos;
 					}
-					else if (hit.distance <= stateMgr.mediumVaultDistance && hit.distance >= stateMgr.shortVaultDistance)
+					else if (hit.distance <= stateMgr.mediumVaultDistance + animTriggerOffset && hit.distance >= stateMgr.shortVaultDistance + animTriggerOffset)
 					{
-						if (hit.distance <= stateMgr.shortVaultDistance + animPlayRoom && hit.distance >= stateMgr.shortVaultDistance - animPlayRoom)
-							vaultRange = VaultRange.shortRange;
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.shortVaultDistance;
+						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+						if (t > 1)
+						{
+							vaultActive = false;
+						}
+						vaultRange = VaultRange.shortRange;
+						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+						transform.position = targetPos;
 					}
-					else if (hit.distance <= stateMgr.veryShortVaultDistance && hit.distance >= stateMgr.nearestVaultDistance)
+					else if (hit.distance <= stateMgr.shortVaultDistance + animTriggerOffset && hit.distance >= stateMgr.nearestVaultDistance)
 					{
-						//if (hit.distance <= stateMgr.veryShortVaultDistance + animPlayRoom && hit.distance >= stateMgr.veryShortVaultDistance - animPlayRoom)
-							vaultRange = VaultRange.veryShortRange;
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.veryShortVaultDistance;
+						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+						if (t > 1)
+						{
+							vaultActive = false;
+						}
+						vaultRange = VaultRange.veryShortRange;
+						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+						transform.position = targetPos;
 					} 
 				}
 				else if (stateMgr.charStates.curState == 2)
@@ -208,8 +239,6 @@ public class PlayerMovement : MonoBehaviour
 				{
 
 				}
-				//Debug.Log(hit.distance + " " + vaultActive);
-				Debug.DrawRay(origin, hit.transform.position - origin, Color.green);
 				return (int)vaultRange;
 			}
 			else
@@ -217,10 +246,96 @@ public class PlayerMovement : MonoBehaviour
 				vaultActive = false;
 			}
 		}
-		
 
 		return -1;
 	}
+
+	
+	// private int Jump()
+	// {
+	// 	if (stateMgr.jump || vaultActive) 
+	// 	{
+	// 		//Debug.Log(vaultActive);
+	// 		VaultRange vaultRange = new VaultRange();
+
+	// 		Vector3 origin = transform.position;
+	// 		RaycastHit hit = new RaycastHit();
+	// 		Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
+
+	// 		float inputEnterRoom = stateMgr.inputEnterRoom;
+	// 		float animPlayRoom = 0.1f;
+
+	// 		float t = 0;
+
+	// 		if (Physics.Raycast(origin, direction, out hit, stateMgr.longVaultDistance + inputEnterRoom, stateMgr.obstacles))
+	// 		{
+				
+	// 			vaultActive = true;
+	// 			if (stateMgr.charStates.curState == 3)
+	// 			{
+					
+	// 				//float speed = (Time.deltaTime * stateMgr.jogVaultSpeed) / stateMgr.jog_vault.length;
+	// 				//if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance)
+	// 				if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance)
+	// 				{
+	// 					/* if (hit.distance <= stateMgr.longVaultDistance + animPlayRoom && hit.distance >= stateMgr.longVaultDistance - animPlayRoom)
+	// 					{
+	// 						vaultRange = VaultRange.longRange;
+	// 					} */
+						
+	// 				}
+	// 				//Debug.Log(hit.distance);
+	// 				else if (hit.distance <= stateMgr.longVaultDistance && hit.distance >= stateMgr.longMediumVaultDistance)
+	// 				{
+	// 					/* if (hit.distance <= stateMgr.longMediumVaultDistance + animPlayRoom && hit.distance >= stateMgr.longMediumVaultDistance - animPlayRoom)
+	// 						vaultRange = VaultRange.longMediumRange; */
+	// 				}
+	// 				else if (hit.distance <= stateMgr.longMediumVaultDistance && hit.distance >= stateMgr.mediumLongVaultDistance)
+	// 				{
+	// 					/* if (hit.distance <= stateMgr.mediumLongVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumLongVaultDistance - animPlayRoom)
+	// 						vaultRange = VaultRange.mediumLongRange; */
+	// 				}
+	// 				else if (hit.distance <= stateMgr.longVaultDistance && hit.distance >= stateMgr.mediumVaultDistance)
+	// 				{
+	// 					/* if (hit.distance <= stateMgr.mediumVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumVaultDistance - animPlayRoom)
+	// 						vaultRange = VaultRange.mediumRange; */
+	// 				}
+	// 				else if (hit.distance <= stateMgr.mediumVaultDistance && hit.distance >= stateMgr.shortVaultDistance)
+	// 				{
+	// 					/* if (hit.distance <= stateMgr.shortVaultDistance + animPlayRoom && hit.distance >= stateMgr.shortVaultDistance - animPlayRoom)
+	// 						vaultRange = VaultRange.shortRange; */
+	// 				}
+	// 				else if (hit.distance <= stateMgr.veryShortVaultDistance && hit.distance >= stateMgr.nearestVaultDistance)
+	// 				{
+	// 					/* //if (hit.distance <= stateMgr.veryShortVaultDistance + animPlayRoom && hit.distance >= stateMgr.veryShortVaultDistance - animPlayRoom)
+	// 						vaultRange = VaultRange.veryShortRange; */
+	// 				} 
+	// 			}
+	// 			else if (stateMgr.charStates.curState == 2)
+	// 			{
+
+	// 			}
+	// 			else if (stateMgr.charStates.curState == 1)
+	// 			{
+
+	// 			}
+	// 			else
+	// 			{
+
+	// 			}
+	// 			//Debug.Log(hit.distance + " " + vaultActive);
+	// 			//Debug.DrawRay(origin, hit.point - origin, Color.green);
+	// 			return (int)vaultRange;
+	// 		}
+	// 		else
+	// 		{
+	// 			vaultActive = false;
+	// 		}
+	// 	}
+		
+
+	// 	return -1;
+	// }
 
     private bool OnGround()
 	{
