@@ -28,7 +28,7 @@ public class UserInput : MonoBehaviour
 			stateMgr.mainCam = Camera.main.transform;
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		UpdateInputs(ref stateMgr.AxisDir, ref stateMgr.inputActive, ref stateMgr.sprint, ref stateMgr.jump);
 

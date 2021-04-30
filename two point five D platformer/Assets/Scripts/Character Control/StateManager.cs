@@ -47,6 +47,8 @@ public class StateManager : MonoBehaviour
 	public float veryShortVaultDistance = 1.93f;
 	public float nearestVaultDistance = 0f;
 	public float sprintVaultSpeed;
+	public float jogVaultSpeed;
+	public float walkVaultSpeed;
 	public float inputEnterRoom;
 	public float animTriggerOffset;
 	public LayerMask ground;
@@ -98,15 +100,15 @@ public class StateManager : MonoBehaviour
     private void UpdateStates()
 	{
 		if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Idle) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.IdleMirror))
-			charStates.curState = 0;
+			charStates.curState = 0; //Idle
 		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Walk) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkBwdLeft) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkBwdRight) | anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.WalkTurnMirror))
-			charStates.curState = 1;
+			charStates.curState = 1; //Walk
 		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Jog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.JogTurnMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopJog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopJogMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartJog) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartJogMirror))
-			charStates.curState = 2;
+			charStates.curState = 2; //Jog
 		else if (anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.Sprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintTurn) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.SprintTurnMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopSprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StopSprintMirror) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartSprint) || anim.GetCurrentAnimatorStateInfo(0).IsName(AnimVars.StartSprintMirror))
-			charStates.curState = 3;
+			charStates.curState = 3; //Sprint
 		else
-			charStates.curState = 4;
+			charStates.curState = 4; //On-hold (i.e when you can't do anything else, eg. Vault, Jump, Airborne)
 	}
 
 	private bool RequirementsCleared()

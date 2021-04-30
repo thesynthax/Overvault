@@ -508,11 +508,11 @@ ModelImporter:
       name: jog vault 1
       takeName: _16_B_a_U1_M_P_JogJump_ToLeft_R_Fb_p0_No_0_1
       internalID: 0
-      firstFrame: 270
-      lastFrame: 315
+      firstFrame: 266
+      lastFrame: 320
       wrapMode: 0
       orientationOffsetY: 180
-      level: -0.05
+      level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0

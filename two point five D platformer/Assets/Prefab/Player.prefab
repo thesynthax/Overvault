@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8805136549658277631}
+  - {fileID: 8009699125397167812}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,7 +97,6 @@ Transform:
   m_Children:
   - {fileID: 3562017987414544129}
   - {fileID: 803219969904330604}
-  - {fileID: 8009699125397167812}
   m_Father: {fileID: 8694330238305677714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -173,11 +173,29 @@ MonoBehaviour:
   AxisDir: {x: 0, y: 0}
   facingDir: 0
   inputActive: 0
+  suddenChange: 0
+  sprint: 0
+  jump: 0
   _curState: 0
   _onGround: 0
   jumpForce: 8
   groundDistance: 0.634
+  longVaultDistance: 5.17
+  longMediumVaultDistance: 4.63
+  mediumLongVaultDistance: 4.02
+  mediumVaultDistance: 3.12
+  shortVaultDistance: 2.52
+  veryShortVaultDistance: 1.93
+  nearestVaultDistance: 0
+  sprintVaultSpeed: 0
+  jogVaultSpeed: 0
+  walkVaultSpeed: 0
+  inputEnterRoom: 0
+  animTriggerOffset: 0
   ground:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacles:
     serializedVersion: 2
     m_Bits: 0
 --- !u!114 &8985458789121738636
@@ -207,6 +225,7 @@ MonoBehaviour:
   stateMgr: {fileID: 0}
   pMove: {fileID: 0}
   joystick: {fileID: 0}
+  buttons: {fileID: 0}
 --- !u!1 &5951363892879785091
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,13 +282,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6093389076666357188}
-  m_LocalRotation: {x: 0.11320323, y: -0, z: -0, w: 0.9935719}
-  m_LocalPosition: {x: 0, y: 0.5, z: -7}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8009699125397167812}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6093389076666357190
 Camera:
   m_ObjectHideFlags: 0
@@ -362,6 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8009699125397167812}
+  - component: {fileID: 8894801395500505311}
   m_Layer: 0
   m_Name: CameraBase
   m_TagString: Untagged
@@ -381,6 +401,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6093389076666357191}
-  m_Father: {fileID: 8805136549658277631}
-  m_RootOrder: 2
+  m_Father: {fileID: 8694330238305677714}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8894801395500505311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9202182524863252561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e8d08d1e676ce448152f84dd90b279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

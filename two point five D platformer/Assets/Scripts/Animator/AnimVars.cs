@@ -22,7 +22,7 @@ public static class AnimVars
 	public static string InputActive = "InputActive";
 	public static string Jump = "Jump";
 	public static string VaultDistance = "VaultDistance";
-
+	public static string Random = "Random";
 
 	public static string Idle = "idle";
 	public static string IdleMirror = "idle mirror";
