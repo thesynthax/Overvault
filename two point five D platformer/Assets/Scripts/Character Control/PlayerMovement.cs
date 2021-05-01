@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     {
 		switch(stateMgr.charStates.curState)
 		{
+			case (0):
+				stateMgr.coll.radius = 0.3f;
+				break;
 			case (1):
 				stateMgr.coll.radius = 0.3f;
 				break;
@@ -234,7 +237,7 @@ public class PlayerMovement : MonoBehaviour
 						int random = Random.Range(1,4);
 						stateMgr.anim.SetInteger(AnimVars.Random, random);
 
-						Vector3 endPos = hit.point - direction.normalized * 1f;
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.jogVaultDistance;
 						t += Time.deltaTime * stateMgr.jogVaultSpeed;
 
 						if (t > 1)
@@ -253,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
 						int random = Random.Range(1,3);
 						stateMgr.anim.SetInteger(AnimVars.Random, random);
 
-						Vector3 endPos = hit.point - direction.normalized * 0.5f;
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.walkVaultDistance;
 						t += Time.deltaTime * stateMgr.walkVaultSpeed;
 
 						if (t > 1)
@@ -265,9 +268,24 @@ public class PlayerMovement : MonoBehaviour
 						transform.position = targetPos;
 					}
 				}
-				else
+				else if (stateMgr.charStates.curState == 0)
 				{
+					if (hit.distance <= inputEnterRoom)
+					{
+						int random = Random.Range(1,3);
+						stateMgr.anim.SetInteger(AnimVars.Random, random);
 
+						Vector3 endPos = hit.point - direction.normalized * stateMgr.idleVaultDistance;
+						t += Time.deltaTime * stateMgr.idleVaultSpeed;
+
+						if (t > 1)
+						{
+							vaultActive = false;
+						}
+						
+						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+						transform.position = targetPos;
+					}
 				}
 				
 

@@ -46,9 +46,13 @@ public class StateManager : MonoBehaviour
 	public float shortVaultDistance = 2.52f;
 	public float veryShortVaultDistance = 1.93f;
 	public float nearestVaultDistance = 0f;
+	public float jogVaultDistance = 1f;
+	public float walkVaultDistance = 0.5f;
+	public float idleVaultDistance = 0.3f;
 	public float sprintVaultSpeed;
 	public float jogVaultSpeed;
 	public float walkVaultSpeed;
+	public float idleVaultSpeed;
 	public float inputEnterRoom;
 	public float animTriggerOffset;
 	public LayerMask ground;

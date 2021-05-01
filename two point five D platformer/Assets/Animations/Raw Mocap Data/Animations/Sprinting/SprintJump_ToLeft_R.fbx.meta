@@ -480,6 +480,12 @@ ModelImporter:
   - first:
       74: 2837362592739356339
     second: jog vault 5
+  - first:
+      74: -7146729991914810480
+    second: jog vault 3
+  - first:
+      74: 6131419559149344074
+    second: jog vault 3 mirror
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -569,13 +575,42 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 314
     - serializedVersion: 16
-      name: jog vault 5
+      name: jog vault 3
       takeName: _39_a_U1_M_P_SprintJump_ToLeft_R_Fb_p0_No_0_1
       internalID: 0
       firstFrame: 325
       lastFrame: 355
       wrapMode: 0
       orientationOffsetY: 184.8
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 314
+    - serializedVersion: 16
+      name: jog vault 3 mirror
+      takeName: _39_a_U1_M_P_SprintJump_ToLeft_R_Fb_p0_No_0_1
+      internalID: 0
+      firstFrame: 325
+      lastFrame: 355
+      wrapMode: 0
+      orientationOffsetY: 4.8
       level: 0
       cycleOffset: 0
       loop: 0
