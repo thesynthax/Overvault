@@ -15,7 +15,7 @@ public class UserInput : MonoBehaviour
 	public PlayerMovement pMove;
     public JoystickControl joystick;
 	public ButtonsControl buttons;
-
+	
 	private float horizontal { get; set; }
 	private float vertical { get; set; }
 
@@ -30,7 +30,7 @@ public class UserInput : MonoBehaviour
 
 	private void Update()
 	{
-		UpdateInputs(ref stateMgr.AxisDir, ref stateMgr.inputActive, ref stateMgr.sprint, ref stateMgr.jump);
+		UpdateInputs(ref stateMgr.AxisDir, ref stateMgr.inputActive, ref stateMgr.sprint, ref stateMgr.jump, ref stateMgr.slide);
 
 		stateMgr.Tick();
 		pMove.Tick();
@@ -40,7 +40,7 @@ public class UserInput : MonoBehaviour
         pMove.OnAnimMove(stateMgr.charStates.onGround, Time.deltaTime, stateMgr.anim, stateMgr.rBody);
     }
 
-    private void UpdateInputs(ref Vector2 axisDir, ref bool inputActive, ref bool sprint, ref bool jump)
+    private void UpdateInputs(ref Vector2 axisDir, ref bool inputActive, ref bool sprint, ref bool jump, ref bool slide)
     {
         horizontal = joystick.Horizontal();
         vertical = joystick.Vertical();
@@ -50,7 +50,8 @@ public class UserInput : MonoBehaviour
         inputActive = horizontal != 0 ? true : false;
 
 		sprint = buttons.Sprint();
-		jump = buttons.jumpScript.pressed || Input.GetKey(KeyCode.Space);
+		jump = buttons.jumpScript.pressed || Input.GetKey(KeyCode.W);
+		slide = buttons.slideScript.pressed || Input.GetKey(KeyCode.S);
 	}
 
 	/* public void ClearLog()

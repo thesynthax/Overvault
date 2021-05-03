@@ -14,8 +14,10 @@ public class ButtonsControl : MonoBehaviour
 {
     private GameObject sprintButton;
     private GameObject jumpButton;
+    private GameObject slideButton;
 
     [HideInInspector] public jump jumpScript;
+    [HideInInspector] public slide slideScript;
 
     private void Start()
     {
@@ -29,6 +31,11 @@ public class ButtonsControl : MonoBehaviour
             {
                 jumpButton = child.gameObject;
                 jumpScript = jumpButton.GetComponent<jump>();
+            }
+            if (child.name.Equals("Slide"))
+            {
+                slideButton = child.gameObject;
+                slideScript = slideButton.GetComponent<slide>();
             }
         }
     }

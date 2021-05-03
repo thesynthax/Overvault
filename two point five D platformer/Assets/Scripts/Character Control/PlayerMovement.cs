@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         stateMgr = st;
         uInput = ui;
     }
-
+	
     public void Tick()
     {
 		switch(stateMgr.charStates.curState)
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 				stateMgr.coll.radius = 0.3f;
 				break;
 			case (2):
-				stateMgr.coll.radius = 0.5f;
+				stateMgr.coll.radius = 0.7f;
 				break;
 			case (3):
 				stateMgr.coll.radius = 0.7f;
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		vaultRange = Jump();
         
-		Animate(stateMgr.anim, vaultRange, stateMgr.jump, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
+		Animate(stateMgr.anim, stateMgr.slide, vaultRange, stateMgr.jump, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
 		
 		if (stateMgr.charStates.curState >= 0 && stateMgr.charStates.curState <= 3)
 		{
@@ -62,31 +62,15 @@ public class PlayerMovement : MonoBehaviour
 		stateMgr.suddenChange = suddenChange(previousValue, currentValue);
 		previousValue = currentValue;
 
-		/* RaycastHit hit = new RaycastHit();
-		if (Physics.Raycast(transform.position, stateMgr.facingDir == 1 ? transform.forward : -transform.forward, out hit, stateMgr.longVaultDistance + stateMgr.inputEnterRoom, stateMgr.obstacles))
+		RaycastHit hit = new RaycastHit();
+		Vector3 origin = transform.position + transform.up * stateMgr.obsLowShortHeight;
+		Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
+		if (Physics.Raycast(origin, direction, out hit, 10f, stateMgr.obstacles))
 		{
-			if (hit.distance <= stateMgr.longVaultDistance + stateMgr.inputEnterRoom && hit.distance >= stateMgr.longVaultDistance + stateMgr.animTriggerOffset)
-			{
-				Debug.Log("Long");
-			}
-			else if (hit.distance <= stateMgr.longVaultDistance + stateMgr.animTriggerOffset && hit.distance >= stateMgr.longMediumVaultDistance + stateMgr.animTriggerOffset)
-			{
-				Debug.Log("Long Medium");
-			}
-			else if (hit.distance <= stateMgr.longMediumVaultDistance + stateMgr.animTriggerOffset && hit.distance >= stateMgr.mediumVaultDistance)
-			{
-				Debug.Log("Medium");
-			}
-			else if (hit.distance <= stateMgr.mediumVaultDistance && hit.distance >= stateMgr.shortVaultDistance)
-			{
-				Debug.Log("short");
-			}
-			else if (hit.distance <= stateMgr.shortVaultDistance && hit.distance >= stateMgr.nearestVaultDistance)
-			{
-				Debug.Log("Very Short");
-			} 
+			Debug.DrawRay(origin, direction * 10f, Color.blue);
 		}
- */	}
+		
+ }
 	
 	private bool suddenChange(float previousValue, float currentValue)
 	{
@@ -110,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         return facingDir;
     }
 
-    public void Animate(Animator anim, int vaultDistance, bool jump, bool sprint, bool inputActive, bool suddenChange, float horz, float vert, bool onGround, int facingDir)
+    public void Animate(Animator anim, bool slide, int vaultDistance, bool jump, bool sprint, bool inputActive, bool suddenChange, float horz, float vert, bool onGround, int facingDir)
     {
         anim.SetFloat(AnimVars.Horizontal, horz, 0.01f, Time.deltaTime);
         anim.SetFloat(AnimVars.Vertical, vert, 0.01f, Time.deltaTime);
@@ -121,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
 		anim.SetBool(AnimVars.sprint, sprint);
 		anim.SetBool(AnimVars.Jump, jump || vaultActive);
 		anim.SetInteger(AnimVars.VaultDistance, vaultDistance);
+		anim.SetBool(AnimVars.Slide, slide);
     }
 	
     public void OnAnimMove(bool onGround, float time, Animator anim, Rigidbody rBody)
@@ -133,16 +118,42 @@ public class PlayerMovement : MonoBehaviour
 			rBody.velocity = v;
 		}
 	}
-
-	
 	enum VaultRange
 	{
 		zeroRange, veryShortRange, shortRange, mediumRange, mediumLongRange, longMediumRange, longRange
 	}
 
+	enum ObstacleType
+	{
+		LowShort, //normal vault animations
+		LowMedium, //only kongs and monkey vaults
+		LowLong, //can only step over it, no vaults
+		HighShort, //just climbing and descending
+		HighLong, //climbing, running on it, descending
+		SlideUnder //Slide under
+	}
+	
+	private int GetObstacleType()
+	{
+		ObstacleType obsType = new ObstacleType();
+		Vector3 origin = transform.position;
+		RaycastHit hit = new RaycastHit();
+		Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
+
+		if (Physics.Raycast(origin, direction, out hit, stateMgr.longVaultDistance + stateMgr.inputEnterRoom, stateMgr.obstacles)) //Vault or Climb over
+		{
+			GameObject hitObject = hit.transform.gameObject;
+			ObsType o = hitObject.GetComponent<ObsType>();
+
+			obsType = (ObstacleType)o.obstacleType;
+			return (int)obsType;
+		}
+		
+		return -1;
+	}
+
 	private int Jump()
 	{
-
 		if (stateMgr.jump || vaultActive)
 		{
 			VaultRange vaultRange = new VaultRange();
@@ -161,114 +172,119 @@ public class PlayerMovement : MonoBehaviour
 				Vector3 startPos = transform.position;
 				
 				vaultActive = true;
-				if (stateMgr.charStates.curState == 3)
+
+				
+				switch(GetObstacleType())
 				{
-					if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance + animTriggerOffset)
-					{
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.longVaultDistance;
-						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
-
-						if (t > 1)
+					case(0):
+						if (stateMgr.charStates.curState == 3)
 						{
-							vaultActive = false;
-						}
-						vaultRange = VaultRange.longRange;
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-						
-					}
-					else if (hit.distance <= stateMgr.longVaultDistance + animTriggerOffset && hit.distance >= stateMgr.longMediumVaultDistance + animTriggerOffset)
-					{
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.longMediumVaultDistance;
-						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+							if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance + animTriggerOffset)
+							{
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.longVaultDistance;
+								t += Time.deltaTime * stateMgr.sprintVaultSpeed;
 
-						if (t > 1)
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								vaultRange = VaultRange.longRange;
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+								
+							}
+							else if (hit.distance <= stateMgr.longVaultDistance + animTriggerOffset && hit.distance >= stateMgr.longMediumVaultDistance + animTriggerOffset)
+							{
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.longMediumVaultDistance;
+								t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								vaultRange = VaultRange.longMediumRange;
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
+							else if (hit.distance <= stateMgr.longMediumVaultDistance + animTriggerOffset && hit.distance >= stateMgr.mediumVaultDistance + animTriggerOffset)
+							{
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.mediumVaultDistance;
+								t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								vaultRange = VaultRange.mediumRange;
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
+							else if (hit.distance <= stateMgr.mediumVaultDistance + animTriggerOffset && hit.distance >= stateMgr.shortVaultDistance + animTriggerOffset)
+							{
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.shortVaultDistance;
+								t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								vaultRange = VaultRange.shortRange;
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
+							else if (hit.distance <= stateMgr.shortVaultDistance + animTriggerOffset && hit.distance >= stateMgr.nearestVaultDistance)
+							{
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.veryShortVaultDistance;
+								t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								vaultRange = VaultRange.veryShortRange;
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							} 
+						}
+						else if (stateMgr.charStates.curState == 2)
 						{
-							vaultActive = false;
-						}
-						vaultRange = VaultRange.longMediumRange;
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-					}
-					else if (hit.distance <= stateMgr.longMediumVaultDistance + animTriggerOffset && hit.distance >= stateMgr.mediumVaultDistance + animTriggerOffset)
-					{
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.mediumVaultDistance;
-						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+							if (hit.distance <= inputEnterRoom)
+							{
+								int random = Random.Range(1,4);
+								stateMgr.anim.SetInteger(AnimVars.Random, random);
 
-						if (t > 1)
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.jogVaultDistance;
+								t += Time.deltaTime * stateMgr.jogVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
+						}
+						else if (stateMgr.charStates.curState == 1)
 						{
-							vaultActive = false;
+							if (hit.distance <= inputEnterRoom)
+							{
+								int random = Random.Range(1,3);
+								stateMgr.anim.SetInteger(AnimVars.Random, random);
+
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.walkVaultDistance;
+								t += Time.deltaTime * stateMgr.walkVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
 						}
-						vaultRange = VaultRange.mediumRange;
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-					}
-					else if (hit.distance <= stateMgr.mediumVaultDistance + animTriggerOffset && hit.distance >= stateMgr.shortVaultDistance + animTriggerOffset)
-					{
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.shortVaultDistance;
-						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
-
-						if (t > 1)
-						{
-							vaultActive = false;
-						}
-						vaultRange = VaultRange.shortRange;
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-					}
-					else if (hit.distance <= stateMgr.shortVaultDistance + animTriggerOffset && hit.distance >= stateMgr.nearestVaultDistance)
-					{
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.veryShortVaultDistance;
-						t += Time.deltaTime * stateMgr.sprintVaultSpeed;
-
-						if (t > 1)
-						{
-							vaultActive = false;
-						}
-						vaultRange = VaultRange.veryShortRange;
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-					} 
-				}
-				else if (stateMgr.charStates.curState == 2)
-				{
-					if (hit.distance <= inputEnterRoom)
-					{
-						int random = Random.Range(1,4);
-						stateMgr.anim.SetInteger(AnimVars.Random, random);
-
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.jogVaultDistance;
-						t += Time.deltaTime * stateMgr.jogVaultSpeed;
-
-						if (t > 1)
-						{
-							vaultActive = false;
-						}
-						
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-					}
-				}
-				else if (stateMgr.charStates.curState == 1)
-				{
-					if (hit.distance <= inputEnterRoom)
-					{
-						int random = Random.Range(1,3);
-						stateMgr.anim.SetInteger(AnimVars.Random, random);
-
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.walkVaultDistance;
-						t += Time.deltaTime * stateMgr.walkVaultSpeed;
-
-						if (t > 1)
-						{
-							vaultActive = false;
-						}
-						
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-					}
-				}
-				else if (stateMgr.charStates.curState == 0)
+						else if (stateMgr.charStates.curState == 0)
 				{
 					if (hit.distance <= inputEnterRoom)
 					{
@@ -287,7 +303,41 @@ public class PlayerMovement : MonoBehaviour
 						transform.position = targetPos;
 					}
 				}
-				
+						break;
+					case(1):
+						if (stateMgr.charStates.curState == 3)
+						{
+							if (hit.distance <= inputEnterRoom + 3f && hit.distance >= inputEnterRoom + 1f)
+							{
+								Vector3 endPos = hit.point - direction.normalized * 2f;
+								t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								vaultRange = VaultRange.longRange;
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+								
+							}
+							else if (hit.distance <= inputEnterRoom + 1f)
+							{
+								Vector3 endPos = hit.point + direction.normalized * 0.5f;
+								t += Time.deltaTime * stateMgr.sprintVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								vaultRange = VaultRange.mediumRange;
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
+						}
+						break;
+				}	
+				stateMgr.anim.SetInteger(AnimVars.ObstacleType, GetObstacleType());			
 
 				return (int)vaultRange;
 			}
