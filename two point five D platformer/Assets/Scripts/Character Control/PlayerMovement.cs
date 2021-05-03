@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private float previousValue = 0f;
 	private bool vaultActive = false;
+	private float yRootOffset = 0f;
 	
     public void Init(UserInput ui, StateManager st)
     {
@@ -46,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		vaultRange = Jump();
         
-		Animate(stateMgr.anim, stateMgr.slide, vaultRange, stateMgr.jump, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
+		Animate(stateMgr.anim, stateMgr.crouch, stateMgr.slide, vaultRange, stateMgr.jump, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
 		
 		if (stateMgr.charStates.curState >= 0 && stateMgr.charStates.curState <= 3)
 		{
@@ -63,11 +64,13 @@ public class PlayerMovement : MonoBehaviour
 		previousValue = currentValue;
 
 		RaycastHit hit = new RaycastHit();
-		Vector3 origin = transform.position + transform.up * stateMgr.obsLowShortHeight;
+		Vector3 origin = transform.position + transform.up * stateMgr.obsLowShortMinHeight;
 		Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
 		if (Physics.Raycast(origin, direction, out hit, 10f, stateMgr.obstacles))
 		{
 			Debug.DrawRay(origin, direction * 10f, Color.blue);
+			Debug.DrawRay(stateMgr.facingDir == 1 ? hit.point + transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight - stateMgr.obsLowShortMinHeight) : hit.point - transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight - stateMgr.obsLowShortMinHeight), Vector3.down, Color.red);
+
 		}
 		
  }
@@ -94,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         return facingDir;
     }
 
-    public void Animate(Animator anim, bool slide, int vaultDistance, bool jump, bool sprint, bool inputActive, bool suddenChange, float horz, float vert, bool onGround, int facingDir)
+    public void Animate(Animator anim, bool crouch, bool slide, int vaultDistance, bool jump, bool sprint, bool inputActive, bool suddenChange, float horz, float vert, bool onGround, int facingDir)
     {
         anim.SetFloat(AnimVars.Horizontal, horz, 0.01f, Time.deltaTime);
         anim.SetFloat(AnimVars.Vertical, vert, 0.01f, Time.deltaTime);
@@ -106,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
 		anim.SetBool(AnimVars.Jump, jump || vaultActive);
 		anim.SetInteger(AnimVars.VaultDistance, vaultDistance);
 		anim.SetBool(AnimVars.Slide, slide);
+		anim.SetBool(AnimVars.Crouch, crouch);
     }
 	
     public void OnAnimMove(bool onGround, float time, Animator anim, Rigidbody rBody)
@@ -152,10 +156,54 @@ public class PlayerMovement : MonoBehaviour
 		return -1;
 	}
 
+	private float GetObstacleHeightOffset()
+	{
+		float yRootOffset = 0f;
+
+		Vector3 origin = transform.position;
+		RaycastHit hit = new RaycastHit();
+		Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
+
+		switch(GetObstacleType())
+		{
+			case(0):
+			{
+				if (Physics.Raycast(origin, direction, out hit, stateMgr.longVaultDistance + stateMgr.inputEnterRoom, stateMgr.obstacles))
+				{
+					RaycastHit newHit = new RaycastHit();
+					Vector3 newOrigin = stateMgr.facingDir == 1 ? hit.point + transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight) : hit.point - transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight);
+					Vector3 newDirection = Vector3.down;
+					float newDistance = stateMgr.obsLowShortMaxHeight - stateMgr.obsLowShortMinHeight + 0.001f;
+
+					if (Physics.Raycast(newOrigin, newDirection, out newHit, newDistance, stateMgr.obstacles))
+					{
+						yRootOffset = newDistance - newHit.distance;
+					}
+				}
+				break;
+			}
+		}
+
+		return yRootOffset;
+	}
+
+	private void AssignYOffset(ref float yOffset)
+	{
+		yOffset = GetObstacleHeightOffset();
+	}
+
 	private int Jump()
 	{
 		if (stateMgr.jump || vaultActive)
 		{
+			
+			if (!vaultActive)
+			{
+				AssignYOffset(ref yRootOffset);
+				
+			}
+			//Debug.Log(yRootOffset);
+			
 			VaultRange vaultRange = new VaultRange();
 
 			Vector3 origin = transform.position;
@@ -337,8 +385,9 @@ public class PlayerMovement : MonoBehaviour
 						}
 						break;
 				}	
-				stateMgr.anim.SetInteger(AnimVars.ObstacleType, GetObstacleType());			
-
+				stateMgr.anim.SetInteger(AnimVars.ObstacleType, GetObstacleType());	
+				//transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + yRootOffset, transform.position.z), Time.deltaTime * 10f);		
+				//transform.position = new Vector3(transform.position.x, transform.position.y + yRootOffset, transform.position.z);
 				return (int)vaultRange;
 			}
 			else

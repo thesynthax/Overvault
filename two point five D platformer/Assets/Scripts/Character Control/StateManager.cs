@@ -33,6 +33,7 @@ public class StateManager : MonoBehaviour
 	public bool sprint;
 	public bool jump;
 	public bool slide;
+	public bool crouch;
 	[Space]
 	[SerializeField] private int _curState;
 	[SerializeField] private bool _onGround;
@@ -56,8 +57,9 @@ public class StateManager : MonoBehaviour
 	public float idleVaultSpeed;
 	public float inputEnterRoom;
 	public float animTriggerOffset;
-	public float obsLowShortHeight;
-	public float obsSlideUnderHeight;
+	public float obsLowShortMinHeight;
+	public float obsLowShortMaxHeight;
+	public float obsSlideUnderMinHeight;
 	public LayerMask ground;
 	public LayerMask obstacles;
 

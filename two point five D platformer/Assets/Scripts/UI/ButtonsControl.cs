@@ -12,12 +12,15 @@ using UnityEngine.UI;
 
 public class ButtonsControl : MonoBehaviour
 {
+    public StateManager stateMgr;
     private GameObject sprintButton;
     private GameObject jumpButton;
     private GameObject slideButton;
+    private GameObject crouchButton;
 
     [HideInInspector] public jump jumpScript;
     [HideInInspector] public slide slideScript;
+    [HideInInspector] public crouch crouchScript;
 
     private void Start()
     {
@@ -37,6 +40,11 @@ public class ButtonsControl : MonoBehaviour
                 slideButton = child.gameObject;
                 slideScript = slideButton.GetComponent<slide>();
             }
+            if (child.name.Equals("Crouch"))
+            {
+                crouchButton = child.gameObject;
+                crouchScript = crouchButton.GetComponent<crouch>();
+            }
         }
     }
 
@@ -49,5 +57,30 @@ public class ButtonsControl : MonoBehaviour
         sprintButtonImage.color = pressed ? Color.grey : Color.white;
 
         return pressed; 
+    }
+
+    private void Update()
+    {
+        if (stateMgr.charStates.curState == 0 || stateMgr.charStates.curState == 1 || stateMgr.charStates.curState == 2)
+        {
+            slideButton.GetComponent<Button>().interactable = true;
+            crouchButton.GetComponent<Button>().interactable = true;
+
+            slideButton.SetActive(false);
+            crouchButton.SetActive(true);
+        }
+        else if (stateMgr.charStates.curState == 3)
+        {
+            slideButton.GetComponent<Button>().interactable = true;
+            crouchButton.GetComponent<Button>().interactable = true;
+
+            slideButton.SetActive(true);
+            crouchButton.SetActive(false);
+        }
+        else
+        {
+            slideButton.GetComponent<Button>().interactable = false;
+            crouchButton.GetComponent<Button>().interactable = false;
+        }
     }
 }

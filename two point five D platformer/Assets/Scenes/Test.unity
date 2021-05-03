@@ -279,6 +279,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &182536821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6842236105896292446, guid: 579cd466b99bbc2408cc3bbb3791cbee, type: 3}
+  m_PrefabInstance: {fileID: 488126531937285223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &182536826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182536821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe7373b8a9611e4fac912ad5927fd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &185310609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8126552454601762334, guid: 78308ebb1110b76448589bfe3a367066, type: 3}
@@ -3970,6 +3987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 1
+  heightOffset: 0
 --- !u!1001 &488126531937285223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3981,6 +3999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 488126532010551694, guid: 579cd466b99bbc2408cc3bbb3791cbee, type: 3}
+      propertyPath: stateMgr
+      value: 
+      objectReference: {fileID: 1643067542}
     - target: {fileID: 488126532010551695, guid: 579cd466b99bbc2408cc3bbb3791cbee, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -4064,6 +4086,14 @@ PrefabInstance:
     - target: {fileID: 488126532010551695, guid: 579cd466b99bbc2408cc3bbb3791cbee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642965089715450046, guid: 579cd466b99bbc2408cc3bbb3791cbee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642965089715450046, guid: 579cd466b99bbc2408cc3bbb3791cbee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 7872898531774946021, guid: 579cd466b99bbc2408cc3bbb3791cbee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -4449,6 +4479,18 @@ PrefabInstance:
     - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
       propertyPath: nearestVaultDistance
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
+      propertyPath: obsLowShortMaxHeight
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
+      propertyPath: obsLowShortMinHeight
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
+      propertyPath: obsSlideUnderMinHeight
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5374775019663752084, guid: 4f42a79d341f5064cba5e04d2e5123f9, type: 3}
       propertyPath: veryShortVaultDistance

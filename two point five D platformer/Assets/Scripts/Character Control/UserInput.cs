@@ -30,7 +30,7 @@ public class UserInput : MonoBehaviour
 
 	private void Update()
 	{
-		UpdateInputs(ref stateMgr.AxisDir, ref stateMgr.inputActive, ref stateMgr.sprint, ref stateMgr.jump, ref stateMgr.slide);
+		UpdateInputs(ref stateMgr.AxisDir, ref stateMgr.inputActive, ref stateMgr.sprint, ref stateMgr.jump, ref stateMgr.slide, ref stateMgr.crouch);
 
 		stateMgr.Tick();
 		pMove.Tick();
@@ -40,7 +40,7 @@ public class UserInput : MonoBehaviour
         pMove.OnAnimMove(stateMgr.charStates.onGround, Time.deltaTime, stateMgr.anim, stateMgr.rBody);
     }
 
-    private void UpdateInputs(ref Vector2 axisDir, ref bool inputActive, ref bool sprint, ref bool jump, ref bool slide)
+    private void UpdateInputs(ref Vector2 axisDir, ref bool inputActive, ref bool sprint, ref bool jump, ref bool slide, ref bool crouch)
     {
         horizontal = joystick.Horizontal();
         vertical = joystick.Vertical();
@@ -52,6 +52,7 @@ public class UserInput : MonoBehaviour
 		sprint = buttons.Sprint();
 		jump = buttons.jumpScript.pressed || Input.GetKey(KeyCode.W);
 		slide = buttons.slideScript.pressed || Input.GetKey(KeyCode.S);
+		crouch = buttons.crouchScript.pressed || Input.GetKey(KeyCode.S);
 	}
 
 	/* public void ClearLog()

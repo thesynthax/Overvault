@@ -24,7 +24,8 @@ public static class AnimVars
 	public static string VaultDistance = "VaultDistance";
 	public static string Random = "Random";
 	public static string ObstacleType = "ObstacleType";
-	public static string Slide = "Slide"; 
+	public static string Slide = "Slide";
+	public static string Crouch = "Crouch"; 
 
 	public static string Idle = "idle";
 	public static string IdleMirror = "idle mirror";
