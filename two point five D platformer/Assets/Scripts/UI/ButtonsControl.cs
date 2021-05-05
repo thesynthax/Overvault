@@ -80,7 +80,6 @@ public class ButtonsControl : MonoBehaviour
         else
         {
             slideButton.GetComponent<Button>().interactable = false;
-            crouchButton.GetComponent<Button>().interactable = false;
         }
     }
 }

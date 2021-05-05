@@ -62,6 +62,7 @@ public class StateManager : MonoBehaviour
 	public float obsSlideUnderMinHeight;
 	public LayerMask ground;
 	public LayerMask obstacles;
+	public LayerMask groundAndObs;
 
 	//Private
 	private GameObject activeModel;

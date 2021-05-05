@@ -25,7 +25,7 @@ All the animations required(some animations would be missing here, add them here
 1) Basic:
     - Idle, Walk, Jog, Sprint, and their turns
 2) Intermediate:
-    - Vaulting, Sliding, Step up/down elevated ground, crouching, crouched jogging
+    - Vaulting, Sliding, Step up/down elevated ground, crouching, crouched jogging and walking
 3) Advanced:
     - Jog Jump, Sprint Jump, Falling, Fall to roll, Fall to hard land, climbing and descending walls, slide to crouched running
 4) Expert:

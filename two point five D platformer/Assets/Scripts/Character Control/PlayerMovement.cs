@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
 	private float previousValue = 0f;
 	private bool vaultActive = false;
 	private float yRootOffset = 0f;
-	
+	private int onObstacleType = -1;
+	private bool positionFixed = false;
     public void Init(UserInput ui, StateManager st)
     {
         stateMgr = st;
@@ -46,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         stateMgr.charStates.onGround = OnGround();
 		
 		vaultRange = Jump();
+		FixPositionAfterClimb();
         
 		Animate(stateMgr.anim, stateMgr.crouch, stateMgr.slide, vaultRange, stateMgr.jump, stateMgr.sprint, stateMgr.inputActive, stateMgr.suddenChange, stateMgr.AxisDir.x, stateMgr.AxisDir.y, stateMgr.charStates.onGround, stateMgr.facingDir);
 		
@@ -72,6 +74,9 @@ public class PlayerMovement : MonoBehaviour
 			Debug.DrawRay(stateMgr.facingDir == 1 ? hit.point + transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight - stateMgr.obsLowShortMinHeight) : hit.point - transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight - stateMgr.obsLowShortMinHeight), Vector3.down, Color.red);
 
 		}
+		Vector3 d = stateMgr.anim.GetCurrentAnimatorClipInfo(0)[0].clip.localBounds.max;
+		Debug.Log(d);
+		//Debug.DrawRay(transform.position + transform.forward * 0.5f, Vector3.up * d, Color.green);
 		
  }
 	
@@ -333,24 +338,24 @@ public class PlayerMovement : MonoBehaviour
 							}
 						}
 						else if (stateMgr.charStates.curState == 0)
-				{
-					if (hit.distance <= inputEnterRoom)
-					{
-						int random = Random.Range(1,3);
-						stateMgr.anim.SetInteger(AnimVars.Random, random);
-
-						Vector3 endPos = hit.point - direction.normalized * stateMgr.idleVaultDistance;
-						t += Time.deltaTime * stateMgr.idleVaultSpeed;
-
-						if (t > 1)
 						{
-							vaultActive = false;
+							if (hit.distance <= inputEnterRoom)
+							{
+								int random = Random.Range(1,3);
+								stateMgr.anim.SetInteger(AnimVars.Random, random);
+
+								Vector3 endPos = hit.point - direction.normalized * stateMgr.idleVaultDistance;
+								t += Time.deltaTime * stateMgr.idleVaultSpeed;
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
 						}
-						
-						Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
-						transform.position = targetPos;
-					}
-				}
 						break;
 					case(1):
 						if (stateMgr.charStates.curState == 3)
@@ -383,16 +388,37 @@ public class PlayerMovement : MonoBehaviour
 								transform.position = targetPos;
 							}
 						}
+						if (stateMgr.charStates.curState == 2)
+						{
+							if (hit.distance <= inputEnterRoom)
+							{
+								stateMgr.anim.SetInteger(AnimVars.ClimbType, 1);
+								onObstacleType = 1;
+								/* Vector3 endPos = hit.point + Vector3.up * stateMgr.obsLowShortMinHeight;
+								t += Time.deltaTime * 4f;
+								
+
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t); */
+							}
+
+							
+						}
 						break;
 				}	
 				stateMgr.anim.SetInteger(AnimVars.ObstacleType, GetObstacleType());	
 				//transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + yRootOffset, transform.position.z), Time.deltaTime * 10f);		
 				//transform.position = new Vector3(transform.position.x, transform.position.y + yRootOffset, transform.position.z);
+				
 				return (int)vaultRange;
 			}
 			else
 			{
 				vaultActive = false;
+				stateMgr.anim.SetInteger(AnimVars.ClimbType, -1);
 				stateMgr.anim.SetInteger(AnimVars.Random, -1);
 			}
 		}
@@ -400,6 +426,15 @@ public class PlayerMovement : MonoBehaviour
 		return -1;
 	}
 
+	private void FixPositionAfterClimb()
+	{
+		if (stateMgr.anim.GetAnimatorTransitionInfo(0).IsName("climb up low -> jog"))
+		{
+			Vector3 targetPosition = transform.localPosition;
+			
+			
+		}
+	}
 	
 	// private int Jump()
 	// {
@@ -536,7 +571,7 @@ public class PlayerMovement : MonoBehaviour
 	private void FindGround(Vector3 origin, ref RaycastHit hit, ref bool isHit)
 	{
 		Debug.DrawRay(origin, -Vector3.up * 0.5f, Color.red);
-		if (Physics.Raycast(origin, -Vector3.up, out hit, stateMgr.groundDistance, stateMgr.ground))
+		if (Physics.Raycast(origin, -Vector3.up, out hit, stateMgr.groundDistance, stateMgr.groundAndObs))
 		{
 			isHit = true;
 		}
