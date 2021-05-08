@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 	private float yRootOffset = 0f;
 	private int onObstacleType = -1;
 	private bool positionFixed = false;
+	private bool yRootMotion = true;
     public void Init(UserInput ui, StateManager st)
     {
         stateMgr = st;
@@ -26,6 +27,11 @@ public class PlayerMovement : MonoBehaviour
 	
     public void Tick()
     {
+		if (!OnGround())
+			yRootMotion = false;
+		else
+			yRootMotion = true;
+
 		switch(stateMgr.charStates.curState)
 		{
 			case (0):
@@ -74,8 +80,6 @@ public class PlayerMovement : MonoBehaviour
 			Debug.DrawRay(stateMgr.facingDir == 1 ? hit.point + transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight - stateMgr.obsLowShortMinHeight) : hit.point - transform.forward * 0.1f + Vector3.up * (stateMgr.obsLowShortMaxHeight - stateMgr.obsLowShortMinHeight), Vector3.down, Color.red);
 
 		}
-		Vector3 d = stateMgr.anim.GetCurrentAnimatorClipInfo(0)[0].clip.localBounds.max;
-		Debug.Log(d);
 		//Debug.DrawRay(transform.position + transform.forward * 0.5f, Vector3.up * d, Color.green);
 		
  }
@@ -123,7 +127,9 @@ public class PlayerMovement : MonoBehaviour
 		{
 			Vector3 v = anim.deltaPosition / time;
 
-			v.y = rBody.velocity.y;
+			if(!yRootMotion)
+				v.y = rBody.velocity.y;
+
 			rBody.velocity = v;
 		}
 	}
@@ -200,14 +206,11 @@ public class PlayerMovement : MonoBehaviour
 	private int Jump()
 	{
 		if (stateMgr.jump || vaultActive)
-		{
-			
+		{		
 			if (!vaultActive)
 			{
-				AssignYOffset(ref yRootOffset);
-				
+				AssignYOffset(ref yRootOffset);	
 			}
-			//Debug.Log(yRootOffset);
 			
 			VaultRange vaultRange = new VaultRange();
 
@@ -388,24 +391,39 @@ public class PlayerMovement : MonoBehaviour
 								transform.position = targetPos;
 							}
 						}
-						if (stateMgr.charStates.curState == 2)
+						else if (stateMgr.charStates.curState == 2)
 						{
 							if (hit.distance <= inputEnterRoom)
 							{
 								stateMgr.anim.SetInteger(AnimVars.ClimbType, 1);
 								onObstacleType = 1;
-								/* Vector3 endPos = hit.point + Vector3.up * stateMgr.obsLowShortMinHeight;
-								t += Time.deltaTime * 4f;
-								
+								Vector3 endPos = hit.point - direction.normalized * 2.5f;
+								t += Time.deltaTime * stateMgr.jogVaultSpeed;
 
 								if (t > 1)
 								{
 									vaultActive = false;
 								}
-								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t); */
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
 							}
+						}
+						else if (stateMgr.charStates.curState == 1)
+						{
+							if (hit.distance <= inputEnterRoom)
+							{
+								stateMgr.anim.SetInteger(AnimVars.ClimbType, 1);
+								onObstacleType = 1;
+								Vector3 endPos = hit.point - direction.normalized * 0.7f;
+								t += Time.deltaTime * stateMgr.walkVaultSpeed;
 
-							
+								if (t > 1)
+								{
+									vaultActive = false;
+								}
+								Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
+								transform.position = targetPos;
+							}
 						}
 						break;
 				}	
@@ -428,99 +446,13 @@ public class PlayerMovement : MonoBehaviour
 
 	private void FixPositionAfterClimb()
 	{
-		if (stateMgr.anim.GetAnimatorTransitionInfo(0).IsName("climb up low -> jog"))
+		if (stateMgr.anim.GetAnimatorTransitionInfo(0).normalizedTime >= 1)
 		{
 			Vector3 targetPosition = transform.localPosition;
 			
 			
 		}
 	}
-	
-	// private int Jump()
-	// {
-	// 	if (stateMgr.jump || vaultActive) 
-	// 	{
-	// 		//Debug.Log(vaultActive);
-	// 		VaultRange vaultRange = new VaultRange();
-
-	// 		Vector3 origin = transform.position;
-	// 		RaycastHit hit = new RaycastHit();
-	// 		Vector3 direction = stateMgr.facingDir == 1 ? transform.forward : -transform.forward;
-
-	// 		float inputEnterRoom = stateMgr.inputEnterRoom;
-	// 		float animPlayRoom = 0.1f;
-
-	// 		float t = 0;
-
-	// 		if (Physics.Raycast(origin, direction, out hit, stateMgr.longVaultDistance + inputEnterRoom, stateMgr.obstacles))
-	// 		{
-				
-	// 			vaultActive = true;
-	// 			if (stateMgr.charStates.curState == 3)
-	// 			{
-					
-	// 				//float speed = (Time.deltaTime * stateMgr.jogVaultSpeed) / stateMgr.jog_vault.length;
-	// 				//if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance)
-	// 				if (hit.distance <= stateMgr.longVaultDistance + inputEnterRoom && hit.distance >= stateMgr.longVaultDistance)
-	// 				{
-	// 					/* if (hit.distance <= stateMgr.longVaultDistance + animPlayRoom && hit.distance >= stateMgr.longVaultDistance - animPlayRoom)
-	// 					{
-	// 						vaultRange = VaultRange.longRange;
-	// 					} */
-						
-	// 				}
-	// 				//Debug.Log(hit.distance);
-	// 				else if (hit.distance <= stateMgr.longVaultDistance && hit.distance >= stateMgr.longMediumVaultDistance)
-	// 				{
-	// 					/* if (hit.distance <= stateMgr.longMediumVaultDistance + animPlayRoom && hit.distance >= stateMgr.longMediumVaultDistance - animPlayRoom)
-	// 						vaultRange = VaultRange.longMediumRange; */
-	// 				}
-	// 				else if (hit.distance <= stateMgr.longMediumVaultDistance && hit.distance >= stateMgr.mediumLongVaultDistance)
-	// 				{
-	// 					/* if (hit.distance <= stateMgr.mediumLongVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumLongVaultDistance - animPlayRoom)
-	// 						vaultRange = VaultRange.mediumLongRange; */
-	// 				}
-	// 				else if (hit.distance <= stateMgr.longVaultDistance && hit.distance >= stateMgr.mediumVaultDistance)
-	// 				{
-	// 					/* if (hit.distance <= stateMgr.mediumVaultDistance + animPlayRoom && hit.distance >= stateMgr.mediumVaultDistance - animPlayRoom)
-	// 						vaultRange = VaultRange.mediumRange; */
-	// 				}
-	// 				else if (hit.distance <= stateMgr.mediumVaultDistance && hit.distance >= stateMgr.shortVaultDistance)
-	// 				{
-	// 					/* if (hit.distance <= stateMgr.shortVaultDistance + animPlayRoom && hit.distance >= stateMgr.shortVaultDistance - animPlayRoom)
-	// 						vaultRange = VaultRange.shortRange; */
-	// 				}
-	// 				else if (hit.distance <= stateMgr.veryShortVaultDistance && hit.distance >= stateMgr.nearestVaultDistance)
-	// 				{
-	// 					/* //if (hit.distance <= stateMgr.veryShortVaultDistance + animPlayRoom && hit.distance >= stateMgr.veryShortVaultDistance - animPlayRoom)
-	// 						vaultRange = VaultRange.veryShortRange; */
-	// 				} 
-	// 			}
-	// 			else if (stateMgr.charStates.curState == 2)
-	// 			{
-
-	// 			}
-	// 			else if (stateMgr.charStates.curState == 1)
-	// 			{
-
-	// 			}
-	// 			else
-	// 			{
-
-	// 			}
-	// 			//Debug.Log(hit.distance + " " + vaultActive);
-	// 			//Debug.DrawRay(origin, hit.point - origin, Color.green);
-	// 			return (int)vaultRange;
-	// 		}
-	// 		else
-	// 		{
-	// 			vaultActive = false;
-	// 		}
-	// 	}
-		
-
-	// 	return -1;
-	// }
 
     private bool OnGround()
 	{
