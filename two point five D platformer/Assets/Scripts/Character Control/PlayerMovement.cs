@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private StateManager stateMgr;
     private UserInput uInput;
-
+	
 	private float previousValue = 0f;
 	private bool vaultActive = false;
 	private float yRootOffset = 0f;
@@ -166,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		return -1;
 	}
-
+	
 	private float GetObstacleHeightOffset()
 	{
 		float yRootOffset = 0f;
@@ -443,7 +443,7 @@ public class PlayerMovement : MonoBehaviour
 
 		return -1;
 	}
-
+	
 	private void FixPositionAfterClimb()
 	{
 		if (stateMgr.anim.GetAnimatorTransitionInfo(0).normalizedTime >= 1)

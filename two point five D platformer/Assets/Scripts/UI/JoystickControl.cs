@@ -15,7 +15,8 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     private Image bgImg;
     private Image joystickImg;
     private Vector3 inputVector;
-
+    public enum CurrentPressState {IsPressed, WasPressed, WasReleased}
+    public CurrentPressState currentPressState;
     private void Start()
     {
         bgImg = transform.GetChild(0).GetComponent<Image>();
@@ -24,12 +25,14 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     public virtual void OnPointerDown(PointerEventData ped)
     {
         OnDrag(ped);
+        currentPressState = CurrentPressState.IsPressed;
     }
 
     public virtual void OnPointerUp(PointerEventData ped)
     {
         inputVector = Vector3.zero;
         joystickImg.rectTransform.anchoredPosition = Vector3.zero;
+        currentPressState = CurrentPressState.WasReleased;
     }
     public virtual void OnDrag(PointerEventData ped)
     {
@@ -44,8 +47,10 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         
             joystickImg.rectTransform.anchoredPosition = new Vector3(inputVector.x * bgImg.rectTransform.sizeDelta.x/3, inputVector.z * bgImg.rectTransform.sizeDelta.y/3);
         }
+        currentPressState = CurrentPressState.IsPressed;
     }
 
+    //Deprecated
     public float Horizontal()
     {
         if (inputVector.x != 0)
@@ -60,5 +65,16 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             return inputVector.z;
         else
             return Input.GetAxis("Vertical");
+    }
+
+
+    public float GetHorizontal()
+    {
+        return inputVector.x;
+    }
+
+    public float GetVertical()
+    {
+        return inputVector.z;
     }
 }
