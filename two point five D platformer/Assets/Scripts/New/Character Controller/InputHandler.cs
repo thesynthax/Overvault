@@ -36,11 +36,11 @@ public class InputKey
         {
             uiType = UIType.Joystick;
         }
-        else if (ui.GetComponent<Button>())
+        else if (ui.GetComponent<UIButton>())
         {
             uiType = UIType.Button;
         }
-        else
+        else if (ui.GetComponent<UIToggle>())
         {
             uiType = UIType.Toggle;
         }
@@ -49,21 +49,31 @@ public class InputKey
     public void Update()
     {
         KeyboardInput = Input.GetAxis(InputName) == 0 ? false : true;
-
+        
         switch (uiType)
         {
             case (UIType.Joystick):
                 Pressing = (Input.GetAxis(InputName) != 0) || (UI.GetComponent<JoystickControl>().currentPressState == JoystickControl.CurrentPressState.Pressing);
+                if (InputName.Equals("Horizontal"))
+                    value = KeyboardInput ? Input.GetAxis(InputName) : UI.GetComponent<JoystickControl>().GetHorizontal();
+                else if (InputName.Equals("Vertical"))
+                    value = KeyboardInput ? Input.GetAxis(InputName) : UI.GetComponent<JoystickControl>().GetVertical();
                 break;
             case (UIType.Button):
                 Pressing = (Input.GetAxis(InputName) != 0) || (UI.GetComponent<UIButton>().currentPressState == UIButton.CurrentPressState.Pressing);
+                value = KeyboardInput ? Input.GetAxis(InputName) : BoolToFloat(UI.GetComponent<UIButton>().currentPressState == UIButton.CurrentPressState.Pressing);
                 break;
             case (UIType.Toggle):
                 Pressing = (Input.GetAxis(InputName) != 0) || (UI.GetComponent<UIToggle>().currentPressState == UIToggle.CurrentPressState.On);
+                value = KeyboardInput ? Input.GetAxis(InputName) : BoolToFloat(UI.GetComponent<UIToggle>().currentPressState == UIToggle.CurrentPressState.On);
                 break;
         }
     }
 
+    private float BoolToFloat(bool value)
+    {
+        return (value ? 1 : 0);
+    }
 
     public void SetKeyState(bool pressing)
     {
@@ -113,13 +123,7 @@ public class InputHandler : MonoBehaviour
         SlideButton.Update();
         CrouchButton.Update();
         SprintButton.Update();
-
-        HorizontalJoystick.value = HorizontalJoystick.KeyboardInput ? Input.GetAxis("Horizontal") : MovementUI.GetComponent<JoystickControl>().GetHorizontal();
-        VerticalJoystick.value = VerticalJoystick.KeyboardInput ? Input.GetAxis("Vertical") : MovementUI.GetComponent<JoystickControl>().GetVertical();
-        JumpButton.value = JumpButton.KeyboardInput ? Input.GetAxis("Jump") : BoolToFloat(JumpUI.GetComponent<UIButton>().currentPressState == UIButton.CurrentPressState.Pressing);
-        SlideButton.value = SlideButton.KeyboardInput ? Input.GetAxis("Fire1") : BoolToFloat(SlideUI.GetComponent<UIButton>().currentPressState == UIButton.CurrentPressState.Pressing);
-        CrouchButton.value = CrouchButton.KeyboardInput ? Input.GetAxis("Fire1") : BoolToFloat(CrouchUI.GetComponent<UIToggle>().currentPressState == UIToggle.CurrentPressState.On);
-        SprintButton.value = SprintButton.KeyboardInput ? Input.GetAxis("Fire3") : BoolToFloat(SprintUI.GetComponent<UIToggle>().currentPressState == UIToggle.CurrentPressState.On);        
+        JumpButton.Update();
     }
 
     private float BoolToFloat(bool value)
