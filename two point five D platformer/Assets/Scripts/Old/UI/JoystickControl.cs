@@ -15,7 +15,7 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     private Image bgImg;
     private Image joystickImg;
     private Vector3 inputVector;
-    public enum CurrentPressState {IsPressed, WasPressed, WasReleased}
+    public enum CurrentPressState {Pressing, WasPressed, Released}
     public CurrentPressState currentPressState;
     private void Start()
     {
@@ -25,14 +25,14 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     public virtual void OnPointerDown(PointerEventData ped)
     {
         OnDrag(ped);
-        currentPressState = CurrentPressState.IsPressed;
+        currentPressState = CurrentPressState.Pressing;
     }
 
     public virtual void OnPointerUp(PointerEventData ped)
     {
         inputVector = Vector3.zero;
         joystickImg.rectTransform.anchoredPosition = Vector3.zero;
-        currentPressState = CurrentPressState.WasReleased;
+        currentPressState = CurrentPressState.Released;
     }
     public virtual void OnDrag(PointerEventData ped)
     {
@@ -47,7 +47,7 @@ public class JoystickControl : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         
             joystickImg.rectTransform.anchoredPosition = new Vector3(inputVector.x * bgImg.rectTransform.sizeDelta.x/3, inputVector.z * bgImg.rectTransform.sizeDelta.y/3);
         }
-        currentPressState = CurrentPressState.IsPressed;
+        currentPressState = CurrentPressState.Pressing;
     }
 
     //Deprecated
