@@ -1325,6 +1325,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 41377421263398103, guid: 746be74fd98eb5a409ffea054c338ac0, type: 3}
   m_PrefabInstance: {fileID: 1577862922220818688}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &645011886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645011884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661a8264e0a786249b83d51917e71ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &645011887 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 7689066324681245576, guid: 746be74fd98eb5a409ffea054c338ac0, type: 3}
@@ -1358,7 +1370,32 @@ MonoBehaviour:
   anim: {fileID: 645011889}
   coll: {fileID: 645011887}
   rBody: {fileID: 645011888}
+  states: {fileID: 11400000, guid: c24dbe12186f6dd4e853396d4e001a65, type: 2}
+  inputHandler: {fileID: 645011891}
   mainCam: {fileID: 0}
+--- !u!114 &645011891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1577862922168630431, guid: 746be74fd98eb5a409ffea054c338ac0, type: 3}
+  m_PrefabInstance: {fileID: 1577862922220818688}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645011884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617837bd3f0d3904d898e58eec92de64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &645011892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645011884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5849ebf8e46e9da458ff7194a1e91604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &688694447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8126552454601762334, guid: 78308ebb1110b76448589bfe3a367066, type: 3}
@@ -1974,7 +2011,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2043674952082388124, guid: cc3c6b539ada0524c86d958517118078, type: 3}
       propertyPath: m_Name
-      value: Buttons (1)
+      value: Buttons
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043674952156052714, guid: cc3c6b539ada0524c86d958517118078, type: 3}
+      propertyPath: currentPressState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043674952875346820, guid: cc3c6b539ada0524c86d958517118078, type: 3}
+      propertyPath: currentPressState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043674952972632595, guid: cc3c6b539ada0524c86d958517118078, type: 3}
+      propertyPath: currentPressState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231500385431221770, guid: cc3c6b539ada0524c86d958517118078, type: 3}
+      propertyPath: currentPressState
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc3c6b539ada0524c86d958517118078, type: 3}
@@ -5192,6 +5245,10 @@ PrefabInstance:
     - target: {fileID: 5709156899976531293, guid: c17c0ee17980c824d9588ba0e5c4daa7, type: 3}
       propertyPath: m_Name
       value: Joystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709156899976531295, guid: c17c0ee17980c824d9588ba0e5c4daa7, type: 3}
+      propertyPath: currentPressState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17c0ee17980c824d9588ba0e5c4daa7, type: 3}

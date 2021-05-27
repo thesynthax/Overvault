@@ -13,11 +13,21 @@ public class PlayerMovementBase : MonoBehaviour
     private GameObject activeModel;
     public Transform modelPlaceholder;
 	public GameObject modelInit;
-    public GameObject modelRootBone;
-	public Animator anim;
-	public CapsuleCollider coll;
-	public Rigidbody rBody;
+    [HideInInspector] public GameObject modelRootBone;
+	[HideInInspector] public Animator anim;
+	[HideInInspector] public CapsuleCollider coll;
+	[HideInInspector] public Rigidbody rBody;
+	[SerializeField] public StateHandler states;
+	[HideInInspector] public InputHandler inputHandler;
 	[HideInInspector] public Transform mainCam;
+	
+	private void InitComponents()
+	{
+		anim = GetComponent<Animator>();
+		coll = GetComponent<CapsuleCollider>();
+		rBody = GetComponent<Rigidbody>();
+		inputHandler = GetComponent<InputHandler>();
+	}
 
     private void InitModel()
 	{
@@ -42,15 +52,85 @@ public class PlayerMovementBase : MonoBehaviour
 		rBody.isKinematic = false;
         mainCam = Camera.main.transform;
 	}
-
     private void Start()
     {
+		InitComponents();
         InitModel();
         SetupComponents();
     }
 
     private void Update()
     {
-        
+        states.onGround = OnGround();
+		states.facingDir = FacingDir(modelRootBone.transform.localEulerAngles);
+    }
+
+	private bool OnGround()
+	{
+		bool r = false;
+
+		Vector3 origin = transform.position + (Vector3.up * 0.55f);
+
+		RaycastHit hit = new RaycastHit();
+		bool isHit = false;
+		FindGround(origin, ref hit, ref isHit);
+
+		if (!isHit)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				Vector3 newOrigin = origin;
+
+				switch (i)
+				{
+					case 0:
+						newOrigin += Vector3.forward / 3;
+						break;
+					case 1:
+						newOrigin -= Vector3.forward / 3;
+						break;
+					case 2:
+						newOrigin += Vector3.right / 3;
+						break;
+					case 3:
+						newOrigin -= Vector3.right / 3;
+						break;
+				}
+
+				FindGround(newOrigin, ref hit, ref isHit);
+
+				if (isHit)
+				{
+					break;
+				}
+			}
+		}
+
+		r = isHit;
+
+		return r;
+	}
+
+	private void FindGround(Vector3 origin, ref RaycastHit hit, ref bool isHit)
+	{
+		Debug.DrawRay(origin, -Vector3.up * 0.5f, Color.red);
+		if (Physics.Raycast(origin, -Vector3.up, out hit, ControllerStatics.groundDistance, ControllerStatics.groundAndObs))
+		{
+			isHit = true;
+		}
+	}
+
+	private int FacingDir(Vector3 rootRotation)
+    {
+        int facingDir = 0;
+        if ((rootRotation.y <= 30 && rootRotation.y >= 0) || (rootRotation.y < 360 && rootRotation.y >= 330))
+        {
+            facingDir = 1;
+        }
+        else if (rootRotation.y <= 210 && rootRotation.y >= 150)
+        {
+            facingDir = -1;
+        }
+        return facingDir;
     }
 }
