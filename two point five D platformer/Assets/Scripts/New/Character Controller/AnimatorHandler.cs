@@ -10,11 +10,12 @@ using UnityEngine;
 
 public class AnimatorHandler : MonoBehaviour
 {
-    private bool yRootMotion = false;
-    private PlayerMovementBase pMoveBase;
-    private InputHandler inputHandler;
+    private bool yRootMotion = true;
+    [HideInInspector] public PlayerMovementBase pMoveBase;
+    [HideInInspector] public InputHandler inputHandler;
     private Animator anim;
     private Rigidbody rBody;
+    private CapsuleCollider coll;
 
     private void Start()
     {
@@ -22,15 +23,16 @@ public class AnimatorHandler : MonoBehaviour
         inputHandler = pMoveBase.inputHandler;
         anim = pMoveBase.anim;
         rBody = pMoveBase.rBody;
+        coll = pMoveBase.coll;
     }
 
     private void Update()
     {
         yRootMotion = pMoveBase.states.onGround;
-        Animate(inputHandler.CrouchButton.Pressing, inputHandler.SlideButton.Pressing, inputHandler.JumpButton.Pressing, inputHandler.SprintButton.Pressing, inputHandler.HorizontalJoystick.Pressing || inputHandler.VerticalJoystick.Pressing, inputHandler.HorizontalJoystick.value, inputHandler.VerticalJoystick.value, pMoveBase.states.onGround, pMoveBase.states.facingDir);
+        Animate(pMoveBase.basicMovement.ObstacleAhead(), inputHandler.CrouchButton.Pressing, inputHandler.SlideButton.Pressing, inputHandler.JumpButton.Pressing, inputHandler.SprintButton.Pressing, inputHandler.HorizontalJoystick.Pressing || inputHandler.VerticalJoystick.Pressing, inputHandler.HorizontalJoystick.value, inputHandler.VerticalJoystick.value, pMoveBase.states.onGround, pMoveBase.states.facingDir);
     }
-
-    public void Animate(bool crouch, bool slide, bool jump, bool sprint, bool inputActive, float horz, float vert, bool onGround, int facingDir)
+    
+    public void Animate(bool obstacleAhead, bool crouch, bool slide, bool jump, bool sprint, bool inputActive, float horz, float vert, bool onGround, int facingDir)
     {
         anim.SetFloat(AnimatorStatics.Horizontal, horz, 0.01f, Time.deltaTime);
         anim.SetFloat(AnimatorStatics.Vertical, vert, 0.01f, Time.deltaTime);
@@ -42,11 +44,12 @@ public class AnimatorHandler : MonoBehaviour
 		//anim.SetInteger(AnimatorStatics.VaultDistance, vaultDistance);
 		anim.SetBool(AnimatorStatics.Slide, slide);
 		anim.SetBool(AnimatorStatics.Crouch, crouch);
+        anim.SetBool(AnimatorStatics.ObstacleAhead, obstacleAhead);
     }
 
-    private void OnAnimatorMove()
+    /* private void OnAnimatorMove()
     {
-        if (pMoveBase.states.onGround)
+        if (pMoveBase.states.onGround && Time.deltaTime > 0)
 		{
 			Vector3 v = anim.deltaPosition / Time.deltaTime;
 
@@ -55,5 +58,5 @@ public class AnimatorHandler : MonoBehaviour
 
 			rBody.velocity = v;
 		}
-    }
+    } */
 }

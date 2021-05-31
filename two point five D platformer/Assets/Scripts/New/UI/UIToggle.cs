@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class UIToggle : MonoBehaviour
 {
-    public string name;
+    public new string name;
 
     public enum CurrentPressState
     {

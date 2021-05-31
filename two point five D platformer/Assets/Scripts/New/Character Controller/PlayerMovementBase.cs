@@ -10,16 +10,18 @@ using UnityEngine;
 
 public class PlayerMovementBase : MonoBehaviour
 {
-    private GameObject activeModel;
-    public Transform modelPlaceholder;
-	public GameObject modelInit;
-    [HideInInspector] public GameObject modelRootBone;
+	[SerializeField] private GameObject modelInit;
+	public StateHandler states;
 	[HideInInspector] public Animator anim;
 	[HideInInspector] public CapsuleCollider coll;
 	[HideInInspector] public Rigidbody rBody;
-	[SerializeField] public StateHandler states;
 	[HideInInspector] public InputHandler inputHandler;
 	[HideInInspector] public Transform mainCam;
+	private GameObject modelRootBone;
+	private GameObject activeModel;
+	private Transform modelPlaceholder;
+
+	[HideInInspector] public BasicMovementHandler basicMovement;
 	
 	private void InitComponents()
 	{
@@ -27,10 +29,13 @@ public class PlayerMovementBase : MonoBehaviour
 		coll = GetComponent<CapsuleCollider>();
 		rBody = GetComponent<Rigidbody>();
 		inputHandler = GetComponent<InputHandler>();
+
+		basicMovement = GetComponent<BasicMovementHandler>();
 	}
 
     private void InitModel()
 	{
+		modelPlaceholder = transform.GetChild(1);
 		activeModel = Instantiate(modelInit) as GameObject;
 		activeModel.transform.parent = modelPlaceholder;
 		activeModel.transform.localEulerAngles = Vector3.zero;
@@ -57,13 +62,34 @@ public class PlayerMovementBase : MonoBehaviour
 		InitComponents();
         InitModel();
         SetupComponents();
-    }
 
+		basicMovement.Init();
+    }
+	
     private void Update()
     {
+		UpdateStates();
+
         states.onGround = OnGround();
 		states.facingDir = FacingDir(modelRootBone.transform.localEulerAngles);
+
+		basicMovement.Tick();
     }
+
+	private void UpdateStates()
+	{
+		AnimatorStateInfo currentAnim = anim.GetCurrentAnimatorStateInfo(0);
+		if (currentAnim.IsName(AnimationStatesStatics.Idle) || currentAnim.IsName(AnimationStatesStatics.IdleMirror))
+			states.curState = 0; //Idle
+		else if (currentAnim.IsName(AnimationStatesStatics.Walk) || currentAnim.IsName(AnimationStatesStatics.WalkBwdLeft) || currentAnim.IsName(AnimationStatesStatics.WalkBwdRight) | currentAnim.IsName(AnimationStatesStatics.WalkMirror) || currentAnim.IsName(AnimationStatesStatics.WalkTurn) || currentAnim.IsName(AnimationStatesStatics.WalkTurnMirror))
+			states.curState = 1; //Walk
+		else if (currentAnim.IsName(AnimationStatesStatics.Jog) || currentAnim.IsName(AnimationStatesStatics.JogMirror) || currentAnim.IsName(AnimationStatesStatics.JogTurn) || currentAnim.IsName(AnimationStatesStatics.JogTurnMirror) || currentAnim.IsName(AnimationStatesStatics.StopJog) || currentAnim.IsName(AnimationStatesStatics.StopJogMirror) || currentAnim.IsName(AnimationStatesStatics.StartJog) || currentAnim.IsName(AnimationStatesStatics.StartJogMirror))
+			states.curState = 2; //Jog
+		else if (currentAnim.IsName(AnimationStatesStatics.Sprint) || currentAnim.IsName(AnimationStatesStatics.SprintMirror) || currentAnim.IsName(AnimationStatesStatics.SprintTurn) || currentAnim.IsName(AnimationStatesStatics.SprintTurnMirror) || currentAnim.IsName(AnimationStatesStatics.StopSprint) || currentAnim.IsName(AnimationStatesStatics.StopSprintMirror) || currentAnim.IsName(AnimationStatesStatics.StartSprint) || currentAnim.IsName(AnimationStatesStatics.StartSprintMirror))
+			states.curState = 3; //Sprint
+		else
+			states.curState = 4; //On-hold (i.e when you can't do anything else, eg. Vault, Jump, Airborne)
+	}
 
 	private bool OnGround()
 	{

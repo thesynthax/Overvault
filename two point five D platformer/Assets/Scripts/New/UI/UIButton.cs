@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 
 public class UIButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    public string name;
+    public new string name;
 
     public enum CurrentPressState
     {

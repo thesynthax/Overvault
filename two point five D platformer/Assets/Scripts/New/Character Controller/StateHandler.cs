@@ -11,6 +11,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "States Handler/States")]
 public class StateHandler : ScriptableObject
 {
+    public int curState = 0;
     public bool onGround = false;
     public int facingDir = 0;
 }

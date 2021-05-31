@@ -27,4 +27,5 @@ public static class AnimatorStatics
 	public static string Slide = "Slide";
 	public static string Crouch = "Crouch";
 	public static string ClimbType = "ClimbType"; 
+	public static string ObstacleAhead = "ObstacleAhead";
 }
