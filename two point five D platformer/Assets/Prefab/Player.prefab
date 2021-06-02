@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 1631715174701860718}
   - component: {fileID: 7689066324681245576}
   - component: {fileID: 1577862922168630431}
+  - component: {fileID: 5126245437109863562}
+  - component: {fileID: 1750716649987595071}
+  - component: {fileID: 4923469418676401619}
+  - component: {fileID: 5452738146887114925}
   m_Layer: 0
   m_Name: ControllerBase
   m_TagString: Untagged
@@ -100,7 +104,68 @@ MonoBehaviour:
   MovementUI: {fileID: 0}
   JumpUI: {fileID: 0}
   SprintUI: {fileID: 0}
-  SlideCrouchUI: {fileID: 0}
+  SlideUI: {fileID: 0}
+  CrouchUI: {fileID: 0}
+--- !u!114 &5126245437109863562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41377421263398103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661a8264e0a786249b83d51917e71ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pMoveBase: {fileID: 0}
+  inputHandler: {fileID: 0}
+--- !u!114 &1750716649987595071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41377421263398103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7d1d232a27a7f4eb04e9d84445529d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelInit: {fileID: 5948073123690289004, guid: 2aebdf84bf6ad754b812730bb4aeed04, type: 3}
+  states: {fileID: 11400000, guid: c24dbe12186f6dd4e853396d4e001a65, type: 2}
+  anim: {fileID: 7229431557851351246}
+  coll: {fileID: 7689066324681245576}
+  rBody: {fileID: 1631715174701860718}
+  inputHandler: {fileID: 1577862922168630431}
+  mainCam: {fileID: 0}
+  basicMovement: {fileID: 0}
+  vaultHandler: {fileID: 0}
+--- !u!114 &4923469418676401619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41377421263398103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5849ebf8e46e9da458ff7194a1e91604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleAheadTime: 0
+--- !u!114 &5452738146887114925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41377421263398103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af85dcd1501c1cf4f8bf00efd0f10733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1432950686560291851
 GameObject:
   m_ObjectHideFlags: 0

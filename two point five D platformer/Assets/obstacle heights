@@ -2,3 +2,6 @@ types of obstacles
     - low short ( vault )
     - low medium ( idle, walk, jog - step up and run. sprint - vault )
     - low long ( step up and run )
+    - medium ( same behaviour for all sizes -> climb, but not able to hang on ledge )
+    - high ( same behaviour for all sizes -> climb, able to hang on ledge )
+
