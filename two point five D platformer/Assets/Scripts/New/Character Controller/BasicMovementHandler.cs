@@ -25,6 +25,12 @@ public class BasicMovementHandler : MonoBehaviour
     public void Tick()
     {
         SetColliderRadius();
+
+        if (pMoveBase.states.curState >= 0 && pMoveBase.states.curState <= 3)
+        {
+            pMoveBase.rBody.useGravity = true;
+			pMoveBase.coll.isTrigger = false;
+        }
     }
 
     public bool ObstacleAhead()

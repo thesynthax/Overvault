@@ -23,6 +23,7 @@ public class PlayerMovementBase : MonoBehaviour
 
 	[HideInInspector] public BasicMovementHandler basicMovement;
 	[HideInInspector] public VaultHandler vaultHandler;
+	[HideInInspector] public SlideCrouchHandler slideCrouchHandler;
 	
 	private void InitComponents()
 	{
@@ -33,6 +34,7 @@ public class PlayerMovementBase : MonoBehaviour
 
 		basicMovement = GetComponent<BasicMovementHandler>();
 		vaultHandler = GetComponent<VaultHandler>();
+		slideCrouchHandler = GetComponent<SlideCrouchHandler>();
 	}
 
     private void InitModel()
@@ -67,47 +69,66 @@ public class PlayerMovementBase : MonoBehaviour
 
 		basicMovement.Init();
 		vaultHandler.Init();
+		slideCrouchHandler.Init();
     }
 	
     private void Update()
     {
 		UpdateStates();
-		PhysicControl();
 
         states.onGround = OnGround();
 		states.facingDir = FacingDir(modelRootBone.transform.localEulerAngles);
 
 		basicMovement.Tick();
 		vaultHandler.Tick();
+		slideCrouchHandler.Tick();
     }
-
-	private void PhysicControl()
-	{
-		if (states.curState >= 0 && states.curState <= 3)
-		{
-			rBody.useGravity = true;
-			coll.isTrigger = false;
-		}
-		else
-		{
-			rBody.useGravity = false;
-			coll.isTrigger = true;
-		}
-	}
 
 	private void UpdateStates()
 	{
 		AnimatorStateInfo currentAnim = anim.GetCurrentAnimatorStateInfo(0);
-		if (currentAnim.IsName(AnimationStatesStatics.Idle) || currentAnim.IsName(AnimationStatesStatics.IdleMirror) || currentAnim.IsName(AnimationStatesStatics.IdleTurnLeft) || currentAnim.IsName(AnimationStatesStatics.IdleTurnRight))
+		if (currentAnim.IsTag("idle"))
+		{
 			states.curState = 0; //Idle
-		else if (currentAnim.IsName(AnimationStatesStatics.Walk) || currentAnim.IsName(AnimationStatesStatics.WalkBwdLeft) || currentAnim.IsName(AnimationStatesStatics.WalkBwdRight) | currentAnim.IsName(AnimationStatesStatics.WalkMirror) || currentAnim.IsName(AnimationStatesStatics.WalkTurn) || currentAnim.IsName(AnimationStatesStatics.WalkTurnMirror))
+			states.currentState = StateHandler.CurrentState.Idle;
+		}
+		else if (currentAnim.IsTag("walk"))
+		{
 			states.curState = 1; //Walk
-		else if (currentAnim.IsName(AnimationStatesStatics.Jog) || currentAnim.IsName(AnimationStatesStatics.JogMirror) || currentAnim.IsName(AnimationStatesStatics.JogTurn) || currentAnim.IsName(AnimationStatesStatics.JogTurnMirror) || currentAnim.IsName(AnimationStatesStatics.StopJog) || currentAnim.IsName(AnimationStatesStatics.StopJogMirror) || currentAnim.IsName(AnimationStatesStatics.StartJog) || currentAnim.IsName(AnimationStatesStatics.StartJogMirror))
+			states.currentState = StateHandler.CurrentState.Walking;
+		}
+		else if (currentAnim.IsTag("jog"))
+		{
 			states.curState = 2; //Jog
-		else if (currentAnim.IsName(AnimationStatesStatics.Sprint) || currentAnim.IsName(AnimationStatesStatics.SprintMirror) || currentAnim.IsName(AnimationStatesStatics.SprintTurn) || currentAnim.IsName(AnimationStatesStatics.SprintTurnMirror) || currentAnim.IsName(AnimationStatesStatics.StopSprint) || currentAnim.IsName(AnimationStatesStatics.StopSprintMirror) || currentAnim.IsName(AnimationStatesStatics.StartSprint) || currentAnim.IsName(AnimationStatesStatics.StartSprintMirror))
+			states.currentState = StateHandler.CurrentState.Jogging;
+		}
+		else if (currentAnim.IsTag("sprint"))
+		{
 			states.curState = 3; //Sprint
+			states.currentState = StateHandler.CurrentState.Sprinting;
+		}
 		else
+		{
 			states.curState = 4; //On-hold (i.e when you can't do anything else, eg. Vault, Jump, Airborne)
+
+			if (currentAnim.IsTag("vault"))
+			{
+				states.currentState = StateHandler.CurrentState.Vaulting;
+			}
+			else if (currentAnim.IsTag("slide"))
+			{
+				states.currentState = StateHandler.CurrentState.Sliding;
+			}
+			else if (currentAnim.IsTag("crouch"))
+			{
+				states.currentState = StateHandler.CurrentState.Crouching;
+			}
+			else if (currentAnim.IsTag("climb"))
+			{
+				states.currentState = StateHandler.CurrentState.Climbing;
+			}
+		}
+		
 	}
 
 	enum ObstacleType

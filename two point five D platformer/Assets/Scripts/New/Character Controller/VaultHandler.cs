@@ -25,7 +25,11 @@ public class VaultHandler : MonoBehaviour
 
     public void Tick()
     {
-        
+        if (pMoveBase.states.currentState == StateHandler.CurrentState.Vaulting)
+        {
+            pMoveBase.rBody.useGravity = false;
+            pMoveBase.coll.isTrigger = true;
+        }
     }
 
     public int Vault()
