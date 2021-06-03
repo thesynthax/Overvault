@@ -3,7 +3,7 @@
 */
 
 /** About AnimatorStatics
-* -> 
+* -> All the animator parameters
 */
 
 public static class AnimatorStatics
@@ -28,4 +28,5 @@ public static class AnimatorStatics
 	public static string Crouch = "Crouch";
 	public static string ClimbType = "ClimbType"; 
 	public static string ObstacleAhead = "ObstacleAhead";
+	public static string ObstacleAheadTime = "ObstacleAheadTime";
 }

@@ -22,6 +22,7 @@ public class PlayerMovementBase : MonoBehaviour
 	private Transform modelPlaceholder;
 
 	[HideInInspector] public BasicMovementHandler basicMovement;
+	[HideInInspector] public VaultHandler vaultHandler;
 	
 	private void InitComponents()
 	{
@@ -31,6 +32,7 @@ public class PlayerMovementBase : MonoBehaviour
 		inputHandler = GetComponent<InputHandler>();
 
 		basicMovement = GetComponent<BasicMovementHandler>();
+		vaultHandler = GetComponent<VaultHandler>();
 	}
 
     private void InitModel()
@@ -64,17 +66,34 @@ public class PlayerMovementBase : MonoBehaviour
         SetupComponents();
 
 		basicMovement.Init();
+		vaultHandler.Init();
     }
 	
     private void Update()
     {
 		UpdateStates();
+		PhysicControl();
 
         states.onGround = OnGround();
 		states.facingDir = FacingDir(modelRootBone.transform.localEulerAngles);
 
 		basicMovement.Tick();
+		vaultHandler.Tick();
     }
+
+	private void PhysicControl()
+	{
+		if (states.curState >= 0 && states.curState <= 3)
+		{
+			rBody.useGravity = true;
+			coll.isTrigger = false;
+		}
+		else
+		{
+			rBody.useGravity = false;
+			coll.isTrigger = true;
+		}
+	}
 
 	private void UpdateStates()
 	{
@@ -89,6 +108,64 @@ public class PlayerMovementBase : MonoBehaviour
 			states.curState = 3; //Sprint
 		else
 			states.curState = 4; //On-hold (i.e when you can't do anything else, eg. Vault, Jump, Airborne)
+	}
+
+	enum ObstacleType
+	{
+		LowShort, //vault
+		LowMedium, //idle, walk, jog - step up and run. sprint - vault
+		LowLong, //can only step over it, no vaults
+		Medium, //climb, but not able to hang on ledge
+		High, //climb, able to hang on ledge
+	}
+
+	public int GetObstacleType()
+	{
+		ObstacleType obsType = new ObstacleType();
+		Vector3 origin = transform.position;
+		Vector3 direction = states.facingDir * transform.forward;
+		float distance = ControllerStatics.longVaultDistance + ControllerStatics.inputEnterRoom;
+		float errorDistance = 0.01f;
+		RaycastHit hit = new RaycastHit();
+
+		if (Physics.Raycast(origin, direction, out hit, distance, ControllerStatics.obstacle))
+		{
+			if (!Physics.Raycast(origin + transform.up * (ControllerStatics.obsLowHeight + errorDistance), direction, distance, ControllerStatics.obstacle))
+			{
+				if (!Physics.Raycast(hit.point + transform.up * (ControllerStatics.obsLowHeight + errorDistance) + transform.forward * (ControllerStatics.obsShortLength + errorDistance), Vector3.down, 2 * errorDistance, ControllerStatics.obstacle))
+				{
+					obsType = ObstacleType.LowShort;
+				}
+				else
+				{
+					if (!Physics.Raycast(hit.point + transform.up * (ControllerStatics.obsLowHeight + errorDistance) + transform.forward * (ControllerStatics.obsMediumLength + errorDistance), Vector3.down, 2 * errorDistance, ControllerStatics.obstacle))
+					{
+						obsType = ObstacleType.LowMedium;
+					}
+					else
+					{
+						obsType = ObstacleType.LowLong;
+					}
+				}
+			}
+			else
+			{
+				if (!Physics.Raycast(origin + transform.up * (ControllerStatics.obsMedHeight + errorDistance), direction, distance, ControllerStatics.obstacle))
+				{
+					obsType = ObstacleType.Medium;
+				}
+				else
+				{
+					if (!Physics.Raycast(origin + transform.up * (ControllerStatics.obsHighHeight + errorDistance), direction, distance, ControllerStatics.obstacle))
+					{
+						obsType = ObstacleType.High;
+					}
+				}
+			}
+			return (int)obsType;
+		}
+
+		return -1;
 	}
 
 	private bool OnGround()
