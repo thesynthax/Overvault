@@ -21,7 +21,7 @@ public static class AnimatorStatics
 	public static string FacingDir = "FacingDir";
 	public static string InputActive = "InputActive";
 	public static string Jump = "Jump";
-	public static string VaultDistance = "VaultDistance";
+	public static string VaultType = "VaultType";
 	public static string Random = "Random";
 	public static string ObstacleType = "ObstacleType";
 	public static string Slide = "Slide";

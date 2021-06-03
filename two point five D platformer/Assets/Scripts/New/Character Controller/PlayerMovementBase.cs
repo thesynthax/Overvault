@@ -98,7 +98,7 @@ public class PlayerMovementBase : MonoBehaviour
 	private void UpdateStates()
 	{
 		AnimatorStateInfo currentAnim = anim.GetCurrentAnimatorStateInfo(0);
-		if (currentAnim.IsName(AnimationStatesStatics.Idle) || currentAnim.IsName(AnimationStatesStatics.IdleMirror))
+		if (currentAnim.IsName(AnimationStatesStatics.Idle) || currentAnim.IsName(AnimationStatesStatics.IdleMirror) || currentAnim.IsName(AnimationStatesStatics.IdleTurnLeft) || currentAnim.IsName(AnimationStatesStatics.IdleTurnRight))
 			states.curState = 0; //Idle
 		else if (currentAnim.IsName(AnimationStatesStatics.Walk) || currentAnim.IsName(AnimationStatesStatics.WalkBwdLeft) || currentAnim.IsName(AnimationStatesStatics.WalkBwdRight) | currentAnim.IsName(AnimationStatesStatics.WalkMirror) || currentAnim.IsName(AnimationStatesStatics.WalkTurn) || currentAnim.IsName(AnimationStatesStatics.WalkTurnMirror))
 			states.curState = 1; //Walk

@@ -43,7 +43,7 @@ public class VaultHandler : MonoBehaviour
 
             float t = 0f;
 
-            if (Physics.Raycast(origin, direction, out hit, ControllerStatics.longVaultDistance + inputEnterRoom, ControllerStatics.obstacle))
+            if ((Physics.Raycast(origin, direction, out hit, ControllerStatics.longVaultDistance + inputEnterRoom, ControllerStatics.obstacle) && pMoveBase.states.curState != 0) || (Physics.Raycast(origin, direction, out hit, inputEnterRoom, ControllerStatics.obstacle) && pMoveBase.states.curState == 0))
             {
                 Vector3 startPos = transform.position;
 				
@@ -74,6 +74,24 @@ public class VaultHandler : MonoBehaviour
                                 else if (hit.distance <= ControllerStatics.shortVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.nearestVaultDistance)
 							    {
                                     vaultRange = LowShortVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.veryShortVaultDistance, 1, ref t, hit, startPos, direction);
+                                }
+                                break;
+                            case(2):
+                                if (hit.distance <= inputEnterRoom)
+                                {
+                                    vaultRange = LowShortVault(ControllerStatics.jogVaultSpeed, ControllerStatics.jogVaultDistance, Random.Range(1,4), ref t, hit, startPos, direction);
+                                }
+                                break;
+                            case(1):
+                                if (hit.distance <= inputEnterRoom)
+                                {
+                                    vaultRange = LowShortVault(ControllerStatics.walkVaultSpeed, ControllerStatics.walkVaultDistance, Random.Range(1,3), ref t, hit, startPos, direction);
+                                }
+                                break;
+                            case(0):
+                                if (hit.distance <= inputEnterRoom * 0.6f)
+                                {
+                                    vaultRange = LowShortVault(ControllerStatics.idleVaultSpeed, ControllerStatics.idleVaultDistance, Random.Range(1,3), ref t, hit, startPos, direction);
                                 }
                                 break;
                         }

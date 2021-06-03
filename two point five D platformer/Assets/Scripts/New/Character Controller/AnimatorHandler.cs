@@ -32,7 +32,7 @@ public class AnimatorHandler : MonoBehaviour
         Animate(pMoveBase.GetObstacleType(), pMoveBase.basicMovement.ObstacleAheadTime, pMoveBase.basicMovement.ObstacleAhead(), pMoveBase.vaultHandler.Vault(), inputHandler.CrouchButton.Pressing, inputHandler.SlideButton.Pressing, inputHandler.JumpButton.Pressing, inputHandler.SprintButton.Pressing, inputHandler.HorizontalJoystick.Pressing || inputHandler.VerticalJoystick.Pressing, inputHandler.HorizontalJoystick.value, inputHandler.VerticalJoystick.value, pMoveBase.states.onGround, pMoveBase.states.facingDir);
     }
     
-    public void Animate(int obstacleType, float obstacleAheadTime, bool obstacleAhead, int vaultDistance, bool crouch, bool slide, bool jump, bool sprint, bool inputActive, float horz, float vert, bool onGround, int facingDir)
+    public void Animate(int obstacleType, float obstacleAheadTime, bool obstacleAhead, int vaultType, bool crouch, bool slide, bool jump, bool sprint, bool inputActive, float horz, float vert, bool onGround, int facingDir)
     {
         anim.SetFloat(AnimatorStatics.Horizontal, horz, 0.01f, Time.deltaTime);
         anim.SetFloat(AnimatorStatics.Vertical, vert, 0.01f, Time.deltaTime);
@@ -40,8 +40,8 @@ public class AnimatorHandler : MonoBehaviour
         anim.SetInteger(AnimatorStatics.FacingDir, facingDir);
         anim.SetBool(AnimatorStatics.InputActive, inputActive);
 		anim.SetBool(AnimatorStatics.sprint, sprint);
-		anim.SetBool(AnimatorStatics.Jump, jump || (vaultDistance > -1));
-		anim.SetInteger(AnimatorStatics.VaultDistance, vaultDistance);
+		anim.SetBool(AnimatorStatics.Jump, jump || (vaultType > -1));
+		anim.SetInteger(AnimatorStatics.VaultType, vaultType);
 		anim.SetBool(AnimatorStatics.Slide, slide);
 		anim.SetBool(AnimatorStatics.Crouch, crouch);
         anim.SetBool(AnimatorStatics.ObstacleAhead, obstacleAhead);

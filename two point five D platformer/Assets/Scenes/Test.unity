@@ -1950,6 +1950,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 746772037}
     m_Modifications:
+    - target: {fileID: 1958684504752330975, guid: cc3c6b539ada0524c86d958517118078, type: 3}
+      propertyPath: states
+      value: 
+      objectReference: {fileID: 11400000, guid: c24dbe12186f6dd4e853396d4e001a65, type: 2}
     - target: {fileID: 2043674952082388115, guid: cc3c6b539ada0524c86d958517118078, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -2246,6 +2250,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 949981325464459428, guid: e704eb5346946074084b64d273f7ecdb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034807754663964364, guid: e704eb5346946074084b64d273f7ecdb, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2989,6 +2997,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1349408758}
     m_Modifications:
+    - target: {fileID: 2506991223999891690, guid: 226763ea4ee7cd24ca1bb27a1fc965bc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8695005308290711520, guid: 226763ea4ee7cd24ca1bb27a1fc965bc, type: 3}
       propertyPath: m_Name
       value: obs_vault_high
