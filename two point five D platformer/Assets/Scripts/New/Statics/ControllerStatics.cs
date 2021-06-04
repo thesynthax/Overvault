@@ -25,7 +25,7 @@ public static class ControllerStatics
 	public static float animTriggerOffset = 1.3f;
 
     public static float longVaultDistance = 4.3f;
-	public static float longMediumVaultDistance = 3f;
+	public static float longMediumVaultDistance = 3.34f;
 	public static float mediumVaultDistance = 2f;
 	public static float shortVaultDistance = 1.1f;
 	public static float veryShortVaultDistance = 0.9f;

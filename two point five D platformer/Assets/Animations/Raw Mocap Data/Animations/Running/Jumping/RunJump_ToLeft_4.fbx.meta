@@ -477,6 +477,9 @@ ModelImporter:
   - first:
       74: -6110051611464816634
     second: sprint vault 2 mirror
+  - first:
+      74: -5634458900218723284
+    second: _28_C_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_2
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -553,6 +556,35 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 213
+    - serializedVersion: 16
+      name: _28_C_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_2
+      takeName: _28_C_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_2
+      internalID: 0
+      firstFrame: 220
+      lastFrame: 259
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0

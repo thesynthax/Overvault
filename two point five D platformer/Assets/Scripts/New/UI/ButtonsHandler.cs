@@ -47,6 +47,7 @@ public class ButtonsHandler : MonoBehaviour
         else
         {
             slide.interactable = false;
+            crouch.interactable = false;
         }
     }
 }

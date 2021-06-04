@@ -24,6 +24,7 @@ public class PlayerMovementBase : MonoBehaviour
 	[HideInInspector] public BasicMovementHandler basicMovement;
 	[HideInInspector] public VaultHandler vaultHandler;
 	[HideInInspector] public SlideCrouchHandler slideCrouchHandler;
+	[HideInInspector] public ClimbHandler climbHandler;
 	
 	private void InitComponents()
 	{
@@ -35,6 +36,7 @@ public class PlayerMovementBase : MonoBehaviour
 		basicMovement = GetComponent<BasicMovementHandler>();
 		vaultHandler = GetComponent<VaultHandler>();
 		slideCrouchHandler = GetComponent<SlideCrouchHandler>();
+		climbHandler = GetComponent<ClimbHandler>();
 	}
 
     private void InitModel()
@@ -70,6 +72,7 @@ public class PlayerMovementBase : MonoBehaviour
 		basicMovement.Init();
 		vaultHandler.Init();
 		slideCrouchHandler.Init();
+		climbHandler.Init();
     }
 	
     private void Update()
@@ -82,6 +85,7 @@ public class PlayerMovementBase : MonoBehaviour
 		basicMovement.Tick();
 		vaultHandler.Tick();
 		slideCrouchHandler.Tick();
+		climbHandler.Tick();
     }
 
 	private void UpdateStates()
@@ -153,13 +157,13 @@ public class PlayerMovementBase : MonoBehaviour
 		{
 			if (!Physics.Raycast(origin + transform.up * (ControllerStatics.obsLowHeight + errorDistance), direction, distance, ControllerStatics.obstacle))
 			{
-				if (!Physics.Raycast(hit.point + transform.up * (ControllerStatics.obsLowHeight + errorDistance) + transform.forward * (ControllerStatics.obsShortLength + errorDistance), Vector3.down, 2 * errorDistance, ControllerStatics.obstacle))
+				if (!Physics.Raycast(hit.point + transform.up * (ControllerStatics.obsLowHeight + errorDistance) + states.facingDir * transform.forward * (ControllerStatics.obsShortLength + errorDistance), Vector3.down, 2 * errorDistance, ControllerStatics.obstacle))
 				{
 					obsType = ObstacleType.LowShort;
 				}
 				else
 				{
-					if (!Physics.Raycast(hit.point + transform.up * (ControllerStatics.obsLowHeight + errorDistance) + transform.forward * (ControllerStatics.obsMediumLength + errorDistance), Vector3.down, 2 * errorDistance, ControllerStatics.obstacle))
+					if (!Physics.Raycast(hit.point + transform.up * (ControllerStatics.obsLowHeight + errorDistance) + states.facingDir * transform.forward * (ControllerStatics.obsMediumLength + errorDistance), Vector3.down, 2 * errorDistance, ControllerStatics.obstacle))
 					{
 						obsType = ObstacleType.LowMedium;
 					}

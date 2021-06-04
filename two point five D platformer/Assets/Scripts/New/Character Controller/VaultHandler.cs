@@ -40,7 +40,7 @@ public class VaultHandler : MonoBehaviour
 			RaycastHit hit = new RaycastHit();
 			Vector3 direction = pMoveBase.states.facingDir * transform.forward;
 
-            int vaultRange = -1;
+            int vaultType = -1;
 
             float inputEnterRoom = ControllerStatics.inputEnterRoom;
 			float animTriggerOffset = ControllerStatics.animTriggerOffset;
@@ -53,67 +53,80 @@ public class VaultHandler : MonoBehaviour
 				
 				vaultActive = true;
 
-                switch(pMoveBase.GetObstacleType())
+                if (pMoveBase.states.currentState != StateHandler.CurrentState.Vaulting)
                 {
-                    case(0):
-                        switch(pMoveBase.states.curState)
-                        {
-                            case(3):
-                                if (hit.distance <= ControllerStatics.longVaultDistance + inputEnterRoom && hit.distance >= ControllerStatics.longVaultDistance + animTriggerOffset)
-                                {
-                                    vaultRange = LowShortVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.longVaultDistance, 5, ref t, hit, startPos, direction);
-                                }
-                                else if (hit.distance <= ControllerStatics.longVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.longMediumVaultDistance + animTriggerOffset)
-							    {
-                                    vaultRange = LowShortVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.longMediumVaultDistance, 4, ref t, hit, startPos, direction);
-                                }
-                                else if (hit.distance <= ControllerStatics.longMediumVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.mediumVaultDistance + animTriggerOffset)
-							    {
-                                    vaultRange = LowShortVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.mediumVaultDistance, 3, ref t, hit, startPos, direction);
-                                }
-                                else if (hit.distance <= ControllerStatics.mediumVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.shortVaultDistance + animTriggerOffset)
-							    {
-                                    vaultRange = LowShortVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.shortVaultDistance, 2, ref t, hit, startPos, direction);
-                                }
-                                else if (hit.distance <= ControllerStatics.shortVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.nearestVaultDistance)
-							    {
-                                    vaultRange = LowShortVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.veryShortVaultDistance, 1, ref t, hit, startPos, direction);
-                                }
-                                break;
-                            case(2):
-                                if (hit.distance <= inputEnterRoom)
-                                {
-                                    vaultRange = LowShortVault(ControllerStatics.jogVaultSpeed, ControllerStatics.jogVaultDistance, Random.Range(1,4), ref t, hit, startPos, direction);
-                                }
-                                break;
-                            case(1):
-                                if (hit.distance <= inputEnterRoom)
-                                {
-                                    vaultRange = LowShortVault(ControllerStatics.walkVaultSpeed, ControllerStatics.walkVaultDistance, Random.Range(1,3), ref t, hit, startPos, direction);
-                                }
-                                break;
-                            case(0):
-                                if (hit.distance <= inputEnterRoom * 0.6f)
-                                {
-                                    vaultRange = LowShortVault(ControllerStatics.idleVaultSpeed, ControllerStatics.idleVaultDistance, Random.Range(1,3), ref t, hit, startPos, direction);
-                                }
-                                break;
-                        }
-                        break;
+                    switch(pMoveBase.GetObstacleType())
+                    {
+                        case(0):
+                            switch(pMoveBase.states.curState)
+                            {
+                                case(3):
+                                    if (hit.distance <= ControllerStatics.longVaultDistance + inputEnterRoom && hit.distance >= ControllerStatics.longVaultDistance + animTriggerOffset)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.longVaultDistance, 5, ref t, hit, startPos, direction);
+                                    }
+                                    else if (hit.distance <= ControllerStatics.longVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.longMediumVaultDistance + animTriggerOffset)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.longMediumVaultDistance, 4, ref t, hit, startPos, direction);
+                                    }
+                                    else if (hit.distance <= ControllerStatics.longMediumVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.mediumVaultDistance + animTriggerOffset)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.mediumVaultDistance, 3, ref t, hit, startPos, direction);
+                                    }
+                                    else if (hit.distance <= ControllerStatics.mediumVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.shortVaultDistance + animTriggerOffset)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.shortVaultDistance, 2, ref t, hit, startPos, direction);
+                                    }
+                                    else if (hit.distance <= ControllerStatics.shortVaultDistance + animTriggerOffset && hit.distance >= ControllerStatics.nearestVaultDistance)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.sprintVaultSpeed, ControllerStatics.veryShortVaultDistance, 1, ref t, hit, startPos, direction);
+                                    }
+                                    break;
+                                case(2):
+                                    if (hit.distance <= inputEnterRoom)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.jogVaultSpeed, ControllerStatics.jogVaultDistance, Random.Range(1,4), ref t, hit, startPos, direction);
+                                    }
+                                    break;
+                                case(1):
+                                    if (hit.distance <= inputEnterRoom)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.walkVaultSpeed, ControllerStatics.walkVaultDistance, Random.Range(1,3), ref t, hit, startPos, direction);
+                                    }
+                                    break;
+                                case(0):
+                                    if (hit.distance <= inputEnterRoom * 0.6f)
+                                    {
+                                        vaultType = LowVault(ControllerStatics.idleVaultSpeed, ControllerStatics.idleVaultDistance, Random.Range(1,3), ref t, hit, startPos, direction);
+                                    }
+                                    break;
+                            }
+                            break;
+                        case(1):
+                            if (pMoveBase.states.curState == 3)
+                            {
+                                if (hit.distance <= 3 * inputEnterRoom && hit.distance > 2 * inputEnterRoom)
+                                    vaultType = LowVault(ControllerStatics.sprintVaultSpeed, 2f, 5, ref t, hit, startPos, direction);
+                                else if (hit.distance <= 2 * inputEnterRoom)
+                                    vaultType = LowVault(ControllerStatics.sprintVaultSpeed, 1f, 6, ref t, hit, startPos, direction);
+                            }
+                            break;
+                    }
                 }
 
-                return vaultRange;
+                return vaultType;
             }
             else
             {
                 vaultActive = false;
             }
         }
+        
 
         return -1;
     }
 
-    private int LowShortVault(float speed, float distance, int vaultRange, ref float t, RaycastHit hit, Vector3 startPos, Vector3 direction)
+    private int LowVault(float speed, float distance, int vaultType, ref float t, RaycastHit hit, Vector3 startPos, Vector3 direction)
     {
         Vector3 endPos = hit.point - direction.normalized * distance;
         t += Time.deltaTime * ControllerStatics.sprintVaultSpeed;
@@ -126,6 +139,6 @@ public class VaultHandler : MonoBehaviour
         Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
         transform.position = targetPos;
 
-        return vaultRange;
+        return vaultType;
     }
 }
