@@ -13,6 +13,7 @@ public class ButtonsHandler : MonoBehaviour
 {
     private Toggle crouch;
     private Button slide;
+    private Toggle sprint;
     public StateHandler states;
 
     private void Start()
@@ -23,6 +24,8 @@ public class ButtonsHandler : MonoBehaviour
                 crouch = t.GetComponent<Toggle>();
             else if (t.name == "Slide")
                 slide = t.GetComponent<Button>();
+            else if (t.name == "Sprint")
+                sprint = t.GetComponent<Toggle>();
         }
     }
 
@@ -44,10 +47,17 @@ public class ButtonsHandler : MonoBehaviour
             crouch.gameObject.SetActive(false);
             slide.gameObject.SetActive(true);
         }
-        else
+        else if (states.currentState != StateHandler.CurrentState.Crouching)
         {
             slide.interactable = false;
             crouch.interactable = false;
         }
+
+        if (states.currentState == StateHandler.CurrentState.Crouching)
+        {
+            sprint.interactable = false;
+        }
+        else
+            sprint.interactable = true;
     }
 }

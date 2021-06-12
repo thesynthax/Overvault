@@ -27,11 +27,11 @@ public class SlideCrouchHandler : MonoBehaviour
     {
         if (pMoveBase.states.currentState == StateHandler.CurrentState.Sliding)
         {
-            pMoveBase.coll.radius = 0.4f;
+            pMoveBase.coll.radius = 0.5f;
             if (pMoveBase.states.facingDir == 1)
-                pMoveBase.coll.center = new Vector3(0, 0.4f, 0.4f);
+                pMoveBase.coll.center = new Vector3(0, 0.5f, 0.4f);
             else if (pMoveBase.states.facingDir == -1)
-                pMoveBase.coll.center = new Vector3(0, 0.4f,- 0.4f);
+                pMoveBase.coll.center = new Vector3(0, 0.5f,- 0.4f);
             else if (pMoveBase.states.facingDir == 0)
             {
 
@@ -40,8 +40,8 @@ public class SlideCrouchHandler : MonoBehaviour
         }
         else if (pMoveBase.states.currentState == StateHandler.CurrentState.Crouching)
         {
-            pMoveBase.coll.radius = 0.4f;
-            pMoveBase.coll.center = new Vector3(0, 0.4f, 0);
+            pMoveBase.coll.radius = 0.5f;
+            pMoveBase.coll.center = new Vector3(0, 0.5f, 0);
             pMoveBase.coll.height = 0.8f;
         }
         else
