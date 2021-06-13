@@ -14,7 +14,7 @@ public class SlideCrouchHandler : MonoBehaviour
     private InputHandler inputHandler;
     private PlayerMovementBase pMoveBase;
 
-    private bool vaultActive = false;
+    private float underObstacleTime = 0f;
     
     public void Init()
     {
@@ -49,5 +49,15 @@ public class SlideCrouchHandler : MonoBehaviour
             pMoveBase.coll.center = new Vector3(0, 1f, 0);
             pMoveBase.coll.height = 2f;
         }
+    }
+
+    public float UnderObstacleTime()
+    {
+        if (Physics.Raycast(transform.position, transform.up, 1.5f, ControllerStatics.obstacle))
+            underObstacleTime += Time.deltaTime;
+        else
+            underObstacleTime = 0f;
+        
+        return underObstacleTime;
     }
 }

@@ -15,6 +15,7 @@ public class ButtonsHandler : MonoBehaviour
     private Button slide;
     private Toggle sprint;
     public StateHandler states;
+    public PlayerMovementBase pMoveBase;
 
     private void Start()
     {
@@ -55,9 +56,14 @@ public class ButtonsHandler : MonoBehaviour
 
         if (states.currentState == StateHandler.CurrentState.Crouching)
         {
+            crouch.gameObject.SetActive(true);
+            crouch.interactable = pMoveBase.slideCrouchHandler.UnderObstacleTime() > 0f ? false : true;
+            slide.gameObject.SetActive(false);
             sprint.interactable = false;
         }
         else
+        {
             sprint.interactable = true;
+        }
     }
 }

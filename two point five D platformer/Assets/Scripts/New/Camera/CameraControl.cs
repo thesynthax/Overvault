@@ -12,24 +12,21 @@ public class CameraControl : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
-    public float xOffset;
     public float camMoveSpeed;
-    public StateManager stateMgr;
+    public PlayerMovementBase pMoveBase;
     private Vector3 velocity = Vector3.zero;
 
 
     private void LateUpdate()
     {
-        /* if (stateMgr.charStates.curState != 3)
+        if (pMoveBase.slideCrouchHandler.UnderObstacleTime() < 0.1f)
         {
-            offset.x = 1.5f;
-            offset.z = -5;
+            offset.y = 0.5f;
         }
         else
         {
-            offset.x = 2;
-            offset.z = -7;
-        } */
+            offset.y = -0.3f;
+        }
 
         Vector3 desiredPosition = target.position + offset;
         Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, camMoveSpeed);

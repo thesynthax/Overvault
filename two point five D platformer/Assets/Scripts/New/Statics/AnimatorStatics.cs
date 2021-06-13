@@ -29,4 +29,6 @@ public static class AnimatorStatics
 	public static string ClimbType = "ClimbType"; 
 	public static string ObstacleAhead = "ObstacleAhead";
 	public static string ObstacleAheadTime = "ObstacleAheadTime";
+	public static string UnderObstacleTime = "UnderObstacleTime";
+	public static string CurState = "CurState"; 
 }
