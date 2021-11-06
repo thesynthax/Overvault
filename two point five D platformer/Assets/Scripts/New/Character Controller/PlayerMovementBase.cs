@@ -238,7 +238,7 @@ public class PlayerMovementBase : MonoBehaviour
 
 		return r;
 	}
-
+	
 	private void FindGround(Vector3 origin, ref RaycastHit hit, ref bool isHit)
 	{
 		Debug.DrawRay(origin, -Vector3.up * 0.5f, Color.red);
