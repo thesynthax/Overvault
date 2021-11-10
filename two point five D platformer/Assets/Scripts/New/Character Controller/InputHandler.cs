@@ -45,7 +45,7 @@ public class InputKey
             uiType = UIType.Toggle;
         }
     }
-
+    
     public void Update()
     {
         KeyboardInput = Input.GetAxis(InputName) == 0 ? false : true;

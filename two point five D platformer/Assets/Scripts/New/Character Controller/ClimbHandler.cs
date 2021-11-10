@@ -62,15 +62,15 @@ public class ClimbHandler : MonoBehaviour
                             {
                                 case(2):
                                     if (hit.distance <= 2 * inputEnterRoom)
-                                        climbType = LowClimb(ControllerStatics.jogVaultSpeed, 1.5f, 1, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.jogVaultSpeed, 1.5f, 1, ref t, hit, startPos, direction);
                                     break;
                                 case(1):
                                     if (hit.distance <= inputEnterRoom)
-                                        climbType = LowClimb(ControllerStatics.walkVaultSpeed, 0.7f, 1, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.walkVaultSpeed, 0.7f, 1, ref t, hit, startPos, direction);
                                     break;
                                 case(0):
                                     if (hit.distance <= 0.5f * inputEnterRoom)
-                                        climbType = LowClimb(ControllerStatics.idleVaultSpeed, 0.3f, 1, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.idleVaultSpeed, 0.3f, 1, ref t, hit, startPos, direction);
                                     break;    
                             }
                             break;
@@ -79,20 +79,41 @@ public class ClimbHandler : MonoBehaviour
                             {
                                 case(3):
                                     if (hit.distance <= 3 * inputEnterRoom)
-                                        climbType = LowClimb(ControllerStatics.sprintVaultSpeed, 1.5f, 1, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.sprintVaultSpeed, 1.5f, 1, ref t, hit, startPos, direction);
                                     break;
                                 case(2):
                                     if (hit.distance <= 2 * inputEnterRoom)
-                                        climbType = LowClimb(ControllerStatics.jogVaultSpeed, 1.5f, 1, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.jogVaultSpeed, 1.5f, 1, ref t, hit, startPos, direction);
                                     break;
                                 case(1):
                                     if (hit.distance <= inputEnterRoom)
-                                        climbType = LowClimb(ControllerStatics.walkVaultSpeed, 0.7f, 1, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.walkVaultSpeed, 0.7f, 1, ref t, hit, startPos, direction);
                                     break;
                                 case(0):
                                     if (hit.distance <= 0.5f * inputEnterRoom)
-                                        climbType = LowClimb(ControllerStatics.idleVaultSpeed, 0.3f, 1, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.idleVaultSpeed, 0.3f, 1, ref t, hit, startPos, direction);
                                     break;    
+                            }
+                            break;
+                        case(3):
+                            switch(pMoveBase.states.curState)
+                            {
+                                case(0):
+                                    if(hit.distance <= 0.5f * inputEnterRoom)
+                                        climbType = Climb(ControllerStatics.idleVaultSpeed, 0.2f, 2, ref t, hit, startPos, direction);
+                                    break;
+                                case(1):
+                                    if(hit.distance <= inputEnterRoom)
+                                        climbType = Climb(ControllerStatics.walkVaultSpeed, 0.25f, 2, ref t, hit, startPos, direction);
+                                    break;
+                                case(2):
+                                    if(hit.distance <= 1.2f * inputEnterRoom)
+                                        climbType = Climb(ControllerStatics.jogVaultSpeed, 0.25f, 2, ref t, hit, startPos, direction);
+                                    break;
+                                case(3):
+                                    if(hit.distance <= 2f * inputEnterRoom)
+                                        climbType = Climb(ControllerStatics.sprintVaultSpeed, 1.4f, 2, ref t, hit, startPos, direction);
+                                    break;
                             }
                             break;
                     }
@@ -110,16 +131,17 @@ public class ClimbHandler : MonoBehaviour
         return -1;
     }
 
-    private int LowClimb(float speed, float distance, int climbType, ref float t, RaycastHit hit, Vector3 startPos, Vector3 direction)
+    private int Climb(float speed, float distance, int climbType, ref float t, RaycastHit hit, Vector3 startPos,
+        Vector3 direction)
     {
         Vector3 endPos = hit.point - direction.normalized * distance;
-        t += Time.deltaTime * ControllerStatics.sprintVaultSpeed;
+        t += Time.deltaTime * speed;
 
         if (t > 1)
         {
             climbActive = false;
         }
-        
+
         Vector3 targetPos = Vector3.Lerp(startPos, endPos, t);
         transform.position = targetPos;
 

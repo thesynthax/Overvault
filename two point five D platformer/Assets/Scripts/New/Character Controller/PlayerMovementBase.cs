@@ -25,6 +25,7 @@ public class PlayerMovementBase : MonoBehaviour
 	[HideInInspector] public VaultHandler vaultHandler;
 	[HideInInspector] public SlideCrouchHandler slideCrouchHandler;
 	[HideInInspector] public ClimbHandler climbHandler;
+	[HideInInspector] public BasicAirMovementHandler basicAirMovement;
 	
 	private void InitComponents()
 	{
@@ -37,9 +38,10 @@ public class PlayerMovementBase : MonoBehaviour
 		vaultHandler = GetComponent<VaultHandler>();
 		slideCrouchHandler = GetComponent<SlideCrouchHandler>();
 		climbHandler = GetComponent<ClimbHandler>();
+		basicAirMovement = GetComponent<BasicAirMovementHandler>();
 	}
-
-    private void InitModel()
+	
+	private void InitModel()
 	{
 		modelPlaceholder = transform.GetChild(1);
 		activeModel = Instantiate(modelInit) as GameObject;
@@ -73,6 +75,7 @@ public class PlayerMovementBase : MonoBehaviour
 		vaultHandler.Init();
 		slideCrouchHandler.Init();
 		climbHandler.Init();
+		basicAirMovement.Init();
     }
 	
     private void Update()
@@ -86,6 +89,7 @@ public class PlayerMovementBase : MonoBehaviour
 		vaultHandler.Tick();
 		slideCrouchHandler.Tick();
 		climbHandler.Tick();
+		basicAirMovement.Tick();
     }
 
 	private void UpdateStates()
@@ -130,6 +134,26 @@ public class PlayerMovementBase : MonoBehaviour
 			else if (currentAnim.IsTag("climb"))
 			{
 				states.currentState = StateHandler.CurrentState.Climbing;
+			}
+			else if (currentAnim.IsTag("jump"))
+			{
+				states.currentState = StateHandler.CurrentState.Jumping;
+			}
+			else if (currentAnim.IsTag("fall"))
+			{
+				states.currentState = StateHandler.CurrentState.Falling;
+			}
+			else if (currentAnim.IsTag("land"))
+			{
+				states.currentState = StateHandler.CurrentState.Landing;
+			}
+			else if (currentAnim.IsTag("roll"))
+			{
+				states.currentState = StateHandler.CurrentState.Rolling;
+			}
+			else if (currentAnim.IsTag("ledge"))
+			{
+				states.currentState = StateHandler.CurrentState.Ledge;
 			}
 		}
 		
