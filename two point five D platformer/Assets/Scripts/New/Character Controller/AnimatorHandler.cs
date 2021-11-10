@@ -64,4 +64,23 @@ public class AnimatorHandler : MonoBehaviour
 			rBody.velocity = v;
 		}
     } */
+    private void OnAnimatorMove()
+    {
+	    if (Time.deltaTime > 0)
+	    {
+		    Vector3 v = anim.deltaPosition / Time.deltaTime;
+		    
+		    //Root motion disabled in y-axis
+		    if (pMoveBase.states.onGround && pMoveBase.states.currentState != StateHandler.CurrentState.Climbing && pMoveBase.states.currentState != StateHandler.CurrentState.Jumping)
+		    {
+			    v.y = rBody.velocity.y;
+			    rBody.velocity = v;
+		    }
+			//Root motion enabled in y-axis
+		    if (pMoveBase.states.currentState == StateHandler.CurrentState.Climbing || pMoveBase.states.currentState == StateHandler.CurrentState.Jumping)
+		    {
+			    rBody.velocity = v;
+		    }
+	    }
+    }
 }

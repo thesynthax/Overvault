@@ -5,7 +5,7 @@
 using UnityEngine;
 
 /** About BasicAirMovementHandler
-* -> 
+* -> Handles basic air movement like jumping, falling, landing
 */
 
 public class BasicAirMovementHandler : MonoBehaviour
@@ -23,6 +23,6 @@ public class BasicAirMovementHandler : MonoBehaviour
 
     public void Tick()
     {
-
+        
     }
 }
