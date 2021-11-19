@@ -50,6 +50,8 @@ public class AnimatorHandler : MonoBehaviour
         anim.SetInteger(AnimatorStatics.ClimbType, climbType);
         anim.SetFloat(AnimatorStatics.UnderObstacleTime, underObstacleTime);
         anim.SetInteger(AnimatorStatics.CurState, curState);
+        
+        anim.SetBool("ok", Input.GetKey(KeyCode.J));
     }
 
     /* private void OnAnimatorMove()
