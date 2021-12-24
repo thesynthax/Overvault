@@ -76,6 +76,7 @@ public class PlayerMovementBase : MonoBehaviour
 		slideCrouchHandler.Init();
 		climbHandler.Init();
 		basicAirMovement.Init();
+		print(SystemInfo.graphicsDeviceName);
     }
 	
     private void Update()

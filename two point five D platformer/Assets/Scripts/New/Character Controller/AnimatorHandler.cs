@@ -9,8 +9,8 @@ using UnityEngine;
 */
 
 public class AnimatorHandler : MonoBehaviour
-{
-    private bool yRootMotion = true;
+{	
+	private bool yRootMotion = true;
     [HideInInspector] public PlayerMovementBase pMoveBase;
     [HideInInspector] public InputHandler inputHandler;
     private Animator anim;
