@@ -3,8 +3,8 @@ Branch:                  2020.3/staging
 Build type:              Release
 Batch mode:              YES
 System name:             Linux
-Distro version:          #1 SMP PREEMPT Wed, 22 Dec 2021 09:23:54 +0000
-Kernel version:          5.15.11-arch2-1
+Distro version:          #1 SMP PREEMPT Wed, 29 Dec 2021 12:04:56 +0000
+Kernel version:          5.15.12-arch1-1
 Architecture:            x86_64
 Available memory:        7769 MB
 Using pre-set license
@@ -23,11 +23,11 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-45915
+42653
 Successfully changed project path to: /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer
 /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 60.68 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 61.37 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.24f1 (79c78de19888)
 [Subsystems] Discovering subsystems at path /home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/Resources/UnitySubsystems
@@ -48,42 +48,42 @@ blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffe
 der_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture
 _footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap
  GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 1347079512
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -2046518952
 Initialize mono
 Mono path[0] = '/home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/Managed'
 Mono path[1] = '/home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56215
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56905
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.001181 seconds.
+Registered in 0.001071 seconds.
 Native extension for LinuxStandalone target not found
-Refreshing native plugins compatible for Editor in 62.13 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 62.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.519 seconds
+- Completed reload, in  0.555 seconds
 Domain Reload Profiling:
-	ReloadAssembly (519ms)
-		BeginReloadAssembly (39ms)
+	ReloadAssembly (555ms)
+		BeginReloadAssembly (23ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (425ms)
-			LoadAssemblies (33ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (475ms)
+			LoadAssemblies (81ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (124ms)
+			SetupTypeCache (133ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (175ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (177ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (62ms)
+				RefreshPlugins (63ms)
 				BeforeProcessingInitializeOnLoad (8ms)
-				ProcessInitializeOnLoadAttributes (78ms)
+				ProcessInitializeOnLoadAttributes (79ms)
 				ProcessInitializeOnLoadMethodAttributes (23ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -91,34 +91,34 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007065 seconds.
+Registered in 0.002814 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
-Refreshing native plugins compatible for Editor in 83.59 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 63.11 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.953 seconds
+- Completed reload, in  3.290 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1954ms)
-		BeginReloadAssembly (108ms)
+	ReloadAssembly (3291ms)
+		BeginReloadAssembly (97ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1794ms)
-			LoadAssemblies (59ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (3148ms)
+			LoadAssemblies (786ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (383ms)
+			SetupTypeCache (465ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (71ms)
-			SetupLoadedEditorAssemblies (1164ms)
+			RebuildScriptCaches (65ms)
+			SetupLoadedEditorAssemblies (1707ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (84ms)
-				BeforeProcessingInitializeOnLoad (109ms)
-				ProcessInitializeOnLoadAttributes (957ms)
+				RefreshPlugins (63ms)
+				BeforeProcessingInitializeOnLoad (70ms)
+				ProcessInitializeOnLoadAttributes (1560ms)
 				ProcessInitializeOnLoadMethodAttributes (7ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
@@ -127,15 +127,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.99 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.23 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3867 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.3 MB.
-System memory in use after: 173.0 MB.
+Unloading 3869 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 174.0 MB.
+System memory in use after: 173.7 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4307.
-Total: 6.053683 ms (FindLiveObjects: 0.581391 ms CreateObjectMapping: 0.304058 ms MarkObjects: 4.673755 ms  DeleteObjects: 0.493449 ms)
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4310.
+Total: 5.902953 ms (FindLiveObjects: 0.523278 ms CreateObjectMapping: 0.277026 ms MarkObjects: 4.590387 ms  DeleteObjects: 0.511041 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -148,146 +148,109 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Assets/AnimFollow/New Terrain.asset
-  artifactKey: Guid(07a0e6928be9f144696d96eb33313def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/New Terrain.asset using Guid(07a0e6928be9f144696d96eb33313def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2eb1d598da51bb2c8391f2dc8069ac5c') in 0.138281 seconds 
-  Import took 0.144820 seconds .
+  path: Assets/Scenes/GangbeastRagdollTest.unity
+  artifactKey: Guid(6bf6585613666df4cbba2f733071a3a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GangbeastRagdollTest.unity using Guid(6bf6585613666df4cbba2f733071a3a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e70c162bb57a15f3a360e3a5ffde184d') in 0.071541 seconds 
+  Import took 0.124221 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/Assets/RootMotion/PuppetMaster
-  artifactKey: Guid(96b187132b9a544c8a08d5b29323cc10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/RootMotion/PuppetMaster using Guid(96b187132b9a544c8a08d5b29323cc10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d7e7396aa22577af3a82a57fbcd6665') in 0.000662 seconds 
-  Import took 0.005779 seconds .
+  Time since last request: 22.248932 seconds.
+  path: Assets/Prefab/ybot 1.prefab
+  artifactKey: Guid(c9e712f990e82a63c9d089894c416c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/ybot 1.prefab using Guid(c9e712f990e82a63c9d089894c416c2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2e52d9ce51a0779537af446e4e6449') in 0.297466 seconds 
+  Import took 0.303562 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000123 seconds.
-  path: Assets/Assets/RootMotion/Editor
-  artifactKey: Guid(5059b61e5885d6945ad3de1923d051de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/RootMotion/Editor using Guid(5059b61e5885d6945ad3de1923d051de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6ff5f827145ea482d215c48124249ef') in 0.000520 seconds 
-  Import took 0.005039 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000120 seconds.
-  path: Assets/Assets/AnimFollow/Scripts
-  artifactKey: Guid(3da2d07a60e8efb4681e8c2bfc954fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/Scripts using Guid(3da2d07a60e8efb4681e8c2bfc954fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5b81039b9599c91832165cb00b45f2b') in 0.000693 seconds 
-  Import took 0.006196 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000131 seconds.
-  path: Assets/Assets/AnimFollow/Scene_AF_SFIK.unity
-  artifactKey: Guid(911696ba8fd763e4884c75c9d4c3be11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/Scene_AF_SFIK.unity using Guid(911696ba8fd763e4884c75c9d4c3be11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d9b4a514daf594f2d34fd439206b764') in 0.000891 seconds 
-  Import took 0.005487 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000121 seconds.
-  path: Assets/Assets/RootMotion/Baker
-  artifactKey: Guid(47bf04154c11c5e45b94b1aec2c0baf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/RootMotion/Baker using Guid(47bf04154c11c5e45b94b1aec2c0baf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb5902f5ff18cc3949690b8904d1bb0a') in 0.000567 seconds 
-  Import took 0.004986 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000144 seconds.
-  path: Assets/Assets/AnimFollow/FromStealth
-  artifactKey: Guid(70065fa323a24c14cb455b42097839b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/FromStealth using Guid(70065fa323a24c14cb455b42097839b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6a98ba1c04a00e9ee6605c02c9577f1') in 0.000574 seconds 
-  Import took 0.005101 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000113 seconds.
-  path: Assets/Assets/AnimFollow/AnimFollow5ForUnity5_ReadMe.pdf
-  artifactKey: Guid(86910cb60c340d34090263b3c257438a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/AnimFollow5ForUnity5_ReadMe.pdf using Guid(86910cb60c340d34090263b3c257438a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b0965647f22e18f648993c879e30d6') in 0.000912 seconds 
-  Import took 0.005714 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000131 seconds.
-  path: Assets/Assets/AnimFollow/Brawler Anims
-  artifactKey: Guid(818d31064d76d184bb62f38cff216f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/Brawler Anims using Guid(818d31064d76d184bb62f38cff216f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '428a783e2a82fcac52a69b5d871ab26d') in 0.000641 seconds 
-  Import took 0.005849 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000113 seconds.
-  path: Assets/Assets/AnimFollow/Prefabs
-  artifactKey: Guid(30b11102be16e5c4187b48288157d36f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/Prefabs using Guid(30b11102be16e5c4187b48288157d36f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd29eb8fc6afc060209c9abe48dc5647d') in 0.000550 seconds 
-  Import took 0.005021 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 253.109996 seconds.
-  path: Assets/Assets/AnimFollow/Scripts/MasterScripts
-  artifactKey: Guid(7bb714816c122704fa3cbd578e3ddcab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/AnimFollow/Scripts/MasterScripts using Guid(7bb714816c122704fa3cbd578e3ddcab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '009683b0fdb2b894c1afb36a57663a11') in 0.112476 seconds 
-  Import took 0.121855 seconds .
+  Time since last request: 411.982926 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b341ea92f4df05ab5fb91a96c6ca03e8') in 0.001144 seconds 
+  Import took 0.006763 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004072 seconds.
+Registered in 0.002804 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+InvalidCastException: Specified cast is not valid.
+  at UnityEngine.Rendering.VolumeComponent.<OnEnable>b__10_2 (System.Reflection.FieldInfo t) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.render-pipelines.core@10.7.0/Runtime/Volume/VolumeComponent.cs:94 
+  at System.Linq.Enumerable+SelectIPartitionIterator`2[TSource,TResult].ToList () [0x00040] in <351e49e2a5bf4fd6beabb458ce2255f3>:0 
+  at System.Linq.Enumerable.ToList[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x0001f] in <351e49e2a5bf4fd6beabb458ce2255f3>:0 
+  at UnityEngine.Rendering.VolumeComponent.OnEnable () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.render-pipelines.core@10.7.0/Runtime/Volume/VolumeComponent.cs:90 
+
 Mono: successfully reloaded assembly
-- Completed reload, in  1.319 seconds
+- Completed reload, in  1.135 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1320ms)
-		BeginReloadAssembly (83ms)
+	ReloadAssembly (1136ms)
+		BeginReloadAssembly (97ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (39ms)
-		EndReloadAssembly (1187ms)
-			LoadAssemblies (229ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (989ms)
+			LoadAssemblies (57ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (288ms)
+			SetupTypeCache (281ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (506ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (453ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (61ms)
-				ProcessInitializeOnLoadAttributes (431ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (375ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
 Platform modules already initialized, skipping
 Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3639 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 154.2 MB.
-System memory in use after: 154.0 MB.
+Unloading 3635 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 157.0 MB.
+* Assertion at unity-liveness.c:232, condition `res' not met
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4318.
-Total: 5.914234 ms (FindLiveObjects: 0.574219 ms CreateObjectMapping: 0.270483 ms MarkObjects: 4.666222 ms  DeleteObjects: 0.402099 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+Caught fatal signal - signo:6 code:-6 errno:0 addr:0x3e8000ad511
+Obtained 33 stack frames.
+#0  0x007fd6038df870 in funlockfile
+#1  0x007fd60373cd22 in gsignal
+#2  0x007fd603726862 in abort
+#3  0x007fd4f1e0faf8 in mono_dl_fallback_unregister
+#4  0x007fd4f1e1fea4 in monoeg_g_logv
+#5  0x007fd4f1e1ffd5 in monoeg_assertion_message
+#6  0x007fd4f1e05b32 in mono_monitor_enter_v4
+#7  0x007fd4f1e06012 in mono_unity_liveness_start_gc_world
+#8  0x007fd4f1e061ca in mono_unity_liveness_start_gc_world
+#9  0x007fd4f1e0621b in mono_unity_liveness_calculation_from_root
+#10 0x0055cf7fd57217 in MarkDependencies(GarbageCollectorThreadState&, unsigned int)
+#11 0x0055cf7fd557a0 in GarbageCollectSharedAssets(bool, bool)
+#12 0x0055cf7fda2a21 in UnloadUnusedAssetsOperation::IntegrateMainThread()
+#13 0x0055cf7fda12da in PreloadManager::UpdatePreloadingSingleStep(PreloadManager::UpdatePreloadingFlags, int)
+#14 0x0055cf7fda1dd1 in PreloadManager::WaitForAllAsyncOperationsToComplete()
+#15 0x0055cf7fda2b7b in UnloadUnusedAssetsImmediate(bool, bool)
+#16 0x0055cf81eb75f0 in core::mutable_function<void ()>::DispatchT<IOService::PostHelper<AssetImportWorkerClient::HandleMessage(PrepareMessage const&)::$_5>(AssetImportWorkerClient::HandleMessage(PrepareMessage const&)::$_5&&, IOService::WrapCallableInFunctionTag)::{lambda()#1}>::Dispatch()
+#17 0x0055cf81f29336 in asio::detail::completion_handler<core::mutable_function<void ()> >::do_complete(asio::detail::task_io_service*, asio::detail::task_io_service_operation*, std::error_code const&, unsigned long)
+#18 0x0055cf81f26c70 in asio::detail::task_io_service::do_run_one(asio::detail::scoped_lock<asio::detail::posix_mutex>&, asio::detail::task_io_service_thread_info&, std::error_code const&)
+#19 0x0055cf81f26803 in asio::detail::task_io_service::run(std::error_code&)
+#20 0x0055cf81f2038a in asio::io_service::run()
+#21 0x0055cf81f2033b in IOService::Run(bool)
+#22 0x0055cf81e81644 in RunAssetImporterV2()
+#23 0x0055cf811a3143 in Application::InitializeProject()
+#24 0x0055cf81d2a706 in InitializeUnity(void*)
+#25 0x007fd603fddad4 in g_main_context_check
+#26 0x007fd603fdd435 in g_main_context_dispatch
+#27 0x007fd6040317b9 in g_io_channel_new_file
+#28 0x007fd603fdcab3 in g_main_loop_run
+#29 0x007fd6045ea93f in gtk_main
+#30 0x0055cf81d2a0d0 in main
+#31 0x007fd603727b25 in __libc_start_main
+#32 0x0055cf7e9a8029 in _start
