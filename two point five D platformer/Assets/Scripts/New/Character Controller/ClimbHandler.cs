@@ -31,7 +31,7 @@ public class ClimbHandler : MonoBehaviour
             pMoveBase.coll.isTrigger = true;
         }
     }
-
+    
     public int Climb()
     {
         if (inputHandler.JumpButton.Pressing || climbActive)

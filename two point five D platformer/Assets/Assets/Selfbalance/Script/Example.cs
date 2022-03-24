@@ -22,7 +22,7 @@ public class Example : MonoBehaviour
         StartLegR2 = PlayerParts[5].GetComponent<ConfigurableJoint>().targetRotation;
         StartLegL1 = PlayerParts[7].GetComponent<ConfigurableJoint>().targetRotation;
         StartLegL2 = PlayerParts[8].GetComponent<ConfigurableJoint>().targetRotation;
-
+        
         Spring0 = new JointDrive();
         Spring0.positionSpring = 0;
         Spring0.positionDamper = 0;
