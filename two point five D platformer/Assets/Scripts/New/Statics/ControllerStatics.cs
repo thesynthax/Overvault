@@ -13,7 +13,8 @@ public static class ControllerStatics
     public static float groundDistance = 0.634f;
     public static LayerMask ground = 1 << LayerMask.NameToLayer("ground");
     public static LayerMask obstacle = 1 << LayerMask.NameToLayer("Obstacles");
-    public static LayerMask groundAndObs = ground.value | obstacle.value;
+    public static LayerMask ragdoll = 1 << LayerMask.NameToLayer("Ragdoll");
+    public static LayerMask groundAndObs = ground.value | obstacle.value | ragdoll.value;
 
     public static float obsLowHeight = 0.81f;
     public static float obsShortLength = 0.5f;
