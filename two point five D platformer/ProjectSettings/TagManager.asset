@@ -12,6 +12,7 @@ TagManager:
   - Wood
   - Sand
   - IgnoreMe
+  - ragdoller
   layers:
   - Default
   - TransparentFX

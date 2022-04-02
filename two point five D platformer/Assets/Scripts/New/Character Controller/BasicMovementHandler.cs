@@ -78,7 +78,7 @@ public class BasicMovementHandler : MonoBehaviour
 				pMoveBase.coll.radius = 0.4f;
 				break;
 			case (3):
-				pMoveBase.coll.radius = 0.7f;
+				pMoveBase.coll.radius = 0.0f;
 				break;
 		}
     }

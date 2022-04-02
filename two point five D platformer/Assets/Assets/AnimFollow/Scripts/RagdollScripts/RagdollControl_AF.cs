@@ -192,7 +192,7 @@ namespace AnimFollow
 			if (userNeedsToAssignStuff)
 				return;
 
-			disableFall = playerMovement.anim.GetCurrentAnimatorStateInfo(0).IsName("Kick");
+			//disableFall = playerMovement.anim.GetCurrentAnimatorStateInfo(0).IsName("Kick");
 
 			if (stayDeadOnHeadShot && shotInHead)
 			{

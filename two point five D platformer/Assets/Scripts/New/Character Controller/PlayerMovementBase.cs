@@ -17,7 +17,7 @@ public class PlayerMovementBase : MonoBehaviour
 	[HideInInspector] public Rigidbody rBody;
 	[HideInInspector] public InputHandler inputHandler;
 	[HideInInspector] public Transform mainCam;
-	private GameObject modelRootBone;
+	[HideInInspector] public GameObject modelRootBone;
 	private GameObject activeModel;
 	private Transform modelPlaceholder;
 
