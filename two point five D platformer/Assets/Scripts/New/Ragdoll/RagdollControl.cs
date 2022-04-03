@@ -30,28 +30,26 @@ public class RagdollControl : MonoBehaviour
 
         childRigidbodies = transform.GetChild(1).GetComponentsInChildren<Rigidbody>();
         childColliders = transform.GetChild(1).GetComponentsInChildren<Collider>();
+
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ragdoller")// && pMoveBase.states.currentState == StateHandler.CurrentState.Sprinting)
+        if ((other.gameObject.tag == "ragdoller" && pMoveBase.states.currentState == StateHandler.CurrentState.Sprinting))
         {
-            //RagdollOn();
             Ragdoll = true;
         }
     } 
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-            Ragdoll = !Ragdoll;
+        if (pMoveBase.states.currentState != StateHandler.CurrentState.Sprinting)
+            Ragdoll = inputHandler.RagdollButton.Pressing;
 
         if (Ragdoll)
         {
             Vector3 vel = rBody.velocity;
             anim.enabled = false;
-
-            rBody.velocity = vel;
 
             foreach (Rigidbody rigidbody in childRigidbodies)
             {
@@ -61,6 +59,7 @@ public class RagdollControl : MonoBehaviour
             {
                 collider.isTrigger = false;
             }
+            childRigidbodies[0].velocity = vel;
             coll.enabled = false;
             rBody.isKinematic = true;
         }
@@ -78,21 +77,6 @@ public class RagdollControl : MonoBehaviour
             anim.enabled = true;
             coll.enabled = true;
             rBody.isKinematic = false;
-        } 
-    }
-
-    private void RagdollOn()
-    {
-        rBody.isKinematic = true;
-        coll.isTrigger = true;
-        anim.enabled = false;
-        foreach (Rigidbody rigidbody in childRigidbodies)
-        {
-            rigidbody.isKinematic = false;
-        }
-        foreach (Collider collider in childColliders)
-        {
-            collider.isTrigger = false;
         }
     }
 }

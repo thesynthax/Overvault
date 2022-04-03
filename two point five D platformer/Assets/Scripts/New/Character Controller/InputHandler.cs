@@ -98,6 +98,7 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private GameObject SprintUI; //sprint toggle
     [SerializeField] private GameObject SlideUI; //slide button
     [SerializeField] private GameObject CrouchUI; //crouch toggle
+    [SerializeField] private GameObject RagdollUI; //ragdoll toggle
 
     public InputKey HorizontalJoystick { get; private set; }
     public InputKey VerticalJoystick { get; private set; }
@@ -105,6 +106,7 @@ public class InputHandler : MonoBehaviour
     public InputKey SlideButton { get; private set; }
     public InputKey CrouchButton { get; private set; }
     public InputKey SprintButton { get; private set; }
+    public InputKey RagdollButton { get; private set; }
 
     private void Start()
     {
@@ -114,6 +116,7 @@ public class InputHandler : MonoBehaviour
         SlideButton = new InputKey("Fire1", SlideUI);
         CrouchButton = new InputKey("Fire1", CrouchUI);
         SprintButton = new InputKey("Fire3", SprintUI);
+        RagdollButton = new InputKey("Reload", RagdollUI);
     }
 
     private void Update() 
@@ -124,6 +127,7 @@ public class InputHandler : MonoBehaviour
         CrouchButton.Update();
         SprintButton.Update();
         JumpButton.Update();
+        RagdollButton.Update();
     }
 
     private float BoolToFloat(bool value)

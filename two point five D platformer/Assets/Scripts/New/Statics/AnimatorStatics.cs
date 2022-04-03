@@ -31,4 +31,5 @@ public static class AnimatorStatics
 	public static string ObstacleAheadTime = "ObstacleAheadTime";
 	public static string UnderObstacleTime = "UnderObstacleTime";
 	public static string CurState = "CurState"; 
+	public static string GetUp = "GetUp";
 }

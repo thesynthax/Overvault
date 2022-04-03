@@ -29,10 +29,10 @@ public class AnimatorHandler : MonoBehaviour
     private void Update()
     {
         yRootMotion = pMoveBase.states.onGround;
-        Animate((int)pMoveBase.states.currentState, pMoveBase.slideCrouchHandler.UnderObstacleTime(), pMoveBase.climbHandler.Climb(), pMoveBase.GetObstacleType(), pMoveBase.basicMovement.ObstacleAheadTime, pMoveBase.basicMovement.ObstacleAhead(), pMoveBase.vaultHandler.Vault(), inputHandler.CrouchButton.Pressing, inputHandler.SlideButton.Pressing, inputHandler.JumpButton.Pressing, inputHandler.SprintButton.Pressing, inputHandler.HorizontalJoystick.Pressing || inputHandler.VerticalJoystick.Pressing, inputHandler.HorizontalJoystick.value, inputHandler.VerticalJoystick.value, pMoveBase.states.onGround, pMoveBase.states.facingDir);
+        Animate(-1, (int)pMoveBase.states.currentState, pMoveBase.slideCrouchHandler.UnderObstacleTime(), pMoveBase.climbHandler.Climb(), pMoveBase.GetObstacleType(), pMoveBase.basicMovement.ObstacleAheadTime, pMoveBase.basicMovement.ObstacleAhead(), pMoveBase.vaultHandler.Vault(), inputHandler.CrouchButton.Pressing, inputHandler.SlideButton.Pressing, inputHandler.JumpButton.Pressing, inputHandler.SprintButton.Pressing, inputHandler.HorizontalJoystick.Pressing || inputHandler.VerticalJoystick.Pressing, inputHandler.HorizontalJoystick.value, inputHandler.VerticalJoystick.value, pMoveBase.states.onGround, pMoveBase.states.facingDir);
     }
     
-    public void Animate(int curState, float underObstacleTime, int climbType, int obstacleType, float obstacleAheadTime, bool obstacleAhead, int vaultType, bool crouch, bool slide, bool jump, bool sprint, bool inputActive, float horz, float vert, bool onGround, int facingDir)
+    public void Animate(int getup, int curState, float underObstacleTime, int climbType, int obstacleType, float obstacleAheadTime, bool obstacleAhead, int vaultType, bool crouch, bool slide, bool jump, bool sprint, bool inputActive, float horz, float vert, bool onGround, int facingDir)
     {
         anim.SetFloat(AnimatorStatics.Horizontal, horz, 0.01f, Time.deltaTime);
         anim.SetFloat(AnimatorStatics.Vertical, vert, 0.01f, Time.deltaTime);
@@ -50,6 +50,7 @@ public class AnimatorHandler : MonoBehaviour
         anim.SetInteger(AnimatorStatics.ClimbType, climbType);
         anim.SetFloat(AnimatorStatics.UnderObstacleTime, underObstacleTime);
         anim.SetInteger(AnimatorStatics.CurState, curState);
+        anim.SetInteger(AnimatorStatics.GetUp, getup);
         
         anim.SetBool("ok", Input.GetKey(KeyCode.J));
     }

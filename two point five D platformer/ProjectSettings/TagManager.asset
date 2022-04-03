@@ -13,6 +13,10 @@ TagManager:
   - Sand
   - IgnoreMe
   - ragdoller
+  - TrackedLimb
+  - Ragdoll Animation
+  - Ragdoll
+  - Rider
   layers:
   - Default
   - TransparentFX
@@ -24,7 +28,7 @@ TagManager:
   - Obstacles
   - ground
   - noselfcollision
-  - 
+  - ObstacleGround
   - 
   - 
   - Ragdoll
