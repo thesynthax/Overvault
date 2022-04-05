@@ -29,7 +29,7 @@ public class AnimatorHandler : MonoBehaviour
     private void Update()
     {
         yRootMotion = pMoveBase.states.onGround;
-        Animate(-1, (int)pMoveBase.states.currentState, pMoveBase.slideCrouchHandler.UnderObstacleTime(), pMoveBase.climbHandler.Climb(), pMoveBase.GetObstacleType(), pMoveBase.basicMovement.ObstacleAheadTime, pMoveBase.basicMovement.ObstacleAhead(), pMoveBase.vaultHandler.Vault(), inputHandler.CrouchButton.Pressing, inputHandler.SlideButton.Pressing, inputHandler.JumpButton.Pressing, inputHandler.SprintButton.Pressing, inputHandler.HorizontalJoystick.Pressing || inputHandler.VerticalJoystick.Pressing, inputHandler.HorizontalJoystick.value, inputHandler.VerticalJoystick.value, pMoveBase.states.onGround, pMoveBase.states.facingDir);
+        Animate(pMoveBase.ragdollControl.animType, (int)pMoveBase.states.currentState, pMoveBase.slideCrouchHandler.UnderObstacleTime(), pMoveBase.climbHandler.Climb(), pMoveBase.GetObstacleType(), pMoveBase.basicMovement.ObstacleAheadTime, pMoveBase.basicMovement.ObstacleAhead(), pMoveBase.vaultHandler.Vault(), inputHandler.CrouchButton.Pressing, inputHandler.SlideButton.Pressing, inputHandler.JumpButton.Pressing, inputHandler.SprintButton.Pressing, inputHandler.HorizontalJoystick.Pressing || inputHandler.VerticalJoystick.Pressing, inputHandler.HorizontalJoystick.value, inputHandler.VerticalJoystick.value, pMoveBase.states.onGround, pMoveBase.states.facingDir);
     }
     
     public void Animate(int getup, int curState, float underObstacleTime, int climbType, int obstacleType, float obstacleAheadTime, bool obstacleAhead, int vaultType, bool crouch, bool slide, bool jump, bool sprint, bool inputActive, float horz, float vert, bool onGround, int facingDir)

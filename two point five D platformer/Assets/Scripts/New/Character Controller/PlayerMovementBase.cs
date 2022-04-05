@@ -26,6 +26,7 @@ public class PlayerMovementBase : MonoBehaviour
 	[HideInInspector] public SlideCrouchHandler slideCrouchHandler;
 	[HideInInspector] public ClimbHandler climbHandler;
 	[HideInInspector] public BasicAirMovementHandler basicAirMovement;
+	[HideInInspector] public RagdollControl ragdollControl;
 	
 	private void InitComponents()
 	{
@@ -39,6 +40,8 @@ public class PlayerMovementBase : MonoBehaviour
 		slideCrouchHandler = GetComponent<SlideCrouchHandler>();
 		climbHandler = GetComponent<ClimbHandler>();
 		basicAirMovement = GetComponent<BasicAirMovementHandler>();
+
+		ragdollControl = GetComponent<RagdollControl>();
 	}
 	
 	private void InitModel()

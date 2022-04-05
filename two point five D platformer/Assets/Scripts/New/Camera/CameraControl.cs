@@ -16,6 +16,11 @@ public class CameraControl : MonoBehaviour
     public PlayerMovementBase pMoveBase;
     private Vector3 velocity = Vector3.zero;
 
+    private Transform camPivot;
+    private void Start()
+    {
+        camPivot = target;
+    }
 
     private void LateUpdate()
     {
@@ -28,9 +33,21 @@ public class CameraControl : MonoBehaviour
             offset.y = -0.3f;
         }
 
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, camMoveSpeed);
-        transform.position = smoothedPosition;
+        if (pMoveBase.ragdollControl.Ragdolled)
+        {
+            target = pMoveBase.anim.GetBoneTransform(HumanBodyBones.Hips);
+            Vector3 desiredPosition = target.position + offset + Vector3.up * 0.5f;
+            Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, camMoveSpeed);
+            transform.position = smoothedPosition;
+        }
+        else
+        {
+            target = camPivot;
+            Vector3 desiredPosition = target.position + offset;
+            Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, camMoveSpeed);
+            transform.position = smoothedPosition;
+        }
+
     }
     
 }

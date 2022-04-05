@@ -50,7 +50,7 @@ public class StairDismount : MonoBehaviour {
 					impactTarget = hit.rigidbody;
 					
 					//impact direction also according to the ray
-					impact = ray.direction * 2.0f;
+					impact = ray.direction * 0.5f;
 					
 					//the impact will be reapplied for the next 250ms
 					//to make the connected objects follow even though the simulated body joints

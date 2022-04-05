@@ -20,11 +20,14 @@ movement/game mechanics
         2) ragdoll activated on death, tripping, and when about to fall while moving on incline(use deadly physics)
         3) smooth transitions between ragdoll state to getting up (different animations based upon player lying on which side) to idle
         4) self balancing ragdoll physics(deadly knowledge about joints required)
-        5) This ragdoll will be a combo of:
+        5) weight system to lerp between ragdolled mode or animated mode
+        6) behaviour system to play animations according to the type of ragdoll mode (eg, collision, falling etc)
+        7) This ragdoll will be a combo of:
             i) PuppetMaster(for unpinning the ragdoll based on how much disbalance is created while moving down and incline)
             ii) Gangbeast ragdoll tutorial(for animations playing while unpinning, PuppetMaster is also good for it)
             iii) Self balancing ragdoll asset(quite cool active ragdoll which steps forward or backward to not fall)
             iv) AnimFollow(Getting shot, hitting wall while sprinting, tripping over, best ragdoll for these things)
+            v) ragdolltomecanim (for getting up from ragdoll position)
 
 All the animations required(some animations would be missing here, add them here as they come into your mind):
 1) Basic:
