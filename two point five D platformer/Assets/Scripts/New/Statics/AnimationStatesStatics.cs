@@ -36,4 +36,9 @@ public static class AnimationStatesStatics
 	public static string SprintTurnMirror = "sprint turn mirror"; 
 	public static string SprintTurn = "sprint turn";
 
+	public static string GetUpFromBack = "Get Up from back";
+	public static string GetUpFromBackMirror = "Get Up from back mirror";
+	public static string GetUpFromBelly = "Get up from belly";
+	public static string GetUpFromBellyMirror = "Get up from belly mirror";
+
 }

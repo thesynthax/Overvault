@@ -2515,7 +2515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3394ee7f22636b855b347163e47547e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdolled: 0
   animType: -1
+  gettingup: 0
   ragdollState: 0
 --- !u!1001 &654898183
 PrefabInstance:
@@ -11118,6 +11120,10 @@ PrefabInstance:
     - target: {fileID: 7229431557851351246, guid: 746be74fd98eb5a409ffea054c338ac0, type: 3}
       propertyPath: m_UpdateMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229431557851351246, guid: 746be74fd98eb5a409ffea054c338ac0, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746be74fd98eb5a409ffea054c338ac0, type: 3}

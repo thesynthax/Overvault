@@ -98,66 +98,74 @@ public class PlayerMovementBase : MonoBehaviour
 	private void UpdateStates()
 	{
 		AnimatorStateInfo currentAnim = anim.GetCurrentAnimatorStateInfo(0);
-		if (currentAnim.IsTag("idle"))
+		if (ragdollControl.ragdollState == RagdollControl.RagdollState.animated)
 		{
-			states.curState = 0; //Idle
-			states.currentState = StateHandler.CurrentState.Idle;
-		}
-		else if (currentAnim.IsTag("walk"))
-		{
-			states.curState = 1; //Walk
-			states.currentState = StateHandler.CurrentState.Walking;
-		}
-		else if (currentAnim.IsTag("jog"))
-		{
-			states.curState = 2; //Jog
-			states.currentState = StateHandler.CurrentState.Jogging;
-		}
-		else if (currentAnim.IsTag("sprint"))
-		{
-			states.curState = 3; //Sprint
-			states.currentState = StateHandler.CurrentState.Sprinting;
-		}
-		else
-		{
-			states.curState = 4; //On-hold (i.e when you can't do anything else, eg. Vault, Jump, Airborne)
+			if (currentAnim.IsTag("idle"))
+			{
+				states.curState = 0; //Idle
+				states.currentState = StateHandler.CurrentState.Idle;
+			}
+			else if (currentAnim.IsTag("walk"))
+			{
+				states.curState = 1; //Walk
+				states.currentState = StateHandler.CurrentState.Walking;
+			}
+			else if (currentAnim.IsTag("jog"))
+			{
+				states.curState = 2; //Jog
+				states.currentState = StateHandler.CurrentState.Jogging;
+			}
+			else if (currentAnim.IsTag("sprint"))
+			{
+				states.curState = 3; //Sprint
+				states.currentState = StateHandler.CurrentState.Sprinting;
+			}
+			else
+			{
+				states.curState = 4; //On-hold (i.e when you can't do anything else, eg. Vault, Jump, Airborne)
 
-			if (currentAnim.IsTag("vault"))
-			{
-				states.currentState = StateHandler.CurrentState.Vaulting;
+				if (currentAnim.IsTag("vault"))
+				{
+					states.currentState = StateHandler.CurrentState.Vaulting;
+				}
+				else if (currentAnim.IsTag("slide"))
+				{
+					states.currentState = StateHandler.CurrentState.Sliding;
+				}
+				else if (currentAnim.IsTag("crouch"))
+				{
+					states.currentState = StateHandler.CurrentState.Crouching;
+				}
+				else if (currentAnim.IsTag("climb"))
+				{
+					states.currentState = StateHandler.CurrentState.Climbing;
+				}
+				else if (currentAnim.IsTag("jump"))
+				{
+					states.currentState = StateHandler.CurrentState.Jumping;
+				}
+				else if (currentAnim.IsTag("fall"))
+				{
+					states.currentState = StateHandler.CurrentState.Falling;
+				}
+				else if (currentAnim.IsTag("land"))
+				{
+					states.currentState = StateHandler.CurrentState.Landing;
+				}
+				else if (currentAnim.IsTag("roll"))
+				{
+					states.currentState = StateHandler.CurrentState.Rolling;
+				}
+				else if (currentAnim.IsTag("ledge"))
+				{
+					states.currentState = StateHandler.CurrentState.Ledge;
+				}
 			}
-			else if (currentAnim.IsTag("slide"))
-			{
-				states.currentState = StateHandler.CurrentState.Sliding;
-			}
-			else if (currentAnim.IsTag("crouch"))
-			{
-				states.currentState = StateHandler.CurrentState.Crouching;
-			}
-			else if (currentAnim.IsTag("climb"))
-			{
-				states.currentState = StateHandler.CurrentState.Climbing;
-			}
-			else if (currentAnim.IsTag("jump"))
-			{
-				states.currentState = StateHandler.CurrentState.Jumping;
-			}
-			else if (currentAnim.IsTag("fall"))
-			{
-				states.currentState = StateHandler.CurrentState.Falling;
-			}
-			else if (currentAnim.IsTag("land"))
-			{
-				states.currentState = StateHandler.CurrentState.Landing;
-			}
-			else if (currentAnim.IsTag("roll"))
-			{
-				states.currentState = StateHandler.CurrentState.Rolling;
-			}
-			else if (currentAnim.IsTag("ledge"))
-			{
-				states.currentState = StateHandler.CurrentState.Ledge;
-			}
+		}
+		else 
+		{
+			states.curState = 4;
+			states.currentState = StateHandler.CurrentState.Ragdolled;
 		}
 		
 	}

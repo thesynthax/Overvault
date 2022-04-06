@@ -13,7 +13,7 @@ public class StateHandler : ScriptableObject
 {
     public enum CurrentState
     {
-        Idle, Walking, Jogging, Sprinting, Jumping, Falling, Landing, Rolling, Vaulting, Crouching, Sliding, Climbing, Ledge
+        Idle, Walking, Jogging, Sprinting, Jumping, Falling, Landing, Rolling, Vaulting, Crouching, Sliding, Climbing, Ledge, Ragdolled
     }
     public CurrentState currentState = new CurrentState();
     public int curState = 0;
