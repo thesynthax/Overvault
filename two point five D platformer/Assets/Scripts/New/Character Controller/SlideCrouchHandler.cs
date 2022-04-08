@@ -46,7 +46,7 @@ public class SlideCrouchHandler : MonoBehaviour
         }
         else
         {
-            pMoveBase.coll.center = new Vector3(0, 1f, 0);
+            //pMoveBase.coll.center = new Vector3(0, 1f, 0);
             pMoveBase.coll.height = 2f;
         }
     }

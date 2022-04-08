@@ -14,6 +14,7 @@ public class BasicMovementHandler : MonoBehaviour
     private InputHandler inputHandler;
     private PlayerMovementBase pMoveBase;
     [HideInInspector] public float ObstacleAheadTime = 0f;
+    private float z = 0f, radius = 0f;
     
     public void Init()
     {
@@ -69,17 +70,34 @@ public class BasicMovementHandler : MonoBehaviour
         switch(pMoveBase.states.curState)
 		{
 			case (0):
-				pMoveBase.coll.radius = 0.3f;
+				radius = 0.3f;
+                z = 0;
 				break;
 			case (1):
-				pMoveBase.coll.radius = 0.3f;
+				radius = 0.3f;
+                z = 0;
 				break;
 			case (2):
-				pMoveBase.coll.radius = 0.4f;
+                z = 0;
+				radius = 0.4f;
 				break;
 			case (3):
-				pMoveBase.coll.radius = 0.0f;
+                if (ObstacleAheadTime > 0.5f)
+                {
+                    radius = 0.6f;
+                    z = 0;
+                }
+                else
+                {
+                    z = pMoveBase.states.facingDir * 0.1f;
+				    radius = 0.0f;
+                }
 				break;
 		}
+        if (!(pMoveBase.states.currentState == StateHandler.CurrentState.Sliding || pMoveBase.states.currentState == StateHandler.CurrentState.Sliding))
+        {
+            pMoveBase.coll.radius = radius;
+            pMoveBase.coll.center = new Vector3(0, 1, z);
+        }
     }
 }

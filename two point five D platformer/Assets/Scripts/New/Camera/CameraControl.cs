@@ -24,24 +24,38 @@ public class CameraControl : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (pMoveBase.slideCrouchHandler.UnderObstacleTime() < 0.1f)
+
+        if (pMoveBase.ragdollControl.ragdollState == RagdollControl.RagdollState.ragdolled)
         {
             offset.y = 0.5f;
-        }
-        else
-        {
-            offset.y = -0.3f;
-        }
 
-        if (pMoveBase.ragdollControl.Ragdolled)
-        {
             target = pMoveBase.anim.GetBoneTransform(HumanBodyBones.Hips);
-            Vector3 desiredPosition = target.position + offset + Vector3.up * 0.5f;
+
+            float difference = 0f;
+            if (target.position.y > pMoveBase.ragdollControl.hipY)
+            {
+                difference = target.position.y - pMoveBase.ragdollControl.hipY;
+            }
+            else if (target.position.y < (pMoveBase.ragdollControl.hipY - 0.85f))
+            {
+                difference = -(pMoveBase.ragdollControl.hipY - 0.85f - target.position.y);
+            }
+            offset.y += difference;
+
+            Vector3 desiredPosition = new Vector3(target.position.x, camPivot.position.y, target.position.z) + offset;
             Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, camMoveSpeed);
             transform.position = smoothedPosition;
         }
         else
         {
+            if (pMoveBase.slideCrouchHandler.UnderObstacleTime() < 0.1f)
+            {
+                offset.y = 0.5f;
+            }
+            else
+            {
+                offset.y = -0.3f;
+            }
             target = camPivot;
             Vector3 desiredPosition = target.position + offset;
             Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, camMoveSpeed);

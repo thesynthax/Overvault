@@ -11,6 +11,7 @@ using System.Collections.Generic;
 
 public class RagdollControl : MonoBehaviour
 {
+    [HideInInspector] public float hipY;
     private PlayerMovementBase pMoveBase;
     private InputHandler inputHandler;
     private AnimatorHandler animHandler;
@@ -114,6 +115,7 @@ public class RagdollControl : MonoBehaviour
 
     private Vector3 ragdolledHipPos, ragdolledHeadPos, ragdolledFeetPos;
     private float ragdollEndTime = -100f;
+    private float sprintTime = 0f;
 
     private void Start()
     {
@@ -152,33 +154,52 @@ public class RagdollControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ragdoller" && pMoveBase.states.currentState == StateHandler.CurrentState.Sprinting)
+        if (other.gameObject.tag == "ragdoller" && (pMoveBase.states.currentState == StateHandler.CurrentState.Sprinting && sprintTime > 0.7f))
         {
-            Ragdolled = true;
+            RaycastHit hit = new RaycastHit();
+            Vector3 hitDirection = other.transform.position - transform.position;
+            Vector3 hitNormal = Vector3.zero;
+            if (Physics.Raycast(transform.position, hitDirection, out hit))
+            {
+                hitNormal = hit.transform.TransformDirection(hit.normal);
+            }
+            if (hitNormal != hit.transform.up)
+            {
+                Ragdolled = true;
+            }
         }
     } 
 
     private void Update()
     {
+        if (pMoveBase.states.currentState == StateHandler.CurrentState.Sprinting)
+        {
+            sprintTime += Time.deltaTime;
+        }
+        else
+        {
+            sprintTime = 0f;
+        }
+
         ragdolled = Ragdolled;
 
         if (!Ragdolled)
         {
             velWhole = rBody.velocity;
             velHips = childRigidbodies[0].velocity;
+            hipY = childRigidbodies[0].transform.position.y;
         }
         else
         {
-            Invoke("GetUp", 3f);
+            if (!inputHandler.RagdollButton.Pressing)
+                Invoke("GetUp", 3f);
         }
     }
     
     private void LateUpdate()
     {
-        if (pMoveBase.states.currentState != StateHandler.CurrentState.Sprinting || ragdollState == RagdollState.ragdolled)
-        {
-            //Ragdolled = inputHandler.RagdollButton.Pressing;
-        }
+
+        Ragdolled = inputHandler.RagdollButton.Pressing;
 
         animType = -1;
         if (ragdollState == RagdollState.blended)
@@ -187,9 +208,9 @@ public class RagdollControl : MonoBehaviour
             {
                 Vector3 rootHipDifference = anim.GetBoneTransform(HumanBodyBones.Hips).position - transform.position;
                 anim.GetBoneTransform(HumanBodyBones.Hips).position -= new Vector3(rootHipDifference.x, 0, 0);
-                Vector3 newRootPos = transform.position + rootHipDifference;
+                Vector3 newRootPos = transform.position + new Vector3(rootHipDifference.x, rootHipDifference.y, 0);
 
-                RaycastHit[] hits = Physics.RaycastAll(new Ray(newRootPos, Vector3.down));
+                RaycastHit[] hits = Physics.RaycastAll(new Ray(newRootPos, Vector3.down), Mathf.Infinity, ControllerStatics.groundAndObs);
                 newRootPos.y = 0;
 
                 foreach (RaycastHit hit in hits)
@@ -199,51 +220,19 @@ public class RagdollControl : MonoBehaviour
                         newRootPos.y=Mathf.Max(newRootPos.y, hit.point.y);
                     }
                 }
+                newRootPos.y += 0.02f;
                 transform.position = newRootPos;
             }
 
-            float blendAmount = 1 - (Time.time - ragdollEndTime - 0.05f)/0.5f;
+            float blendAmount = 1-(Time.time - ragdollEndTime - 0.05f)/0.2f;
             blendAmount = Mathf.Clamp01(blendAmount);
 
             foreach (BodyPart bp in parts)
             {
                 //if (bp.t == anim.GetBoneTransform(HumanBodyBones.Hips))
-                //    bp.t.position = Vector3.Lerp(bp.t.position, bp.pos, blendAmount);
+                bp.t.position = Vector3.Lerp(bp.t.position, bp.pos, blendAmount);
                 bp.t.rotation = Quaternion.Slerp(bp.t.rotation, bp.rot, blendAmount);
             }
-            
-    /*         SetKinematic(true);
-            anim.enabled = true;
-            
-            if (anim.GetBoneTransform(HumanBodyBones.Hips).forward.y > 0)
-            {
-                if (anim.GetBoneTransform(HumanBodyBones.Hips).right.z < 0)
-                {
-                    animType = 1;
-                    gettingup = false;
-                }
-                else
-                {
-                    animType = 3;
-                    gettingup = false;
-                }
-            }
-            else
-            {
-                if (anim.GetBoneTransform(HumanBodyBones.Hips).right.z < 0)
-                {
-                    animType = 2;
-                    gettingup = false;
-                }
-                else
-                {
-                    animType = 4;
-                    gettingup = false;
-                }
-            }
-
-            coll.enabled = true;
-            rBody.isKinematic = false; */
 
             if (blendAmount < Mathf.Epsilon)
             {
@@ -266,8 +255,8 @@ public class RagdollControl : MonoBehaviour
         anim.enabled = false;
 
         SetKinematic(false);
-        rBody.velocity = vWhole;
-        childRigidbodies[0].velocity = (vHips + vWhole);
+        float velocityFactor = (rBody.mass / childRigidbodies[0].mass)/2;
+        childRigidbodies[0].velocity = velocityFactor * (vHips + vWhole);
         coll.enabled = false;
         rBody.isKinematic = true;
     }

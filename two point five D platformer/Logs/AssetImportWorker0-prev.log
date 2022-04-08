@@ -23,11 +23,11 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-39437
+38519
 Successfully changed project path to: /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer
 /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 67.42 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 99.66 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.24f1 (79c78de19888)
 [Subsystems] Discovering subsystems at path /home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/Resources/UnitySubsystems
@@ -48,56 +48,56 @@ blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffe
 der_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture
 _footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap
  GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 62349624
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -372231736
 Initialize mono
 Mono path[0] = '/home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/Managed'
 Mono path[1] = '/home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56930
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56999
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.001110 seconds.
+Registered in 0.001130 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 69.38 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 67.06 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.577 seconds
+- Completed reload, in  0.534 seconds
 Domain Reload Profiling:
-	ReloadAssembly (578ms)
-		BeginReloadAssembly (76ms)
+	ReloadAssembly (534ms)
+		BeginReloadAssembly (22ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (446ms)
-			LoadAssemblies (75ms)
+		EndReloadAssembly (457ms)
+			LoadAssemblies (51ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (134ms)
+			SetupTypeCache (141ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (191ms)
+			SetupLoadedEditorAssemblies (180ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (69ms)
+				RefreshPlugins (67ms)
 				BeforeProcessingInitializeOnLoad (7ms)
-				ProcessInitializeOnLoadAttributes (85ms)
-				ProcessInitializeOnLoadMethodAttributes (25ms)
+				ProcessInitializeOnLoadAttributes (78ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002905 seconds.
+Registered in 0.002785 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 68.74 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 69.99 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Fallback handler could not load library /home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/Mono/lib/libdl.so
 Fallback handler could not load library /home/thesynthax/Unity Editor/2020.3.24f1/Editor/Data/Mono/lib/libdl.so
@@ -150,45 +150,45 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (
 (Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.652 seconds
+- Completed reload, in  1.605 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1653ms)
-		BeginReloadAssembly (104ms)
+	ReloadAssembly (1606ms)
+		BeginReloadAssembly (102ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (1502ms)
-			LoadAssemblies (54ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1450ms)
+			LoadAssemblies (59ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (297ms)
+			SetupTypeCache (301ms)
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (67ms)
-			SetupLoadedEditorAssemblies (972ms)
+			SetupLoadedEditorAssemblies (912ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (69ms)
-				BeforeProcessingInitializeOnLoad (73ms)
-				ProcessInitializeOnLoadAttributes (816ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
+				RefreshPlugins (70ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (760ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler after 0.19 seconds
-Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3890 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 175.3 MB.
-System memory in use after: 175.0 MB.
+Unloading 3904 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.2 MB.
+System memory in use after: 175.9 MB.
 
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4333.
-Total: 5.660050 ms (FindLiveObjects: 0.377454 ms CreateObjectMapping: 0.210880 ms MarkObjects: 4.552510 ms  DeleteObjects: 0.517782 ms)
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4348.
+Total: 5.663388 ms (FindLiveObjects: 0.394011 ms CreateObjectMapping: 0.198863 ms MarkObjects: 4.565806 ms  DeleteObjects: 0.503423 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -201,881 +201,69 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/Test/testsc.cs
-  artifactKey: Guid(975e0f5324b9b87cd8aaae0d6f5a09da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Test/testsc.cs using Guid(975e0f5324b9b87cd8aaae0d6f5a09da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0389c58a593208ff4201de1664bc41b0') in 0.005440 seconds 
-  Import took 1.640772 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002683 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.110 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1110ms)
-		BeginReloadAssembly (78ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (984ms)
-			LoadAssemblies (59ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (304ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (463ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (59ms)
-				ProcessInitializeOnLoadAttributes (391ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 154.4 MB.
-System memory in use after: 154.2 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4335.
-Total: 5.370830 ms (FindLiveObjects: 0.336905 ms CreateObjectMapping: 0.189020 ms MarkObjects: 4.467478 ms  DeleteObjects: 0.376442 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002697 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.080 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1080ms)
-		BeginReloadAssembly (75ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (958ms)
-			LoadAssemblies (57ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (298ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (438ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (361ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 154.5 MB.
-System memory in use after: 154.2 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4337.
-Total: 5.619543 ms (FindLiveObjects: 0.370723 ms CreateObjectMapping: 0.175751 ms MarkObjects: 4.658631 ms  DeleteObjects: 0.413439 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002745 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.051 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1051ms)
-		BeginReloadAssembly (73ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (932ms)
-			LoadAssemblies (55ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (281ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (432ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (59ms)
-				ProcessInitializeOnLoadAttributes (358ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 154.5 MB.
-System memory in use after: 154.3 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4339.
-Total: 10.647307 ms (FindLiveObjects: 1.203772 ms CreateObjectMapping: 0.436628 ms MarkObjects: 8.315592 ms  DeleteObjects: 0.689485 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002693 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.061 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1062ms)
-		BeginReloadAssembly (77ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (938ms)
-			LoadAssemblies (57ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (293ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (415ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (63ms)
-				ProcessInitializeOnLoadAttributes (339ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 154.5 MB.
-System memory in use after: 154.3 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4341.
-Total: 5.581871 ms (FindLiveObjects: 0.396181 ms CreateObjectMapping: 0.168523 ms MarkObjects: 4.586877 ms  DeleteObjects: 0.429206 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002689 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.130 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1130ms)
-		BeginReloadAssembly (75ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (1007ms)
-			LoadAssemblies (58ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (299ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (465ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (72ms)
-				ProcessInitializeOnLoadAttributes (377ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 154.6 MB.
-System memory in use after: 154.3 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4343.
-Total: 5.391171 ms (FindLiveObjects: 0.337116 ms CreateObjectMapping: 0.174887 ms MarkObjects: 4.443659 ms  DeleteObjects: 0.434494 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 405.938530 seconds.
   path: Assets/Animator Controller/Anim.controller
   artifactKey: Guid(57734a4a388dce84eb3bae54e5824171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animator Controller/Anim.controller using Guid(57734a4a388dce84eb3bae54e5824171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6536af2c869566136b442310bbc6f8cf') in 0.570297 seconds 
-  Import took 0.946710 seconds .
+Start importing Assets/Animator Controller/Anim.controller using Guid(57734a4a388dce84eb3bae54e5824171) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8552dcc6661bcfc86c99c0d0a1b0c71') in 0.625262 seconds 
+  Import took 0.666662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 290.109143 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Walking
+  artifactKey: Guid(96fb2311e06d25e4eb554e25af490aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Walking using Guid(96fb2311e06d25e4eb554e25af490aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53284fec1d0c383da0ac7e9ed06e98b2') in 0.000888 seconds 
+  Import took 0.009198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.087434 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/_CompleteAnimationList.txt
+  artifactKey: Guid(565ef40c6d397a64297b41867f2ea97a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/_CompleteAnimationList.txt using Guid(565ef40c6d397a64297b41867f2ea97a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2799be90b05371d1d18b8229e3e9502') in 0.001440 seconds 
+  Import took 0.006454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.452793 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle2Crouch_Neutral2Crouch2Idle.fbx
+  artifactKey: Guid(b0f262f777eaaf7409dc7f249dcea8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle2Crouch_Neutral2Crouch2Idle.fbx using Guid(b0f262f777eaaf7409dc7f249dcea8cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb171e14d8a79fd01faf450758346fab') in 0.014882 seconds 
+  Import took 0.022671 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.035011 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpUpMedium_NoHands1Step_Idle.fbx
+  artifactKey: Guid(debe92d6197cd1149ae919c2aa5e90ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpUpMedium_NoHands1Step_Idle.fbx using Guid(debe92d6197cd1149ae919c2aa5e90ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a58241198cdb4343315c4dae27ecf2e') in 0.006313 seconds 
+  Import took 0.012126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.915423 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_ToJumpUpHigh.fbx
+  artifactKey: Guid(3913cd79fb541b84f934bdb99824d057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_ToJumpUpHigh.fbx using Guid(3913cd79fb541b84f934bdb99824d057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd3dd1b988e7988028ae80cc9d8a1dca') in 0.006572 seconds 
+  Import took 0.014920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.518653 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/IdleGrab_FrontHigh.fbx
+  artifactKey: Guid(ec0fd7dac25bd2146a750ace2a26043d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/IdleGrab_FrontHigh.fbx using Guid(ec0fd7dac25bd2146a750ace2a26043d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '202dfa81ad44cdc3556c455642c25887') in 0.015077 seconds 
+  Import took 0.022064 seconds .
 
 ========================================================================
 Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002882 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.08 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.452 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1452ms)
-		BeginReloadAssembly (83ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (1321ms)
-			LoadAssemblies (59ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (288ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (797ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (719ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.3 MB.
-System memory in use after: 155.1 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4345.
-Total: 5.773907 ms (FindLiveObjects: 0.560488 ms CreateObjectMapping: 0.205395 ms MarkObjects: 4.528154 ms  DeleteObjects: 0.478433 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002697 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.096 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1096ms)
-		BeginReloadAssembly (75ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (973ms)
-			LoadAssemblies (56ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (296ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (441ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (365ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.3 MB.
-System memory in use after: 155.1 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4347.
-Total: 5.601090 ms (FindLiveObjects: 0.384260 ms CreateObjectMapping: 0.203705 ms MarkObjects: 4.531060 ms  DeleteObjects: 0.480938 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002671 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.133 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1133ms)
-		BeginReloadAssembly (78ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1008ms)
-			LoadAssemblies (57ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (296ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (475ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (64ms)
-				ProcessInitializeOnLoadAttributes (396ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.3 MB.
-System memory in use after: 155.1 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4349.
-Total: 5.428799 ms (FindLiveObjects: 0.375619 ms CreateObjectMapping: 0.202684 ms MarkObjects: 4.394494 ms  DeleteObjects: 0.454632 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002833 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.064 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1064ms)
-		BeginReloadAssembly (76ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (941ms)
-			LoadAssemblies (57ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (291ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (411ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (61ms)
-				ProcessInitializeOnLoadAttributes (336ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.3 MB.
-System memory in use after: 155.1 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4351.
-Total: 5.723870 ms (FindLiveObjects: 0.390213 ms CreateObjectMapping: 0.179943 ms MarkObjects: 4.676484 ms  DeleteObjects: 0.476004 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006104 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.170 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1170ms)
-		BeginReloadAssembly (77ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (1045ms)
-			LoadAssemblies (57ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (293ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (509ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (61ms)
-				ProcessInitializeOnLoadAttributes (433ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.3 MB.
-System memory in use after: 155.1 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4353.
-Total: 5.542350 ms (FindLiveObjects: 0.385980 ms CreateObjectMapping: 0.228890 ms MarkObjects: 4.445011 ms  DeleteObjects: 0.481405 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002686 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.123 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1123ms)
-		BeginReloadAssembly (76ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1000ms)
-			LoadAssemblies (56ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (292ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (462ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (61ms)
-				ProcessInitializeOnLoadAttributes (387ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.3 MB.
-System memory in use after: 155.1 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4355.
-Total: 5.689792 ms (FindLiveObjects: 0.372042 ms CreateObjectMapping: 0.217271 ms MarkObjects: 4.610118 ms  DeleteObjects: 0.489185 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002550 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-System.InvalidOperationException: Burst failed to compile the function pointer `Int32 DoGetCSRTrampoline()`
-  at Unity.Burst.BurstCompiler.Compile[T] (T delegateObj, System.Boolean isFunctionPointer) [0x0014e] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:189 
-  at Unity.Burst.BurstCompiler.CompileFunctionPointer[T] (T delegateMethod) [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/BurstCompiler.cs:81 
-  at Unity.Burst.Intrinsics.X86.CompileManagedCsrAccessors () [0x00000] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Runtime/Intrinsics/x86/Csr.cs:191 
-  at Unity.Burst.Editor.BurstLoader..cctor () [0x001aa] in /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer/Library/PackageCache/com.unity.burst@1.3.4/Editor/BurstLoader.cs:168 
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:138)
-
-(Filename: /home/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 138)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.193 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1193ms)
-		BeginReloadAssembly (77ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1065ms)
-			LoadAssemblies (58ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (339ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (473ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (60ms)
-				ProcessInitializeOnLoadAttributes (398ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Switching build target platform(24) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3656 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 155.3 MB.
-System memory in use after: 155.1 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 4357.
-Total: 5.785738 ms (FindLiveObjects: 0.435970 ms CreateObjectMapping: 0.164069 ms MarkObjects: 4.712028 ms  DeleteObjects: 0.472627 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 3.05 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 3.01 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 82.8 MB.
-System memory in use after: 82.5 MB.
+System memory in use before: 83.2 MB.
+System memory in use after: 82.9 MB.
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 4357.
-Total: 5.542737 ms (FindLiveObjects: 0.391152 ms CreateObjectMapping: 0.164410 ms MarkObjects: 4.581344 ms  DeleteObjects: 0.404953 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 4348.
+Total: 5.992281 ms (FindLiveObjects: 0.361824 ms CreateObjectMapping: 0.187860 ms MarkObjects: 5.053711 ms  DeleteObjects: 0.388136 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -1086,3 +274,192 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 129.179369 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownMed_Idle.fbx
+  artifactKey: Guid(a56fbcedc389aa045b30647b92c78dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownMed_Idle.fbx using Guid(a56fbcedc389aa045b30647b92c78dc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8b97043b45443f9003a401d64e9a53c') in 0.005850 seconds 
+  Import took 0.011302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.277419 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Stride_Idle.fbx
+  artifactKey: Guid(56f008d866b396b459e348ae8dea65f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Stride_Idle.fbx using Guid(56f008d866b396b459e348ae8dea65f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a45814b9811b6bfc0223d0e6c053f7cd') in 0.006434 seconds 
+  Import took 0.013350 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.311755 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Idle.fbx
+  artifactKey: Guid(b33e456ae548c4d4ca6c71bd1d2c203d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Idle.fbx using Guid(b33e456ae548c4d4ca6c71bd1d2c203d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c21ed82805f91f100f6324131a4b37f') in 0.006359 seconds 
+  Import took 0.013323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.738200 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FrontFlip_Idle.fbx
+  artifactKey: Guid(a138a7fadf1dfd245a895d2eddb4d987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FrontFlip_Idle.fbx using Guid(a138a7fadf1dfd245a895d2eddb4d987) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5869bc0a3ba07ae34208ff0af8b6ed4e') in 0.005845 seconds 
+  Import took 0.011334 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.163868 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FlipOnHands_Idle.fbx
+  artifactKey: Guid(aa0893d464aa302479a7e12acaa46678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FlipOnHands_Idle.fbx using Guid(aa0893d464aa302479a7e12acaa46678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0c34b30af6dfa2b23459b1cde108409') in 0.006516 seconds 
+  Import took 0.012218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.125194 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_CannotUp_Idle.fbx
+  artifactKey: Guid(e187707f79ab35a4897052d1e48d305f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_CannotUp_Idle.fbx using Guid(e187707f79ab35a4897052d1e48d305f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '176853c514148672ffd7b1b9a7494594') in 0.010854 seconds 
+  Import took 0.016452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.115278 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_CannotDown_Idle.fbx
+  artifactKey: Guid(37bfce7e82a23f441a6bbe90e810c569) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_CannotDown_Idle.fbx using Guid(37bfce7e82a23f441a6bbe90e810c569) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd01757c388097426cff8f61e3f7a027') in 0.009675 seconds 
+  Import took 0.015651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.668597 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Idle.fbx
+  artifactKey: Guid(4d7184db881f8e04682e3a5833e21a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Idle.fbx using Guid(4d7184db881f8e04682e3a5833e21a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d1bb00d95015a2316d148b1d3270bb8') in 0.006410 seconds 
+  Import took 0.014030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.135267 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Roll_Idle.fbx
+  artifactKey: Guid(d01d3fdea5aade143adc0060a4282052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Roll_Idle.fbx using Guid(d01d3fdea5aade143adc0060a4282052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de9b466fedaa7c5c717f8ef04af88a55') in 0.006522 seconds 
+  Import took 0.012610 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.369281 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_BackFlip_Idle.fbx
+  artifactKey: Guid(d2719e6a7fe3af94e85c9b949d164a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_BackFlip_Idle.fbx using Guid(d2719e6a7fe3af94e85c9b949d164a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65769b8d7c10722b538e4ec653db2374') in 0.005958 seconds 
+  Import took 0.011452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.378837 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_ToJumpUpHigh.fbx
+  artifactKey: Guid(3913cd79fb541b84f934bdb99824d057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_ToJumpUpHigh.fbx using Guid(3913cd79fb541b84f934bdb99824d057) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3d2fb9f93ed2176e74dfc8e9e4835cd') in 0.007220 seconds 
+  Import took 0.015508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.345829 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpUpLow_NoHands1Step_Idle.fbx
+  artifactKey: Guid(32110e961238de54696cb653c2f67a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Interacting/Idle_JumpUpLow_NoHands1Step_Idle.fbx using Guid(32110e961238de54696cb653c2f67a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f23772d5b277052b2f637cfedc5ff376') in 0.007673 seconds 
+  Import took 0.014710 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.928620 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/_28_C_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_2.anim
+  artifactKey: Guid(fe1f7dc885860104faa99b0fb4c5ef59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/_28_C_a_U1_M_P_RunJump_ToLeft_R_Fb_p0_No_0_2.anim using Guid(fe1f7dc885860104faa99b0fb4c5ef59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4063bfe5299ffc912d6d916bf061dd4') in 0.009631 seconds 
+  Import took 0.018822 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.241257 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/JogJump_ToLeft_2.fbx
+  artifactKey: Guid(e86121e4f110f884bb4b59496e3adbef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/JogJump_ToLeft_2.fbx using Guid(e86121e4f110f884bb4b59496e3adbef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63f2e68fb828cdfe68fed3fa7d4b699e') in 0.007335 seconds 
+  Import took 0.013009 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.620147 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/New Prefab.prefab
+  artifactKey: Guid(27186d7b69541ca4196e5bc715e0a45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/New Prefab.prefab using Guid(27186d7b69541ca4196e5bc715e0a45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c3550e8229ebca0a70322db5c9dcbfd') in 0.001096 seconds 
+  Import took 0.008938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.175037 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownHigh_Roll_Run.fbx
+  artifactKey: Guid(c45b90ea6dcddc34a8294ad8e93f5215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownHigh_Roll_Run.fbx using Guid(c45b90ea6dcddc34a8294ad8e93f5215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e49e947b48e5712e7cae3a3edb5652d') in 0.007202 seconds 
+  Import took 0.013516 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.210288 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownLow_Roll_Run.fbx
+  artifactKey: Guid(d16351a03af1e704fb1da35c87ebcda4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownLow_Roll_Run.fbx using Guid(d16351a03af1e704fb1da35c87ebcda4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4b95f098e369b46496aaeabbf72aabf') in 0.007065 seconds 
+  Import took 0.013604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.957553 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpHigh_Run.fbx
+  artifactKey: Guid(5ba79ab1689344f4983a6e9f83987f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpHigh_Run.fbx using Guid(5ba79ab1689344f4983a6e9f83987f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f74c783c09f8d47921d9ac928c50cf9') in 0.006227 seconds 
+  Import took 0.012353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.123970 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Walk.fbx
+  artifactKey: Guid(7e9df81716960a94aa40562da554ef91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Walk.fbx using Guid(7e9df81716960a94aa40562da554ef91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47a796b3e2a3159cde2747dc1c49902f') in 0.007060 seconds 
+  Import took 0.013611 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.566979 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Run.fbx
+  artifactKey: Guid(9cb50996c1741844f9141fb5612b0824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Run.fbx using Guid(9cb50996c1741844f9141fb5612b0824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d6677d052c4b592ef8815085e0f67c') in 0.007396 seconds 
+  Import took 0.015498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 343.744638 seconds.
+  path: Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpHigh_Run.fbx
+  artifactKey: Guid(5ba79ab1689344f4983a6e9f83987f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpHigh_Run.fbx using Guid(5ba79ab1689344f4983a6e9f83987f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ad2d1b2b777a9ea166ce67bef900500') in 0.050184 seconds 
+  Import took 0.250665 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 672.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.5 MB.
+System memory in use after: 83.3 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 4348.
+Total: 22.227387 ms (FindLiveObjects: 1.410022 ms CreateObjectMapping: 0.776871 ms MarkObjects: 19.108384 ms  DeleteObjects: 0.927455 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
