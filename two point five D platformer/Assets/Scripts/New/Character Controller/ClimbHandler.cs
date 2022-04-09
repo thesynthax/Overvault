@@ -125,15 +125,15 @@ public class ClimbHandler : MonoBehaviour
                                     break;
                                 case(1):
                                     if(hit.distance <= inputEnterRoom)
-                                        climbType = Climb(ControllerStatics.walkVaultSpeed, 0.25f, 3, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.walkVaultSpeed, 0.35f, 3, ref t, hit, startPos, direction);
                                     break;
                                 case(2):
                                     if(hit.distance <= 1.2f * inputEnterRoom)
-                                        climbType = Climb(ControllerStatics.jogVaultSpeed, 0.25f, 3, ref t, hit, startPos, direction);
+                                        climbType = Climb(ControllerStatics.jogVaultSpeed, 0.3f, 3, ref t, hit, startPos, direction);
                                     break;
                                 case(3):
-                                    if(hit.distance <= 2f * inputEnterRoom)
-                                        climbType = Climb(ControllerStatics.sprintVaultSpeed, 1.4f, 3, ref t, hit, startPos, direction);
+                                    if(hit.distance <= 2.5f * inputEnterRoom)
+                                        climbType = Climb(ControllerStatics.sprintVaultSpeed, 0.9f, 3, ref t, hit, startPos, direction);
                                     break;
                             }
                             break;

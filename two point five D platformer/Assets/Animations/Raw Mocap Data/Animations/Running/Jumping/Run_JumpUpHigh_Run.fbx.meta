@@ -480,6 +480,12 @@ ModelImporter:
   - first:
       74: -4236433266947592656
     second: sprint climb up high mirror
+  - first:
+      74: -747397822076814137
+    second: jog climb up high
+  - first:
+      74: -642693351050671503
+    second: jog climb up high mirror
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -543,7 +549,7 @@ ModelImporter:
       name: sprint climb up high
       takeName: Run_JumpUpHigh_Run
       internalID: 0
-      firstFrame: 250
+      firstFrame: 245
       lastFrame: 310
       wrapMode: 0
       orientationOffsetY: -90
@@ -570,6 +576,64 @@ ModelImporter:
       additiveReferencePoseFrame: 231
     - serializedVersion: 16
       name: sprint climb up high mirror
+      takeName: Run_JumpUpHigh_Run
+      internalID: 0
+      firstFrame: 245
+      lastFrame: 310
+      wrapMode: 0
+      orientationOffsetY: 90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 231
+    - serializedVersion: 16
+      name: jog climb up high
+      takeName: Run_JumpUpHigh_Run
+      internalID: 0
+      firstFrame: 250
+      lastFrame: 310
+      wrapMode: 0
+      orientationOffsetY: -90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 231
+    - serializedVersion: 16
+      name: jog climb up high mirror
       takeName: Run_JumpUpHigh_Run
       internalID: 0
       firstFrame: 250
