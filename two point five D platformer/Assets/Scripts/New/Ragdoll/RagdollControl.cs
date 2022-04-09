@@ -89,6 +89,7 @@ public class RagdollControl : MonoBehaviour
                             }
                         }
                         anim.Play(getUpAnim, 0, 0);
+                        //anim.CrossFade(getUpAnim, 1.5f, 0, 0);
                         SetKinematic(true);
                     }
                 }

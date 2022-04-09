@@ -76,10 +76,10 @@ namespace AnimFollow
 		Vector3 torqueError;
 		Vector3 torqueSignal;
 		Vector3[] torqueLastError = new Vector3[1];
-		Vector3 torqueVelError;
+		//Vector3 torqueVelError;
 		[HideInInspector] public Vector3 totalTorqueError; // Total world space angular error of all limbs. This is a vector.
 		
-		Vector3 forceAxis;
+		//Vector3 forceAxis;
 		Vector3 forceSignal;
 		Vector3 forceError;
 		Vector3[] forceLastError = new Vector3[1];
@@ -87,12 +87,12 @@ namespace AnimFollow
 		[HideInInspector] public Vector3 totalForceError; // Total world position error. a vector.
 		public float[] forceErrorWeightProfile = {1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f}; // Per limb error weight
 		
-		float masterAngVel;
+		/*float masterAngVel;
 		Vector3 masterAngVelAxis;
 		float slaveAngVel;
 		Vector3 slaveAngVelAxis;
 		Quaternion masterDeltaRotation;
-		Quaternion slaveDeltaRotation;
+		Quaternion slaveDeltaRotation;*/
 		Quaternion[] lastMasterRotation = new Quaternion[1];
 		Quaternion[] lastSlaveRotation = new Quaternion[1];
 		Quaternion[] lastSlavelocalRotation = new Quaternion[1];

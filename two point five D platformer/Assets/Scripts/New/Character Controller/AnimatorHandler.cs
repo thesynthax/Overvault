@@ -3,6 +3,7 @@
 */
 
 using UnityEngine;
+//using UnityEditor.Animations;
 
 /** About AnimatorHandler
 * -> Handles all animation related stuff
@@ -16,6 +17,9 @@ public class AnimatorHandler : MonoBehaviour
     private Animator anim;
     private Rigidbody rBody;
     private CapsuleCollider coll;
+
+    //[HideInInspector] public AnimatorState animState;
+    //[HideInInspector] public AnimatorStateTransition animTransition;
 
     private void Start()
     {
@@ -53,6 +57,7 @@ public class AnimatorHandler : MonoBehaviour
         anim.SetInteger(AnimatorStatics.GetUp, getup);
         
         anim.SetBool("ok", Input.GetKey(KeyCode.J));
+
     }
 
     /* private void OnAnimatorMove()
