@@ -62,8 +62,26 @@ game features:
     - motion only x and y axis only, NPCs etc can move in z axis also
     - evening and night environment
     - Joystick and three buttons setup
-    - 
 
 air movement features:
     falling:
         - 
+
+to do:
+    - Feet IK
+    - editing transition exit times using script to improve vault accuracy
+    - learning cascadeur
+    - aerial movement:
+        - falling (animation, code(x velocity during fall depends upon the x velocity before falling starts))
+        - fall to land (code)
+        - fall to roll (code)
+        - idle jump (animation, code)
+        - walk jump (animation, code)
+        - jog jump (animation, code)
+        - sprint jump (animation, code)
+        - special trick jumps (animation, code)
+    - ragdoll
+        - getup smooth transition (from animfollow)
+        - ragdoll balance (...to be added more in detail)
+    - ledge system:
+    - climb system:

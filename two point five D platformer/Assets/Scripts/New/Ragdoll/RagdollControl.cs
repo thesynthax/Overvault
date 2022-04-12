@@ -18,6 +18,7 @@ public class RagdollControl : MonoBehaviour
     private Animator anim;
     private Rigidbody rBody;
     private CapsuleCollider coll;
+    private Quaternion desiredRotation;
 
     private Rigidbody[] childRigidbodies;
     private Collider[] childColliders;
@@ -151,6 +152,8 @@ public class RagdollControl : MonoBehaviour
             rBody.isKinematic = false;
  
         } 
+
+        desiredRotation = Quaternion.Euler(0, 90, 0);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -205,6 +208,7 @@ public class RagdollControl : MonoBehaviour
         animType = -1;
         if (ragdollState == RagdollState.blended)
         {
+            Quaternion blendedRotation = Quaternion.identity;
             if (Time.time <= ragdollEndTime + 0.05f)
             {
                 Vector3 rootHipDifference = anim.GetBoneTransform(HumanBodyBones.Hips).position - transform.position;
@@ -223,10 +227,22 @@ public class RagdollControl : MonoBehaviour
                 }
                 newRootPos.y += 0.02f;
                 transform.position = newRootPos;
+
+				Vector3 ragdolledDirection = ragdolledHeadPos - ragdolledFeetPos;
+				ragdolledDirection.y=0;
+
+				Vector3 meanFeetPosition = 0.5f*(anim.GetBoneTransform(HumanBodyBones.LeftFoot).position + anim.GetBoneTransform(HumanBodyBones.RightFoot).position);
+				Vector3 animatedDirection = anim.GetBoneTransform(HumanBodyBones.Head).position - meanFeetPosition;
+				animatedDirection.y = 0;
+										
+				transform.rotation *= Quaternion.FromToRotation(animatedDirection.normalized, ragdolledDirection.normalized);
+
             }
 
             float blendAmount = 1-(Time.time - ragdollEndTime - 0.05f)/0.2f;
             blendAmount = Mathf.Clamp01(blendAmount);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.deltaTime);
+            transform.rotation *= Quaternion.FromToRotation(transform.forward, Vector3.right);
 
             foreach (BodyPart bp in parts)
             {
