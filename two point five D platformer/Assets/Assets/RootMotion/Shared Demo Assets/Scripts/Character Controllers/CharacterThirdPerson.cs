@@ -44,10 +44,9 @@ namespace RootMotion.Demos {
 		[Header("Rotation")]
 		public bool lookInCameraDirection; // should the character be looking in the same direction that the camera is facing
 		public float turnSpeed = 5f;					// additional turn speed added when the player is moving (added to animation root rotation)
-		public float stationaryTurnSpeedMlp = 1f;           // additional turn speed added when the player is stationary (added to animation root rotation)
+		public float stationaryTurnSpeedMlp = 1f;			// additional turn speed added when the player is stationary (added to animation root rotation)
 
-        [Header("Jumping and Falling")]
-        public bool smoothJump = true; // If true, adds jump force over a few fixed time steps, not in a single step
+		[Header("Jumping and Falling")]
 		public float airSpeed = 6f; // determines the max speed of the character while airborne
 		public float airControl = 2f; // determines the response speed of controlling the character while airborne
 		public float jumpPower = 12f; // determines the jump force applied when jumping (and therefore the jump height)
@@ -57,7 +56,7 @@ namespace RootMotion.Demos {
 
 		[Header("Wall Running")]
 
-		public LayerMask wallRunLayers; // walkable vertical surfaces
+		[SerializeField] LayerMask wallRunLayers; // walkable vertical surfaces
 		public float wallRunMaxLength = 1f;					// max duration of a wallrun
 		public float wallRunMinMoveMag = 0.6f;				// the minumum magnitude of the user control input move vector
 		public float wallRunMinVelocityY = -1f;				// the minimum vertical velocity of doing a wall run
@@ -80,7 +79,6 @@ namespace RootMotion.Demos {
 		private Vector3 moveDirectionVelocity;
 		private float wallRunWeight;
 		private float lastWallRunWeight;
-        private float fixedDeltaTime;
 		private Vector3 fixedDeltaPosition;
 		private Quaternion fixedDeltaRotation = Quaternion.identity;
 		private bool fixedFrame;
@@ -111,8 +109,7 @@ namespace RootMotion.Demos {
 
 		// When the Animator moves
 		public override void Move(Vector3 deltaPosition, Quaternion deltaRotation) {
-            // Accumulate delta position, update in FixedUpdate to maintain consitency
-            fixedDeltaTime += Time.deltaTime;
+			// Accumulate delta position, update in FixedUpdate to maintain consitency
 			fixedDeltaPosition += deltaPosition;
 			fixedDeltaRotation *= deltaRotation;
 		}
@@ -137,8 +134,6 @@ namespace RootMotion.Demos {
 
             // Move
 			MoveFixed(fixedDeltaPosition);
-
-            fixedDeltaTime = 0f;
 			fixedDeltaPosition = Vector3.zero;
 
 			r.MoveRotation(transform.rotation * fixedDeltaRotation);
@@ -215,10 +210,10 @@ namespace RootMotion.Demos {
 		}
 
 		private void MoveFixed(Vector3 deltaPosition) {
-            // Process horizontal wall-running
-            WallRun();
-
-            Vector3 velocity = fixedDeltaTime > 0f? deltaPosition / fixedDeltaTime: Vector3.zero;
+			// Process horizontal wall-running
+			WallRun();
+			
+			Vector3 velocity = deltaPosition / Time.deltaTime;
 			
 			// Add velocity of the rigidbody the character is standing on
 			velocity += V3Tools.ExtractHorizontal(platformVelocity, gravity, 1f);
@@ -373,33 +368,12 @@ namespace RootMotion.Demos {
 			onGround = false;
 			jumpEndTime = Time.time + 0.1f;
 
-            Vector3 jumpVelocity = userControl.state.move * airSpeed;
-            jumpVelocity += transform.up * jumpPower;
+			Vector3 jumpVelocity = userControl.state.move * airSpeed;
+			r.velocity = jumpVelocity;
+			r.velocity += transform.up * jumpPower;
 
-            if (smoothJump)
-            {
-                StopAllCoroutines();
-                StartCoroutine(JumpSmooth(jumpVelocity - r.velocity));
-            } else
-            {
-                r.velocity = jumpVelocity;
-            }
-
-            return true;
+			return true;
 		}
-
-        // Add jump velocity smoothly to avoid puppets launching to space when unpinned during jump acceleration
-        private IEnumerator JumpSmooth(Vector3 jumpVelocity)
-        {
-            int steps = 0;
-            int stepsToTake = 3;
-            while (steps < stepsToTake)
-            {
-                r.AddForce((jumpVelocity) / stepsToTake, ForceMode.VelocityChange);
-                steps++;
-                yield return new WaitForFixedUpdate();
-            }
-        }
 
 		// Is the character grounded?
 		private void GroundCheck () {

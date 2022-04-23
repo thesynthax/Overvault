@@ -8,12 +8,12 @@ namespace RootMotion.Demos {
 	/// </summary>
 	public class SlowMo : MonoBehaviour {
 
-        public KeyCode[] keyCodes;
-        public bool mouse0;
-        public bool mouse1;
-        public float slowMoTimeScale = 0.3f;
+		[SerializeField] KeyCode[] keyCodes;
+		[SerializeField] bool mouse0;
+		[SerializeField] bool mouse1;
+		[SerializeField] float slowMoTimeScale = 0.3f;
 
-        void Update () {
+		void Update () {
 			Time.timeScale = IsSlowMotion()? slowMoTimeScale: 1f;
 		}
 

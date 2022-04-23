@@ -40,7 +40,7 @@ namespace RootMotion.Dynamics
         private bool directTargetParent;
         private Vector3 targetVelocity;
         private Vector3 targetAnimatedCenterOfMass;
-        
+         
         public void Initiate(MuscleLite[] colleagues)
         {
             name = joint.name;
@@ -84,7 +84,7 @@ namespace RootMotion.Dynamics
             // Fix target Transforms
             defaultTargetLocalPosition = target.localPosition;
             defaultTargetLocalRotation = target.localRotation;
-            targetAnimatedCenterOfMass = V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
+            //targetAnimatedCenterOfMass = V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
 
             // Resetting
             if (joint.connectedBody == null)
@@ -151,12 +151,12 @@ namespace RootMotion.Dynamics
             rigidbody.angularVelocity = Vector3.zero;
 
             targetVelocity = Vector3.zero;
-            targetAnimatedCenterOfMass = V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
+            //targetAnimatedCenterOfMass = V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
         }
 
         public void Read()
         {
-            Vector3 tAM = V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
+            Vector3 tAM = Vector3.zero;// = V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
             targetVelocity = (tAM - targetAnimatedCenterOfMass) / Time.deltaTime;
             targetAnimatedCenterOfMass = tAM;
 

@@ -41,9 +41,9 @@ namespace RootMotion.Demos {
 			}
 
 			lastPosition = transform.position;
-			localPosition = transform.localPosition;
+			localPosition = transform.parent.InverseTransformPoint(transform.position);
 			lastRotation = transform.rotation;
-			localRotation = transform.localRotation;
+			localRotation = Quaternion.Inverse(transform.parent.rotation) * transform.rotation;
 		}
 
 		protected virtual void LateUpdate() {
@@ -63,11 +63,7 @@ namespace RootMotion.Demos {
 			if (smoothFollow) {
 				transform.position = Vector3.Lerp(lastPosition, transform.parent.TransformPoint(localPosition), Time.deltaTime * smoothFollowSpeed);
 				transform.rotation = Quaternion.Lerp(lastRotation, transform.parent.rotation * localRotation, Time.deltaTime * smoothFollowSpeed);
-			} else
-            {
-                transform.localPosition = localPosition;
-                transform.localRotation = localRotation;
-            }
+			}
 
 			lastPosition = transform.position;
 			lastRotation = transform.rotation;

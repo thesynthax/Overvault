@@ -130,7 +130,7 @@ namespace RootMotion.Dynamics {
             if (float.IsInfinity(aV.x)) return Vector3.zero;
             angle *= Mathf.Deg2Rad;
             angle /= deltaTime;
-            angle = QuaTools.ToBiPolar(angle);
+            //angle = QuaTools.ToBiPolar(angle);
             aV *= angle;
             return aV;
         }

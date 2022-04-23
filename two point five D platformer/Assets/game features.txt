@@ -68,8 +68,10 @@ air movement features:
         - 
 
 to do:
+    - sandbox level with beautiful assets
     - Feet IK
     - editing transition exit times using script to improve vault accuracy
+    - polishing transition times for more smooth animations
     - learning cascadeur
     - aerial movement:
         - falling (animation, code(x velocity during fall depends upon the x velocity before falling starts))
@@ -83,5 +85,6 @@ to do:
     - ragdoll
         - getup smooth transition (from animfollow)
         - ragdoll balance (...to be added more in detail)
+        - prolly rewrite complete ragdoll
     - ledge system:
     - climb system:

@@ -6,23 +6,25 @@ namespace RootMotion.Demos {
 	/// <summary>
 	/// The base abstract class for all character controllers, provides common functionality.
 	/// </summary>
+	[RequireComponent(typeof(Rigidbody))]
+	[RequireComponent(typeof(CapsuleCollider))]
 	public abstract class CharacterBase: MonoBehaviour {
 
 		[Header("Base Parameters")]
 
-        [Tooltip("If specified, will use the direction from the character to this Transform as the gravity vector instead of Physics.gravity. Physics.gravity.magnitude will be used as the magnitude of the gravity vector.")]
-        public Transform gravityTarget;
+		[Tooltip("If specified, will use the direction from the character to this Transform as the gravity vector instead of Physics.gravity. Physics.gravity.magnitude will be used as the magnitude of the gravity vector.")] 
+		public Transform gravityTarget;
 
-        [Tooltip("Multiplies gravity applied to the character even if 'Individual Gravity' is unchecked.")]
-        public float gravityMultiplier = 2f; // gravity modifier - often higher than natural gravity feels right for game characters
+		[Tooltip("Multiplies gravity applied to the character even if 'Individual Gravity' is unchecked.")] 
+		[SerializeField] protected float gravityMultiplier = 2f; // gravity modifier - often higher than natural gravity feels right for game characters
 
-        public float airborneThreshold = 0.6f; // Height from ground after which the character is considered airborne
-        public float slopeStartAngle = 50f; // The start angle of velocity dampering on slopes
-        public float slopeEndAngle = 85f; // The end angle of velocity dampering on slopes
-        public float spherecastRadius = 0.1f; // The radius of sperecasting
-        public LayerMask groundLayers; // The walkable layers
+		[SerializeField] protected float airborneThreshold = 0.6f; // Height from ground after which the character is considered airborne
+		[SerializeField] float slopeStartAngle = 50f; // The start angle of velocity dampering on slopes
+		[SerializeField] float slopeEndAngle = 85f; // The end angle of velocity dampering on slopes
+		[SerializeField] float spherecastRadius = 0.1f; // The radius of sperecasting
+		[SerializeField] LayerMask groundLayers; // The walkable layers
 
-        private PhysicMaterial zeroFrictionMaterial;
+		private PhysicMaterial zeroFrictionMaterial;
 		private PhysicMaterial highFrictionMaterial;
 		protected Rigidbody r;
 		protected const float half = 0.5f;

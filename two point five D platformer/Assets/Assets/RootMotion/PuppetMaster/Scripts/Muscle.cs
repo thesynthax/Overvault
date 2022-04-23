@@ -853,7 +853,7 @@ namespace RootMotion.Dynamics
             float readDeltaTime = Time.time - lastReadTime;
             lastReadTime = Time.time;
 
-            Vector3 tAM = V3Tools.TransformPointUnscaled(target, defaultTargetRotRelToMuscleInverse * rigidbody.centerOfMass); // Center of mass is unscaled, so can't use Transform.TransformPoint() here
+            Vector3 tAM = Vector3.zero;//V3Tools.TransformPointUnscaled(target, defaultTargetRotRelToMuscleInverse * rigidbody.centerOfMass); // Center of mass is unscaled, so can't use Transform.TransformPoint() here
 
             if (readDeltaTime > 0f)
             {
@@ -871,7 +871,7 @@ namespace RootMotion.Dynamics
 
             if (additionalPin != null)
             {
-                Vector3 aTAM = V3Tools.TransformPointUnscaled(additionalPinTarget, additionalRigidbody.centerOfMass); // Center of mass is unscaled, so can't use Transform.TransformPoint() here
+                Vector3 aTAM = Vector3.zero;//V3Tools.TransformPointUnscaled(additionalPinTarget, additionalRigidbody.centerOfMass); // Center of mass is unscaled, so can't use Transform.TransformPoint() here
 
                 if (readDeltaTime > 0f)
                 {
@@ -896,14 +896,14 @@ namespace RootMotion.Dynamics
             mappedAngularVelocity = Vector3.zero;
             additionalTargetVelocity = Vector3.zero;
 
-            targetAnimatedCenterOfMass = V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
+            targetAnimatedCenterOfMass = Vector3.zero;//V3Tools.TransformPointUnscaled(target, rigidbody.centerOfMass);
             targetAnimatedPosition = target.position;
             targetAnimatedWorldRotation = target.rotation;
             lastMappedPosition = target.position;
             lastMappedRotation = target.rotation;
             if (additionalPin != null)
             {
-                additionalPinTargetAnimatedCenterOfMass = V3Tools.TransformPointUnscaled(additionalPinTarget, additionalRigidbody.centerOfMass);
+                additionalPinTargetAnimatedCenterOfMass = Vector3.zero;//V3Tools.TransformPointUnscaled(additionalPinTarget, additionalRigidbody.centerOfMass);
                 //additionalTargetAnimatedPosition = additionalPinTarget.position;
             }
         }

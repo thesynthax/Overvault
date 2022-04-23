@@ -47,7 +47,6 @@ namespace RootMotion {
 		public LayerMask blockingLayers;
 		public float blockingRadius = 1f;
 		public float blockingSmoothTime = 0.1f;
-        public float blockingOriginOffset;
 		[Range(0f, 1f)] public float blockedOffset = 0.5f;
 
 		public float x { get; private set; } // The current x rotation of the camera
@@ -63,19 +62,6 @@ namespace RootMotion {
 		private Quaternion r = Quaternion.identity;
 		private Vector3 lastUp;
 		private float blockedDistance = 10f, blockedDistanceV;
-
-        public void SetAngles(Quaternion rotation)
-        {
-            Vector3 euler = rotation.eulerAngles;
-            this.x = euler.y;
-            this.y = euler.x;
-        }
-
-        public void SetAngles(float yaw, float pitch)
-        {
-            this.x = yaw;
-            this.y = pitch;
-        }
 
 		// Initiate, set the params to the current transformation of the camera relative to the target
 		protected virtual void Awake () {
@@ -165,19 +151,17 @@ namespace RootMotion {
 				Vector3 t = smoothPosition + rotation * offset;
 				Vector3 f = rotation * -Vector3.forward;
 
-                if (blockingLayers != -1)
-                {
-                    RaycastHit hit;
-                    if (Physics.SphereCast(t - f * blockingOriginOffset, blockingRadius, f, out hit, blockingOriginOffset + distanceTarget - blockingRadius, blockingLayers))
-                    {
-                        blockedDistance = Mathf.SmoothDamp(blockedDistance, hit.distance + blockingRadius * (1f - blockedOffset) - blockingOriginOffset, ref blockedDistanceV, blockingSmoothTime);
-                    }
-                    else blockedDistance = distanceTarget;
+				if (blockingLayers != -1) {
+					RaycastHit hit;
+					if (Physics.SphereCast (t, blockingRadius, f, out hit, distanceTarget - blockingRadius, blockingLayers)) {
+						//distance = hit.distance;
+						blockedDistance = Mathf.SmoothDamp(blockedDistance, hit.distance + blockingRadius * (1f - blockedOffset), ref blockedDistanceV, blockingSmoothTime);
+					} else blockedDistance = distanceTarget;
 
-                    distance = Mathf.Min(distance, blockedDistance);
-                }
+					distance = Mathf.Min(distance, blockedDistance);
+				}
 
-                position = t + f * distance;
+				position = t + f * distance;
 
 				// Translating the camera
 				transform.position = position;
