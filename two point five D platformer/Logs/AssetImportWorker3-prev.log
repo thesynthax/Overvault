@@ -10,7 +10,7 @@ Available memory:        15821 MB
 Using pre-set license
 Pro License: YES
 
-(Unity:413567): Gdk-CRITICAL **: 13:01:46.016: gdk_window_get_cursor: assertion 'GDK_IS_WINDOW (window)' failed
+(Unity:864046): Gdk-CRITICAL **: 21:27:34.960: gdk_window_get_cursor: assertion 'GDK_IS_WINDOW (window)' failed
 Desktop is 1920 x 1080 @ 60 Hz
 Initialize udev device monitor.
 
@@ -26,7 +26,7 @@ AssetImportWorker3
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-33917
+43893
 Successfully changed project path to: /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer
 /home/thesynthax/Unity Projects/Unity-Projects/two point five D platformer
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -58,7 +58,7 @@ Successfully changed project path to: /home/thesynthax/Unity Projects/Unity-Proj
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 71.81 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 102.17 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.0f1 (6eacc8284459)
 [Subsystems] Discovering subsystems at path /home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/Resources/UnitySubsystems
@@ -79,12 +79,15 @@ blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffe
 der_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture
 _footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap
  GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 1875334232
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -1139711176
+Shader 'Hidden/BOXOPHOBIC/The Vegetation Engine/Helpers/Debug': dependency 'LightMode' shader 'ForwardBase' not found
+State comes from an incompatible keyword space
+State comes from an incompatible keyword space
 Initialize mono
 Mono path[0] = '/home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/Managed'
 Mono path[1] = '/home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56567
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56046
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
@@ -92,83 +95,86 @@ Register platform support module: /home/thesynthax/Unity Editor/2021.3.0f1/Edito
 Trying to register platform support module: /home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll (that doesn't exist). Retrying without overrides.
 Platform support module is not available: /home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/thesynthax/Unity Editor/2021.3.0f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.005056 seconds.
+Registered in 0.006192 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 85.00 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 110.81 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.048 seconds
+- Completed reload, in  0.573 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1049ms)
-		BeginReloadAssembly (445ms)
+	ReloadAssembly (574ms)
+		BeginReloadAssembly (41ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (512ms)
-			LoadAssemblies (510ms)
+		EndReloadAssembly (438ms)
+			LoadAssemblies (39ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (115ms)
+			SetupTypeCache (92ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (255ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (276ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (45ms)
+				InitializePlatformSupportModulesInManaged (46ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (85ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (85ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
+				RefreshPlugins (111ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (82ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002122 seconds.
+Registered in 0.002164 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for LinuxStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 77.26 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 149.62 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 UpdateMenuTitleForLanguage: 10
 Mono: successfully reloaded assembly
-- Completed reload, in  5.800 seconds
+- Completed reload, in  7.143 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5801ms)
-		BeginReloadAssembly (69ms)
+	ReloadAssembly (7145ms)
+		BeginReloadAssembly (290ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (5639ms)
-			LoadAssemblies (4656ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (6629ms)
+			LoadAssemblies (2726ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (212ms)
+			SetupTypeCache (572ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (73ms)
-			SetupLoadedEditorAssemblies (641ms)
+			RebuildScriptCaches (106ms)
+			SetupLoadedEditorAssemblies (3343ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (77ms)
-				BeforeProcessingInitializeOnLoad (67ms)
-				ProcessInitializeOnLoadAttributes (394ms)
-				ProcessInitializeOnLoadMethodAttributes (86ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				RefreshPlugins (150ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (2892ms)
+				ProcessInitializeOnLoadMethodAttributes (183ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (3ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+State comes from an incompatible keyword space
+State comes from an incompatible keyword space
+Shader 'Hidden/BOXOPHOBIC/The Vegetation Engine/Helpers/Debug': dependency 'LightMode' shader 'ForwardBase' not found
+Launched and connected shader compiler UnityShaderCompiler after 0.18 seconds
 -------- Shader TENKOKU/cloud_sphere compilation failed
 #version 450
 #extension GL_ARB_explicit_attrib_location : require
@@ -804,12 +810,12 @@ GLSL compilation failed for shader TENKOKU/cloud_sphere:
 0(615) : error C1503: undefined variable "u_xlat10_2"
 0(619) : error C1503: undefined variable "u_xlat10_2"
 Note: Creation of internal variant of shader 'TENKOKU/cloud_sphere' failed.
-Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 1.39 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4587 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 51 unused Assets / (2.0 MB). Loaded Objects now: 5061.
-Memory consumption went from 222.4 MB to 220.3 MB.
-Total: 4.323992 ms (FindLiveObjects: 0.322184 ms CreateObjectMapping: 0.294192 ms MarkObjects: 3.040246 ms  DeleteObjects: 0.666363 ms)
+Unloading 4992 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 62 unused Assets / (11.5 MB). Loaded Objects now: 5463.
+Memory consumption went from 403.2 MB to 391.8 MB.
+Total: 7.123286 ms (FindLiveObjects: 0.470120 ms CreateObjectMapping: 0.424415 ms MarkObjects: 3.727116 ms  DeleteObjects: 2.500014 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -817,723 +823,6 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 64263.491877 seconds.
-  path: Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/Perlin128.asset
-  artifactKey: Guid(aed356a4d70acc0408acc507ee13d8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/Perlin128.asset using Guid(aed356a4d70acc0408acc507ee13d8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '101d430aab84a4ab41f3e5f02a5a12fe') in 1.377941 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/LIGHTFLARES
-  artifactKey: Guid(6ece8b41fc9c9ff4383d27fe20740eb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/LIGHTFLARES using Guid(6ece8b41fc9c9ff4383d27fe20740eb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3422a6f1ed4b7c00b5554fee90da816') in 0.000689 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/tex_clouds_a_hires.psd
-  artifactKey: Guid(6221a9b414a97254b8822d4b4d7667db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/tex_clouds_a_hires.psd using Guid(6221a9b414a97254b8822d4b4d7667db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae1a2f8d9e352ba4171a8fa360ae221d') in 0.586531 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.234959 seconds.
-  path: Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/tex_aurora_norm.psd
-  artifactKey: Guid(5a6b418ea0e065549978f750abf5531e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/TENKOKU - DYNAMIC SKY/TEXTURES/tex_aurora_norm.psd using Guid(5a6b418ea0e065549978f750abf5531e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb27d27735a68b2c57c11ca72a34b3f5') in 0.009483 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002083 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for LinuxStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.188 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1189ms)
-		BeginReloadAssembly (95ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (1008ms)
-			LoadAssemblies (55ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (210ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (618ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (52ms)
-				ProcessInitializeOnLoadAttributes (441ms)
-				ProcessInitializeOnLoadMethodAttributes (100ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
--------- Shader TENKOKU/cloud_sphere compilation failed
-#version 450
-#extension GL_ARB_explicit_attrib_location : require
-#ifdef GL_ARB_shader_bit_encoding
-#extension GL_ARB_shader_bit_encoding : enable
-#endif
-#define HLSLCC_ENABLE_UNIFORM_BUFFERS 1
-#if HLSLCC_ENABLE_UNIFORM_BUFFERS
-#define UNITY_UNIFORM
-#else
-#define UNITY_UNIFORM uniform
-#endif
-#define UNITY_SUPPORTS_UNIFORM_LOCATION 1
-#if UNITY_SUPPORTS_UNIFORM_LOCATION
-#define UNITY_LOCATION(x) layout(location = x)
-#define UNITY_BINDING(x) layout(binding = x, std140)
-#else
-#define UNITY_LOCATION(x)
-#define UNITY_BINDING(x) layout(std140)
-#endif
-uniform 	vec3 _WorldSpaceCameraPos;
-uniform 	float _SampleCount0;
-uniform 	float _SampleCount1;
-uniform 	int _SampleCountL;
-uniform 	float _NoiseFreq1;
-uniform 	float _NoiseFreq2;
-uniform 	float _NoiseAmp1;
-uniform 	float _NoiseAmp2;
-uniform 	float _NoiseBias;
-uniform 	float _NoiseBias2;
-uniform 	float _NoiseBias3;
-uniform 	vec3 _Scroll1;
-uniform 	vec3 _Scroll2;
-uniform 	float _Altitude0;
-uniform 	float _Altitude1;
-uniform 	float _Altitude2;
-uniform 	float _Altitude3;
-uniform 	float _Altitude4;
-uniform 	float _Altitude5;
-uniform 	float _FarDist;
-uniform 	float _Scatter;
-uniform 	float _HGCoeff;
-uniform 	float _Extinct;
-uniform 	float _Edge;
-uniform 	float _Darkness;
-uniform 	float _humid;
-uniform 	vec4 Tenkoku_Vec_SunFwd;
-uniform 	vec4 Tenkoku_Vec_MoonFwd;
-uniform 	vec4 Tenkoku_Vec_LightningFwd;
-uniform 	float Tenkoku_LightningLightIntensity;
-uniform 	vec4 Tenkoku_LightningColor;
-uniform 	vec4 _TenkokuSunColor;
-uniform 	vec4 Tenkoku_MoonLightColor;
-uniform 	vec4 _TenkokuCloudColor;
-uniform 	vec4 _TenkokuCloudAmbientColor;
-uniform 	float _Tenkoku_Ambient;
-uniform 	float _Tenkoku_AmbientGI;
-uniform 	vec4 _Tenkoku_overcastColor;
-uniform 	float _Tenkoku_overcastAmt;
-uniform 	float _cS;
-uniform 	float _tenkokuTimer;
-uniform 	float _tenkokuNoiseTimer;
-uniform 	float _Tenkoku_UseElek;
-UNITY_LOCATION(0) uniform  sampler2D _Tenkoku_SkyTex;
-UNITY_LOCATION(1) uniform  sampler2D _Tenkoku_SkyBox;
-UNITY_LOCATION(2) uniform  sampler3D _NoiseTex1;
-UNITY_LOCATION(3) uniform  sampler3D _NoiseTex2;
-UNITY_LOCATION(4) uniform  sampler2D _CloudTex1;
-in  vec2 vs_TEXCOORD0;
-in  vec3 vs_TEXCOORD1;
-in  vec4 vs_TEXCOORD2;
-layout(location = 0) out vec4 SV_Target0;
-vec3 u_xlat0;
-vec3 u_xlat1;
-bvec2 u_xlatb1;
-vec3 u_xlat2;
-vec4 u_xlat16_2;
-vec3 u_xlat3;
-vec3 u_xlat4;
-vec3 u_xlat5;
-vec4 u_xlat6;
-vec4 u_xlat16_6;
-vec4 u_xlat7;
-vec4 u_xlat16_7;
-vec3 u_xlat8;
-vec4 u_xlat16_8;
-vec4 u_xlat9;
-vec4 u_xlat16_9;
-vec3 u_xlat10;
-vec4 u_xlat16_10;
-vec4 u_xlat11;
-vec4 u_xlat16_11;
-vec3 u_xlat12;
-vec4 u_xlat16_12;
-vec3 u_xlat13;
-vec4 u_xlat16_13;
-vec3 u_xlat14;
-vec4 u_xlat16_14;
-vec2 u_xlat16;
-bool u_xlatb16;
-vec3 u_xlat19;
-vec3 u_xlat22;
-int u_xlati24;
-float u_xlat25;
-bool u_xlatb25;
-vec3 u_xlat26;
-float u_xlat28;
-vec2 u_xlat31;
-int u_xlati31;
-bvec2 u_xlatb31;
-vec2 u_xlat34;
-vec2 u_xlat35;
-bool u_xlatb35;
-float u_xlat37;
-float u_xlat38;
-float u_xlat39;
-bool u_xlatb39;
-float u_xlat40;
-int u_xlati40;
-bool u_xlatb40;
-float u_xlat43;
-float u_xlat45;
-bool u_xlatb45;
-float u_xlat46;
-int u_xlati46;
-float u_xlat47;
-float u_xlat48;
-int u_xlati48;
-float u_xlat49;
-int u_xlati49;
-float u_xlat50;
-bool u_xlatb50;
-float u_xlat51;
-bool u_xlatb51;
-float u_xlat52;
-float u_xlat53;
-float u_xlat54;
-bool u_xlatb54;
-float u_xlat55;
-int u_xlati56;
-float u_xlat57;
-bool u_xlatb57;
-void main()
-{
-    u_xlat0.xyz = max(vs_TEXCOORD2.xyw, vec3(0.00100000005, 0.00100000005, 0.00100000005));
-    u_xlatb1.xy = equal(vec4(_Tenkoku_UseElek), vec4(0.0, 1.0, 0.0, 0.0)).xy;
-    if(u_xlatb1.x){
-        u_xlat1.xz = u_xlat0.xy / u_xlat0.zz;
-        u_xlat10_2 = texture(_Tenkoku_SkyTex, u_xlat1.xz);
-    } else {
-        u_xlat16_2.x = float(1.0);
-        u_xlat16_2.y = float(1.0);
-        u_xlat16_2.z = float(1.0);
-    }
-    if(u_xlatb1.y){
-        u_xlat0.xy = u_xlat0.xy / u_xlat0.zz;
-        u_xlat16_2 = texture(_Tenkoku_SkyBox, u_xlat0.xy);
-    }
-    u_xlat0.xyz = u_xlat10_2.xyz * vec3(0.800000012, 0.800000012, 0.800000012);
-    u_xlatb45 = (-vs_TEXCOORD1.y)<0.00999999978;
-    u_xlatb1.x = 0.0>=_FarDist;
-    u_xlatb45 = u_xlatb45 || u_xlatb1.x;
-    if(u_xlatb45){
-        SV_Target0.xyz = u_xlat0.xyz;
-        SV_Target0.w = 0.0;
-        return;
-    }
-    u_xlat1.xy = vs_TEXCOORD0.xy + vec2(vec2(_tenkokuTimer, _tenkokuTimer));
-    u_xlat3.xyz = vec3(vec3(_Darkness, _Darkness, _Darkness)) * (-u_xlat0.xyz) + u_xlat0.xyz;
-    u_xlat45 = dot(vec2(vec2(_tenkokuNoiseTimer, _tenkokuNoiseTimer)), u_xlat1.xy);
-    u_xlat45 = sin(u_xlat45);
-    u_xlat45 = u_xlat45 * 43758.5469;
-    u_xlat45 = fract(u_xlat45);
-    u_xlatb31.x = 0.0<_NoiseBias;
-    if(u_xlatb31.x){
-        u_xlat31.xy = trunc(vec2(_SampleCount1, _SampleCount0));
-        u_xlat46 = (-u_xlat31.x) + u_xlat31.y;
-        u_xlat31.x = (-vs_TEXCOORD1.y) * u_xlat46 + u_xlat31.x;
-        u_xlati46 = int(u_xlat31.x);
-        u_xlat47 = _Altitude0 / (-vs_TEXCOORD1.y);
-        u_xlat48 = _Altitude1 / (-vs_TEXCOORD1.y);
-        u_xlat48 = (-u_xlat47) + u_xlat48;
-        u_xlat31.x = trunc(u_xlat31.x);
-        u_xlat4.x = u_xlat48 / u_xlat31.x;
-        u_xlat48 = u_xlat45 * u_xlat48;
-        u_xlat31.x = u_xlat48 / u_xlat31.x;
-        u_xlat48 = dot((-vs_TEXCOORD1.xyz), Tenkoku_Vec_SunFwd.xyz);
-        u_xlat19.x = (-_HGCoeff) * _HGCoeff + 1.0;
-        u_xlat19.x = u_xlat19.x * 0.5;
-        u_xlat34.x = _HGCoeff * _HGCoeff + 1.0;
-        u_xlat48 = (-_HGCoeff) * u_xlat48 + u_xlat34.x;
-        u_xlat48 = u_xlat48 * u_xlat48;
-        u_xlat48 = u_xlat19.x / u_xlat48;
-        u_xlat19.x = u_xlat48 * 6.0 + -3.0;
-        u_xlat19.x = clamp(u_xlat19.x, 0.0, 1.0);
-        u_xlat48 = u_xlat48 + u_xlat19.x;
-        u_xlat31.x = u_xlat31.x + u_xlat47;
-        u_xlat5.xz = _WorldSpaceCameraPos.xz;
-        u_xlat5.y = 0.0;
-        u_xlat19.xyz = (-vs_TEXCOORD1.xyz) * u_xlat31.xxx + u_xlat5.xyz;
-        u_xlatb31.x = 0.275000006<_Tenkoku_overcastAmt;
-        u_xlati31 = (u_xlatb31.x) ? 4 : u_xlati46;
-        u_xlat5.xyz = _Scroll1.xyz * vec3(vec3(_tenkokuTimer, _tenkokuTimer, _tenkokuTimer));
-        u_xlat6.xyz = _Scroll2.xyz * vec3(vec3(_tenkokuTimer, _tenkokuTimer, _tenkokuTimer));
-        u_xlat46 = _NoiseBias * 2.55000019 + -0.400000006;
-        u_xlat47 = (-_Altitude0) + _Altitude1;
-        u_xlat7.xy = vec2(u_xlat47) * vec2(0.100000001, 0.400000006);
-        u_xlat7.xy = vec2(1.0, 1.0) / u_xlat7.xy;
-        u_xlat50 = float(_SampleCountL);
-        u_xlat51 = u_xlat50 * Tenkoku_Vec_SunFwd.y;
-        u_xlat37 = _Extinct * -0.75;
-        u_xlat8.xyz = u_xlat19.xyz;
-        u_xlat52 = u_xlat3.x;
-        u_xlat53 = 0.0;
-        u_xlat9.x = float(0.0);
-        for(int u_xlati_loop_1 = int(0) ; u_xlati_loop_1<u_xlati31 ; u_xlati_loop_1++)
-        {
-            u_xlat10.xyz = u_xlat8.xyz * vec3(vec3(_NoiseFreq1, _NoiseFreq1, _NoiseFreq1));
-            u_xlat10.xyz = u_xlat10.xyz * vec3(vec3(_cS, _cS, _cS));
-            u_xlat11.xyz = u_xlat8.xyz * vec3(_NoiseFreq2);
-            u_xlat11.xyz = u_xlat11.xyz * vec3(vec3(_cS, _cS, _cS));
-            u_xlat10.xyz = u_xlat10.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat5.xyz;
-            u_xlat11.xyz = u_xlat11.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat6.xyz;
-            u_xlat16_10 = textureLod(_NoiseTex1, u_xlat10.xyz, 0.0);
-            u_xlat16_11 = textureLod(_NoiseTex2, u_xlat11.xyz, 0.0);
-            u_xlat39 = u_xlat16_11.w * _NoiseAmp2;
-            u_xlat39 = u_xlat16_10.w * _NoiseAmp1 + u_xlat39;
-            u_xlat39 = u_xlat46 + u_xlat39;
-            u_xlat39 = clamp(u_xlat39, 0.0, 1.0);
-            u_xlat54 = u_xlat8.y + (-_Altitude0);
-            u_xlat10.x = u_xlat7.x * u_xlat54;
-            u_xlat10.x = clamp(u_xlat10.x, 0.0, 1.0);
-            u_xlat25 = u_xlat10.x * -2.0 + 3.0;
-            u_xlat10.x = u_xlat10.x * u_xlat10.x;
-            u_xlat10.x = u_xlat10.x * u_xlat25;
-            u_xlat39 = u_xlat39 * u_xlat10.x;
-            u_xlat54 = u_xlat47 + (-u_xlat54);
-            u_xlat54 = u_xlat7.y * u_xlat54;
-            u_xlat54 = clamp(u_xlat54, 0.0, 1.0);
-            u_xlat10.x = u_xlat54 * -2.0 + 3.0;
-            u_xlat54 = u_xlat54 * u_xlat54;
-            u_xlat54 = u_xlat54 * u_xlat10.x;
-            u_xlat39 = u_xlat54 * u_xlat39;
-            u_xlatb54 = _Edge<u_xlat39;
-            if(u_xlatb54){
-                u_xlat54 = u_xlat4.x * u_xlat39;
-                u_xlat10.x = float(u_xlati_loop_1);
-                u_xlat10.xy = u_xlat1.xy + u_xlat10.xx;
-                u_xlat10.x = dot(vec2(vec2(_tenkokuNoiseTimer, _tenkokuNoiseTimer)), u_xlat10.xy);
-                u_xlat10.x = sin(u_xlat10.x);
-                u_xlat10.x = u_xlat10.x * 43758.5469;
-                u_xlat10.x = fract(u_xlat10.x);
-                u_xlat54 = u_xlat54 * _Scatter;
-                u_xlat54 = u_xlat48 * u_xlat54;
-                u_xlat25 = (-u_xlat8.y) + _Altitude1;
-                u_xlat40 = u_xlat25 / u_xlat51;
-                u_xlat11.xyz = vec3(u_xlat40) * Tenkoku_Vec_SunFwd.xyz;
-                u_xlat11.xyz = u_xlat11.xyz * u_xlat10.xxx + u_xlat8.xyz;
-                u_xlat12.xyz = u_xlat11.xyz;
-                u_xlat55 = 0.0;
-                for(int u_xlati_loop_2 = 0 ; u_xlati_loop_2<_SampleCountL ; u_xlati_loop_2++)
-                {
-                    u_xlat13.xyz = u_xlat12.xyz * vec3(vec3(_NoiseFreq1, _NoiseFreq1, _NoiseFreq1));
-                    u_xlat13.xyz = u_xlat13.xyz * vec3(vec3(_cS, _cS, _cS));
-                    u_xlat14.xyz = u_xlat12.xyz * vec3(_NoiseFreq2);
-                    u_xlat14.xyz = u_xlat14.xyz * vec3(vec3(_cS, _cS, _cS));
-                    u_xlat13.xyz = u_xlat13.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat5.xyz;
-                    u_xlat14.xyz = u_xlat14.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat6.xyz;
-                    u_xlat16_13 = textureLod(_NoiseTex1, u_xlat13.xyz, 0.0);
-                    u_xlat16_14 = textureLod(_NoiseTex2, u_xlat14.xyz, 0.0);
-                    u_xlat57 = u_xlat16_14.w * _NoiseAmp2;
-                    u_xlat57 = u_xlat16_13.w * _NoiseAmp1 + u_xlat57;
-                    u_xlat57 = u_xlat46 + u_xlat57;
-                    u_xlat57 = clamp(u_xlat57, 0.0, 1.0);
-                    u_xlat13.x = u_xlat12.y + (-_Altitude0);
-                    u_xlat28 = u_xlat7.x * u_xlat13.x;
-                    u_xlat28 = clamp(u_xlat28, 0.0, 1.0);
-                    u_xlat43 = u_xlat28 * -2.0 + 3.0;
-                    u_xlat28 = u_xlat28 * u_xlat28;
-                    u_xlat28 = u_xlat28 * u_xlat43;
-                    u_xlat57 = u_xlat57 * u_xlat28;
-                    u_xlat13.x = u_xlat47 + (-u_xlat13.x);
-                    u_xlat13.x = u_xlat7.y * u_xlat13.x;
-                    u_xlat13.x = clamp(u_xlat13.x, 0.0, 1.0);
-                    u_xlat28 = u_xlat13.x * -2.0 + 3.0;
-                    u_xlat13.x = u_xlat13.x * u_xlat13.x;
-                    u_xlat13.x = u_xlat13.x * u_xlat28;
-                    u_xlat57 = u_xlat57 * u_xlat13.x;
-                    u_xlat55 = u_xlat57 * u_xlat40 + u_xlat55;
-                    u_xlat12.xyz = Tenkoku_Vec_SunFwd.xyz * vec3(u_xlat40) + u_xlat12.xyz;
-                }
-                u_xlatb40 = 0.100000001>=u_xlat55;
-                u_xlat40 = (u_xlatb40) ? 0.0 : u_xlat55;
-                u_xlat11.x = u_xlat40 * (-_Extinct);
-                u_xlat11.x = u_xlat11.x * 1.44269502;
-                u_xlat11.x = exp2(u_xlat11.x);
-                u_xlat40 = u_xlat37 * u_xlat40;
-                u_xlat40 = u_xlat40 * 1.44269502;
-                u_xlat40 = exp2(u_xlat40);
-                u_xlat40 = (-u_xlat40) + 1.0;
-                u_xlat40 = u_xlat40 * u_xlat11.x;
-                u_xlat40 = u_xlat54 * u_xlat40;
-                u_xlat40 = u_xlat40 * _TenkokuCloudColor.x;
-                u_xlat11.x = u_xlat9.x * (-_Extinct);
-                u_xlat11.x = u_xlat11.x * 1.44269502;
-                u_xlat11.x = exp2(u_xlat11.x);
-                u_xlat26.x = u_xlat37 * u_xlat9.x;
-                u_xlat26.x = u_xlat26.x * 1.44269502;
-                u_xlat26.x = exp2(u_xlat26.x);
-                u_xlat26.x = (-u_xlat26.x) + 1.0;
-                u_xlat11.x = u_xlat26.x * u_xlat11.x;
-                u_xlat52 = u_xlat40 * u_xlat11.x + u_xlat52;
-                u_xlat25 = u_xlat25 / u_xlat50;
-                u_xlat26.xy = vec2(u_xlat25) * vec2(1.0, 0.0);
-                u_xlat26.xyz = u_xlat26.yxy * u_xlat10.xxx + u_xlat8.xyz;
-                u_xlat12.xyz = u_xlat26.xyz;
-                u_xlat10.x = float(0.0);
-                for(int u_xlati_loop_3 = int(0) ; u_xlati_loop_3<_SampleCountL ; u_xlati_loop_3++)
-                {
-                    u_xlat13.xyz = u_xlat12.xyz * vec3(vec3(_NoiseFreq1, _NoiseFreq1, _NoiseFreq1));
-                    u_xlat13.xyz = u_xlat13.xyz * vec3(vec3(_cS, _cS, _cS));
-                    u_xlat14.xyz = u_xlat12.xyz * vec3(_NoiseFreq2);
-                    u_xlat14.xyz = u_xlat14.xyz * vec3(vec3(_cS, _cS, _cS));
-                    u_xlat13.xyz = u_xlat13.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat5.xyz;
-                    u_xlat14.xyz = u_xlat14.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat6.xyz;
-                    u_xlat16_13 = textureLod(_NoiseTex1, u_xlat13.xyz, 0.0);
-                    u_xlat16_14 = textureLod(_NoiseTex2, u_xlat14.xyz, 0.0);
-                    u_xlat57 = u_xlat16_14.w * _NoiseAmp2;
-                    u_xlat57 = u_xlat16_13.w * _NoiseAmp1 + u_xlat57;
-                    u_xlat57 = u_xlat46 + u_xlat57;
-                    u_xlat57 = clamp(u_xlat57, 0.0, 1.0);
-                    u_xlat13.x = u_xlat12.y + (-_Altitude0);
-                    u_xlat28 = u_xlat7.x * u_xlat13.x;
-                    u_xlat28 = clamp(u_xlat28, 0.0, 1.0);
-                    u_xlat43 = u_xlat28 * -2.0 + 3.0;
-                    u_xlat28 = u_xlat28 * u_xlat28;
-                    u_xlat28 = u_xlat28 * u_xlat43;
-                    u_xlat57 = u_xlat57 * u_xlat28;
-                    u_xlat13.x = u_xlat47 + (-u_xlat13.x);
-                    u_xlat13.x = u_xlat7.y * u_xlat13.x;
-                    u_xlat13.x = clamp(u_xlat13.x, 0.0, 1.0);
-                    u_xlat28 = u_xlat13.x * -2.0 + 3.0;
-                    u_xlat13.x = u_xlat13.x * u_xlat13.x;
-                    u_xlat13.x = u_xlat13.x * u_xlat28;
-                    u_xlat57 = u_xlat57 * u_xlat13.x;
-                    u_xlat10.x = u_xlat57 * u_xlat25 + u_xlat10.x;
-                    u_xlat12.xyz = vec3(u_xlat25) * vec3(0.0, 1.0, 0.0) + u_xlat12.xyz;
-                }
-                u_xlatb25 = 0.100000001>=u_xlat10.x;
-                u_xlat25 = (u_xlatb25) ? 0.0 : u_xlat10.x;
-                u_xlat40 = u_xlat25 * (-_Extinct);
-                u_xlat40 = u_xlat40 * 1.44269502;
-                u_xlat40 = exp2(u_xlat40);
-                u_xlat25 = u_xlat37 * u_xlat25;
-                u_xlat25 = u_xlat25 * 1.44269502;
-                u_xlat25 = exp2(u_xlat25);
-                u_xlat25 = (-u_xlat25) + 1.0;
-                u_xlat25 = u_xlat25 * u_xlat40;
-                u_xlat54 = u_xlat54 * u_xlat25;
-                u_xlat53 = u_xlat54 * u_xlat11.x + u_xlat53;
-                u_xlat9.x = u_xlat39 * u_xlat4.x + u_xlat9.x;
-            }
-            u_xlat8.xyz = (-vs_TEXCOORD1.xyz) * u_xlat4.xxx + u_xlat8.xyz;
-        }
-    } else {
-        u_xlat52 = u_xlat3.x;
-        u_xlat53 = 0.0;
-        u_xlat9.x = 0.0;
-    }
-    u_xlat1.x = u_xlat9.x * 1.25;
-    u_xlat1.x = u_xlat1.x * (-_Extinct);
-    u_xlat1.x = u_xlat1.x * 1.44269502;
-    u_xlat1.x = exp2(u_xlat1.x);
-    u_xlat16.x = u_xlat1.x * u_xlat0.x + u_xlat52;
-    u_xlatb31.xy = lessThan(vec4(0.0, 0.0, 0.0, 0.0), vec4(_NoiseBias2, _NoiseBias3, _NoiseBias2, _NoiseBias3)).xy;
-    if(u_xlatb31.x){
-        u_xlat4.xy = vec2(_Altitude2, _Altitude3) / (-vs_TEXCOORD1.yy);
-        u_xlat31.x = (-u_xlat4.x) + u_xlat4.y;
-        u_xlat47 = u_xlat31.x * 0.0500000007;
-        u_xlat31.x = u_xlat45 * u_xlat31.x;
-        u_xlat31.x = u_xlat31.x * 0.0500000007 + u_xlat4.x;
-        u_xlat4.xz = _WorldSpaceCameraPos.xz;
-        u_xlat4.y = 0.0;
-        u_xlat4.xyz = (-vs_TEXCOORD1.xyz) * u_xlat31.xxx + u_xlat4.xyz;
-        u_xlat5.xyz = vec3(vec3(_tenkokuTimer, _tenkokuTimer, _tenkokuTimer)) * vec3(1.39999998, 0.0, 0.349999994);
-        u_xlat6.xyz = u_xlat5.xyz * _Scroll1.xyz;
-        u_xlat5.xyz = u_xlat5.xyz * _Scroll2.xyz;
-        u_xlat7 = vec4(_NoiseBias2) * vec4(1.29999995, 4.9000001, 24.0, 2.5) + vec4(0.200000003, 0.100000001, 20.0, 0.300000012);
-        u_xlat31.x = (-_Altitude2) + _Altitude3;
-        u_xlat8.xy = u_xlat31.xx * vec2(0.100000001, 0.400000006);
-        u_xlat8.xy = vec2(1.0, 1.0) / u_xlat8.xy;
-        u_xlat9 = u_xlat6.xzxz * vec4(0.5, 0.5, 0.5, 0.5);
-        u_xlat10.xyz = u_xlat4.xyz;
-        u_xlat48 = 0.0;
-        for(int u_xlati_loop_4 = 0 ; u_xlati_loop_4<4 ; u_xlati_loop_4++)
-        {
-            u_xlat11.xyz = u_xlat7.xxx * u_xlat10.xyz;
-            u_xlat11.xyz = u_xlat11.xyz * vec3(vec3(_cS, _cS, _cS));
-            u_xlat12.xyz = u_xlat7.yyy * u_xlat10.xyz;
-            u_xlat12.xyz = u_xlat12.xyz * vec3(vec3(_cS, _cS, _cS));
-            u_xlat13.xyz = u_xlat7.zzz * u_xlat10.xyz;
-            u_xlat13.xyz = u_xlat13.xyz * vec3(vec3(_cS, _cS, _cS));
-            u_xlat11.xyz = u_xlat11.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat6.xyz;
-            u_xlat12.xyz = u_xlat12.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat6.xyz;
-            u_xlat13.xyz = u_xlat13.xyz * vec3(9.99999975e-06, 9.99999975e-06, 9.99999975e-06) + u_xlat5.xyz;
-            u_xlat11.xyz = u_xlat11.xyz * vec3(1.0, 4.0, 1.0);
-            u_xlat16_11 = textureLod(_NoiseTex1, u_xlat11.xyz, 0.0);
-            u_xlat16_12 = textureLod(_NoiseTex2, u_xlat12.xyz, 0.0);
-            u_xlat16_13 = textureLod(_NoiseTex2, u_xlat13.xyz, 0.0);
-            u_xlat50 = u_xlat16_13.w * _NoiseAmp2;
-            u_xlat50 = u_xlat16_12.w * _NoiseAmp1 + u_xlat50;
-            u_xlat50 = (-u_xlat16_11.w) * 0.800000012 + u_xlat50;
-            u_xlat50 = u_xlat7.w + u_xlat50;
-            u_xlat50 = clamp(u_xlat50, 0.0, 1.0);
-            u_xlat51 = u_xlat10.y + (-_Altitude2);
-            u_xlat38 = u_xlat8.x * u_xlat51;
-            u_xlat38 = clamp(u_xlat38, 0.0, 1.0);
-            u_xlat55 = u_xlat38 * -2.0 + 3.0;
-            u_xlat38 = u_xlat38 * u_xlat38;
-            u_xlat38 = u_xlat38 * u_xlat55;
-            u_xlat50 = u_xlat50 * u_xlat38;
-            u_xlat51 = u_xlat31.x + (-u_xlat51);
-            u_xlat51 = u_xlat8.y * u_xlat51;
-            u_xlat51 = clamp(u_xlat51, 0.0, 1.0);
-            u_xlat38 = u_xlat51 * -2.0 + 3.0;
-            u_xlat51 = u_xlat51 * u_xlat51;
-            u_xlat51 = u_xlat51 * u_xlat38;
-            u_xlat50 = u_xlat50 * u_xlat51;
-            u_xlat11 = u_xlat10.xzxz * vec4(2.99999992e-05, 2.99999992e-05, 1.99999995e-05, 1.99999995e-05) + u_xlat9;
-            u_xlat16_12 = textureLod(_CloudTex1, u_xlat11.xy, 0.0);
-            u_xlat16_11 = textureLod(_CloudTex1, u_xlat11.zw, 0.0);
-            u_xlat51 = (-u_xlat16_11.y) + u_xlat16_12.z;
-            u_xlat50 = u_xlat50 * u_xlat51;
-            u_xlatb51 = _Edge<u_xlat50;
-            if(u_xlatb51){
-                u_xlat48 = u_xlat50 * u_xlat47 + u_xlat48;
-            }
-            u_xlat10.xyz = (-vs_TEXCOORD1.xyz) * vec3(u_xlat47) + u_xlat10.xyz;
-        }
-    } else {
-        u_xlat48 = 0.0;
-    }
-    u_xlat1.z = u_xlat48 * (-_Extinct);
-    u_xlat1.xz = u_xlat1.xz * vec2(8.0, 1.44269502);
-    u_xlat31.x = exp2(u_xlat1.z);
-    u_xlat3.xyz = u_xlat31.xxx * u_xlat0.xyz + u_xlat3.xyz;
-    u_xlat47 = _Altitude4 / (-vs_TEXCOORD1.y);
-    u_xlat48 = _Altitude5 / (-vs_TEXCOORD1.y);
-    u_xlat48 = (-u_xlat47) + u_xlat48;
-    u_xlat45 = u_xlat45 * u_xlat48;
-    u_xlat45 = u_xlat45 * 0.0199999996 + u_xlat47;
-    u_xlat4.xy = (-vs_TEXCOORD1.xz) * vec2(u_xlat45) + _WorldSpaceCameraPos.xz;
-    if(u_xlatb31.y){
-        u_xlat45 = u_xlat48 * 0.0199999996;
-        u_xlat34.xy = _Scroll1.xz * vec2(vec2(_tenkokuTimer, _tenkokuTimer));
-        u_xlat34.xy = u_xlat34.xy * vec2(0.224999994, 0.0375000015);
-        u_xlat46 = _NoiseBias3 * 1.35000002 + -0.100000001;
-        u_xlat5.xy = u_xlat4.xy;
-        u_xlat47 = 0.0;
-        for(int u_xlati_loop_5 = 0 ; u_xlati_loop_5<4 ; u_xlati_loop_5++)
-        {
-            u_xlat35.xy = u_xlat5.xy * vec2(vec2(_cS, _cS));
-            u_xlat6 = u_xlat35.xyxy * vec4(2.99999992e-05, 2.99999992e-05, 1.99999995e-05, 1.99999995e-05) + u_xlat34.xyxy;
-            u_xlat35.xy = u_xlat35.xy * vec2(9.99999975e-06, 9.99999975e-06) + u_xlat34.xy;
-            u_xlat16_7 = textureLod(_CloudTex1, u_xlat6.xy, 0.0);
-            u_xlat16_6 = textureLod(_CloudTex1, u_xlat6.zw, 0.0);
-            u_xlat16_9 = textureLod(_CloudTex1, u_xlat35.xy, 0.0);
-            u_xlat35.x = u_xlat16_6.y + u_xlat16_9.w;
-            u_xlat35.x = (-u_xlat16_7.z) * 1.20000005 + u_xlat35.x;
-            u_xlat35.x = u_xlat46 + u_xlat35.x;
-            u_xlat35.x = clamp(u_xlat35.x, 0.0, 1.0);
-            u_xlat47 = u_xlat35.x * u_xlat45 + u_xlat47;
-            u_xlat5.xy = (-vs_TEXCOORD1.xz) * vec2(u_xlat45) + u_xlat5.xy;
-        }
-    } else {
-        u_xlat47 = 0.0;
-    }
-    u_xlat45 = u_xlat47 * (-_Extinct);
-    u_xlat45 = u_xlat45 * 2.88539004;
-    u_xlat45 = exp2(u_xlat45);
-    u_xlat46 = dot((-vs_TEXCOORD1.xyz), (-vs_TEXCOORD1.xyz));
-    u_xlat46 = inversesqrt(u_xlat46);
-    u_xlat5.xyz = vec3(u_xlat46) * (-vs_TEXCOORD1.xyz);
-    u_xlat47 = dot(u_xlat5.xyz, Tenkoku_Vec_SunFwd.xyz);
-    u_xlat48 = dot(u_xlat5.xyz, Tenkoku_Vec_MoonFwd.xyz);
-    u_xlat34.x = u_xlat47 * 2.0 + -0.75;
-    u_xlat34.x = clamp(u_xlat34.x, 0.0, 1.0);
-    u_xlat49 = u_xlat47 * 10.0 + -8.75;
-    u_xlat49 = clamp(u_xlat49, 0.0, 1.0);
-    u_xlat47 = u_xlat47 + 0.899999976;
-    u_xlat47 = clamp(u_xlat47, 0.0, 1.0);
-    u_xlat6.xyz = vec3(u_xlat48) + vec3(-0.400000006, -0.100000001, -0.00999999978);
-    u_xlat6.xyz = u_xlat6.xyz * vec3(2.0, 2.0, 2.0) + vec3(-1.0, -1.0, -1.0);
-    u_xlat6.xyz = clamp(u_xlat6.xyz, 0.0, 1.0);
-    u_xlat48 = max(_TenkokuSunColor.y, _TenkokuSunColor.x);
-    u_xlat48 = max(u_xlat48, _TenkokuSunColor.z);
-    u_xlat48 = (-u_xlat48) + 1.0;
-    u_xlat1.x = min(u_xlat1.x, 1.0);
-    u_xlat7.xy = vec2(vec2(_NoiseBias, _NoiseBias)) * vec2(-0.150000036, -0.299999982) + vec2(0.600000024, 0.699999988);
-    u_xlat8.xyz = u_xlat7.xxx * _TenkokuCloudColor.xyz;
-    u_xlat9.xyz = (-_TenkokuCloudColor.xyz) * u_xlat7.xxx + _TenkokuCloudColor.xyz;
-    u_xlat8.xyz = u_xlat16.xxx * u_xlat9.xyz + u_xlat8.xyz;
-    u_xlat8.xyz = u_xlat8.xyz * vec3(vec3(_Tenkoku_AmbientGI, _Tenkoku_AmbientGI, _Tenkoku_AmbientGI));
-    u_xlat9.xyz = u_xlat8.xyz * _Tenkoku_overcastColor.xyz + (-u_xlat8.xyz);
-    u_xlat8.xyz = vec3(_Tenkoku_overcastAmt) * u_xlat9.xyz + u_xlat8.xyz;
-    u_xlat9.xyz = vec3(u_xlat53) * Tenkoku_MoonLightColor.xyz;
-    u_xlat9.xyz = u_xlat6.yyy * u_xlat9.xyz;
-    u_xlat9.xyz = vec3(u_xlat48) * u_xlat9.xyz;
-    u_xlat8.xyz = u_xlat9.xyz * vec3(0.0149999997, 0.0149999997, 0.0149999997) + u_xlat8.xyz;
-    u_xlat9.xyz = u_xlat1.xxx * Tenkoku_MoonLightColor.xyz;
-    u_xlat9.xyz = u_xlat6.yyy * u_xlat9.xyz;
-    u_xlat9.xyz = vec3(u_xlat48) * u_xlat9.xyz;
-    u_xlat8.xyz = u_xlat9.xyz * vec3(0.5, 0.5, 0.5) + u_xlat8.xyz;
-    u_xlat9.xyz = u_xlat7.yyy * u_xlat8.xyz;
-    u_xlat22.xyz = (-u_xlat8.xyz) * u_xlat7.yyy + u_xlat8.xyz;
-    u_xlat22.xyz = vec3(u_xlat53) * u_xlat22.xyz + u_xlat9.xyz;
-    u_xlat8.xyz = _TenkokuCloudAmbientColor.xyz * vec3(_Tenkoku_Ambient);
-    u_xlat9.xyz = u_xlat8.xyz * vec3(0.5, 0.5, 0.5);
-    u_xlat16.x = (-u_xlat47) + u_xlat53;
-    u_xlat16.x = u_xlat16.x + 1.0;
-    u_xlat16.x = clamp(u_xlat16.x, 0.0, 1.0);
-    u_xlat8.xyz = (-u_xlat8.xyz) * vec3(0.5, 0.5, 0.5) + u_xlat22.xyz;
-    u_xlat8.xyz = u_xlat16.xxx * u_xlat8.xyz + u_xlat9.xyz;
-    u_xlat22.xyz = u_xlat22.xyz + (-u_xlat8.xyz);
-    u_xlat22.xyz = vec3(vec3(_Tenkoku_AmbientGI, _Tenkoku_AmbientGI, _Tenkoku_AmbientGI)) * u_xlat22.xyz + u_xlat8.xyz;
-    u_xlat8.xyz = u_xlat22.xyz * vec3(1.39999998, 1.39999998, 1.39999998);
-    u_xlat16.x = _TenkokuCloudAmbientColor.w * -0.300000012 + 1.0;
-    u_xlat9.xyz = _TenkokuCloudAmbientColor.xyz * vec3(2.5, 2.5, 2.5) + (-u_xlat3.xyz);
-    u_xlat3.xyz = u_xlat16.xxx * u_xlat9.xyz + u_xlat3.xyz;
-    u_xlat3.xyz = u_xlat3.xyz * vec3(vec3(_Tenkoku_AmbientGI, _Tenkoku_AmbientGI, _Tenkoku_AmbientGI));
-    u_xlat9.xyz = u_xlat10_2.xyz * vec3(0.800000012, 0.800000012, 0.800000012) + (-u_xlat3.xyz);
-    u_xlat3.xyz = u_xlat9.xyz * vec3(0.5, 0.5, 0.5) + u_xlat3.xyz;
-    u_xlat1.y = u_xlat31.x * u_xlat34.x;
-    u_xlat1.xy = u_xlat1.xy * vec2(3.0, 1.5);
-    u_xlat9.xyz = _TenkokuCloudAmbientColor.xyz * vec3(2.20000005, 2.20000005, 2.20000005) + (-u_xlat3.xyz);
-    u_xlat3.xyz = u_xlat1.yyy * u_xlat9.xyz + u_xlat3.xyz;
-    u_xlat16.x = u_xlat31.x * u_xlat49;
-    u_xlat9.xyz = _TenkokuCloudAmbientColor.xyz * vec3(5.4000001, 5.4000001, 5.4000001) + (-u_xlat3.xyz);
-    u_xlat3.xyz = u_xlat16.xxx * u_xlat9.xyz + u_xlat3.xyz;
-    u_xlat9.xyz = u_xlat31.xxx * Tenkoku_MoonLightColor.xyz;
-    u_xlat9.xyz = u_xlat6.xxx * u_xlat9.xyz;
-    u_xlat9.xyz = vec3(u_xlat48) * u_xlat9.xyz;
-    u_xlat3.xyz = u_xlat9.xyz * vec3(0.5, 0.5, 0.5) + u_xlat3.xyz;
-    u_xlat9.xyz = u_xlat3.xyz * vec3(1.20000005, 1.20000005, 1.20000005);
-    u_xlat10.xyz = vec3(u_xlat45) * Tenkoku_MoonLightColor.xyz;
-    u_xlat6.xyw = u_xlat6.yyy * u_xlat10.xyz;
-    u_xlat6.xyw = vec3(u_xlat48) * u_xlat6.xyw;
-    u_xlat6.xyw = u_xlat6.xyw * vec3(0.100000001, 0.100000001, 0.100000001);
-    u_xlat6.xyw = _TenkokuCloudAmbientColor.xyz * vec3(vec3(_Tenkoku_AmbientGI, _Tenkoku_AmbientGI, _Tenkoku_AmbientGI)) + u_xlat6.xyw;
-    u_xlat6.xyw = u_xlat6.xyw * vec3(2.4000001, 2.4000001, 2.4000001);
-    u_xlat1.x = min(u_xlat1.x, 1.0);
-    u_xlat16.x = u_xlat31.x * 2.0 + -1.0;
-    u_xlat16.x = clamp(u_xlat16.x, 0.0, 1.0);
-    u_xlat45 = min(u_xlat45, 1.0);
-    u_xlat10.xyz = u_xlat10_2.xyz * vec3(0.800000012, 0.800000012, 0.800000012) + (-u_xlat6.xyw);
-    u_xlat6.xyw = vec3(u_xlat45) * u_xlat10.xyz + u_xlat6.xyw;
-    u_xlat3.xyz = (-u_xlat3.xyz) * vec3(1.20000005, 1.20000005, 1.20000005) + u_xlat6.xyw;
-    u_xlat3.xyz = u_xlat16.xxx * u_xlat3.xyz + u_xlat9.xyz;
-    u_xlat3.xyz = (-u_xlat22.xyz) * vec3(1.39999998, 1.39999998, 1.39999998) + u_xlat3.xyz;
-    u_xlat3.xyz = u_xlat1.xxx * u_xlat3.xyz + u_xlat8.xyz;
-    u_xlat31.x = (-_NoiseBias3) + 1.0;
-    u_xlat47 = (-u_xlat1.x) + 1.0;
-    u_xlat47 = (-u_xlat31.x) + u_xlat47;
-    u_xlat31.x = _NoiseBias3 * u_xlat47 + u_xlat31.x;
-    u_xlat45 = u_xlat45 + u_xlat31.x;
-    u_xlat45 = clamp(u_xlat45, 0.0, 1.0);
-    u_xlat45 = u_xlat45 + -0.100000001;
-    u_xlat45 = u_xlat16.x * u_xlat45 + 0.100000001;
-    u_xlat16.xy = u_xlat4.xy * vec2(vec2(_cS, _cS));
-    u_xlat4.xy = vec2(_Tenkoku_overcastAmt, _tenkokuTimer) + vec2(_Tenkoku_overcastAmt, _tenkokuTimer);
-    u_xlat19.xy = u_xlat4.yy * _Scroll1.xz;
-    u_xlat16.xy = u_xlat16.xy * vec2(2.99999992e-05, 2.99999992e-05) + u_xlat19.xy;
-    u_xlat16_8 = textureLod(_CloudTex1, u_xlat16.xy, 0.0);
-    u_xlat16.x = max(_TenkokuCloudColor.y, _TenkokuCloudColor.x);
-    u_xlat16.x = max(u_xlat16.x, _TenkokuCloudColor.z);
-    u_xlat19.xyz = u_xlat16.xxx + (-_TenkokuCloudColor.xyz);
-    u_xlat19.xyz = u_xlat19.xyz * vec3(0.649999976, 0.649999976, 0.649999976) + _TenkokuCloudColor.xyz;
-    u_xlat6.xyw = u_xlat7.xxx * u_xlat19.xyz;
-    u_xlat8.x = u_xlat16_8.x;
-    u_xlat8.x = clamp(u_xlat8.x, 0.0, 1.0);
-    u_xlat19.xyz = (-u_xlat19.xyz) * u_xlat7.xxx + u_xlat19.xyz;
-    u_xlat19.xyz = u_xlat8.xxx * u_xlat19.xyz + u_xlat6.xyw;
-    u_xlat16.x = _Tenkoku_overcastAmt * -0.5 + 1.0;
-    u_xlat6.xyw = u_xlat19.xyz * _Tenkoku_overcastColor.xyz;
-    u_xlat4.x = u_xlat4.x;
-    u_xlat4.x = clamp(u_xlat4.x, 0.0, 1.0);
-    u_xlat6.xyw = u_xlat6.xyw * u_xlat16.xxx + (-u_xlat19.xyz);
-    u_xlat19.xyz = u_xlat4.xxx * u_xlat6.xyw + u_xlat19.xyz;
-    u_xlat16.x = 1900.0 / (-vs_TEXCOORD1.y);
-    u_xlat16.x = u_xlat16.x / _FarDist;
-    u_xlat16.x = clamp(u_xlat16.x, 0.0, 1.0);
-    u_xlat6.xyw = u_xlat10_2.xyz * vec3(0.800000012, 0.800000012, 0.800000012) + (-u_xlat19.xyz);
-    u_xlat19.xyz = u_xlat16.xxx * u_xlat6.xyw + u_xlat19.xyz;
-    u_xlat6.xyz = u_xlat6.zzz * Tenkoku_MoonLightColor.xyz;
-    u_xlat6.xyz = vec3(u_xlat48) * u_xlat6.xyz;
-    u_xlat19.xyz = u_xlat6.xyz * vec3(0.0149999997, 0.0149999997, 0.0149999997) + u_xlat19.xyz;
-    u_xlat19.xyz = (-u_xlat3.xyz) + u_xlat19.xyz;
-    u_xlat3.xyz = u_xlat4.xxx * u_xlat19.xyz + u_xlat3.xyz;
-    u_xlatb16 = 0.0<Tenkoku_LightningLightIntensity;
-    u_xlat31.x = dot(Tenkoku_Vec_LightningFwd.xyz, u_xlat5.xyz);
-    u_xlat31.x = clamp(u_xlat31.x, 0.0, 1.0);
-    u_xlat4.xyz = u_xlat31.xxx + vec3(-0.300000012, -0.649999976, -0.999899983);
-    u_xlat4.xyz = max(u_xlat4.xyz, vec3(0.0, 0.0, 0.0));
-    u_xlat5.xyz = vec3(Tenkoku_LightningLightIntensity) * Tenkoku_LightningColor.xyz;
-    u_xlat5.xyz = u_xlat5.xyz * vec3(0.25, 0.25, 0.25) + u_xlat3.xyz;
-    u_xlat4.xy = u_xlat4.xy * vec2(0.25, 0.5);
-    u_xlat31.x = u_xlat4.y + u_xlat4.x;
-    u_xlat31.x = u_xlat4.z * 3000.0 + u_xlat31.x;
-    u_xlat4.xyz = u_xlat31.xxx * Tenkoku_LightningColor.xyz;
-    u_xlat4.xyz = u_xlat4.xyz * vec3(Tenkoku_LightningLightIntensity) + u_xlat5.xyz;
-    u_xlat3.xyz = (bool(u_xlatb16)) ? u_xlat4.xyz : u_xlat3.xyz;
-    u_xlat16.x = (-vs_TEXCOORD1.y) * u_xlat46 + -0.0250000004;
-    u_xlat16.x = u_xlat16.x * 3.0;
-    u_xlat16.x = clamp(u_xlat16.x, 0.0, 1.0);
-    u_xlat3.xyz = (-u_xlat10_2.xyz) * vec3(0.800000012, 0.800000012, 0.800000012) + u_xlat3.xyz;
-    u_xlat0.xyz = u_xlat16.xxx * u_xlat3.xyz + u_xlat0.xyz;
-    u_xlat16.x = _humid * 2.0 + -1.0;
-    u_xlat16.x = clamp(u_xlat16.x, 0.0, 1.0);
-    u_xlat2.xyz = u_xlat10_2.xyz * vec3(0.800000012, 0.800000012, 0.800000012) + (-u_xlat0.xyz);
-    u_xlat0.xyz = u_xlat16.xxx * u_xlat2.xyz + u_xlat0.xyz;
-    SV_Target0.xyz = u_xlat0.xyz * vec3(1.25, 1.25, 1.25);
-    SV_Target0.w = (-u_xlat1.x) * u_xlat45 + 1.0;
-    return;
-}
--------- failed compiling:
-fragment evaluation shader
-GLSL compilation failed for shader TENKOKU/cloud_sphere:
-0(149) : error C1503: undefined variable "u_xlat10_2"
-0(159) : error C1503: undefined variable "u_xlat10_2"
-0(531) : error C1503: undefined variable "u_xlat10_2"
-0(555) : error C1503: undefined variable "u_xlat10_2"
-0(592) : error C1503: undefined variable "u_xlat10_2"
-0(615) : error C1503: undefined variable "u_xlat10_2"
-0(619) : error C1503: undefined variable "u_xlat10_2"
-Note: Creation of internal variant of shader 'TENKOKU/cloud_sphere' failed.
-Refreshing native plugins compatible for Editor in 1.63 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4310 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (2.0 MB). Loaded Objects now: 5103.
-Memory consumption went from 202.1 MB to 200.1 MB.
-Total: 4.152522 ms (FindLiveObjects: 0.356021 ms CreateObjectMapping: 0.293749 ms MarkObjects: 3.017524 ms  DeleteObjects: 0.483965 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
@@ -1745,9 +1034,9 @@ Memory Statistics:
       Overflow Count 0
     [ALLOC_TEMP_Background Job.Worker 0]
       Initial Block Size 32.0 KB
-      Current Block Size 220.0 KB
-      Peak Allocated Bytes 138.0 KB
-      Overflow Count 0
+      Current Block Size 236.0 KB
+      Peak Allocated Bytes 150.8 KB
+      Overflow Count 2
     [ALLOC_TEMP_Job.Worker 10]
       Initial Block Size 256.0 KB
       Current Block Size 256.0 KB
@@ -1805,8 +1094,8 @@ Memory Statistics:
       Overflow Count 0
     [ALLOC_TEMP_MAIN]
       Initial Block Size 16.0 MB
-      Current Block Size 20.9 MB
-      Peak Allocated Bytes 20.4 MB
+      Current Block Size 20.4 MB
+      Peak Allocated Bytes 20.3 MB
       Overflow Count 0
     [ALLOC_TEMP_CoreBusinessMetricsCache]
       Initial Block Size 64.0 KB
@@ -1817,11 +1106,6 @@ Memory Statistics:
       Initial Block Size 64.0 KB
       Current Block Size 64.0 KB
       Peak Allocated Bytes 32.6 KB
-      Overflow Count 0
-    [ALLOC_TEMP_Loading.PreloadManager]
-      Initial Block Size 32.0 MB
-      Current Block Size 32.0 MB
-      Peak Allocated Bytes 0 B
       Overflow Count 0
     [ALLOC_TEMP_Profiler.Dispatcher]
       Initial Block Size 64.0 KB
@@ -1836,23 +1120,23 @@ Memory Statistics:
 [ALLOC_MEMORYPROFILER]
   Requested Block Size 1.0 MB
   Peak Block count 2
-  Peak Allocated memory 1.0 MB
+  Peak Allocated memory 0.9 MB
   Peak Large allocation bytes 0 B
 [ALLOC_DEFAULT] Dual Thread Allocator
-  Peak main deferred allocation count 105
+  Peak main deferred allocation count 252
     [ALLOC_BUCKET]
       Large Block size 32.0 MB
       Used Block count 1
-      Peak Allocated bytes 7.3 MB
+      Peak Allocated bytes 9.5 MB
     [ALLOC_DEFAULT_MAIN]
       Requested Block Size 16.0 MB
-      Peak Block count 6
-      Peak Allocated memory 84.7 MB
-      Peak Large allocation bytes 0 B
+      Peak Block count 11
+      Peak Allocated memory 236.3 MB
+      Peak Large allocation bytes 72.1 MB
     [ALLOC_DEFAULT_THREAD]
       Requested Block Size 16.0 MB
       Peak Block count 1
-      Peak Allocated memory 0.9 MB
+      Peak Allocated memory 1.1 MB
       Peak Large allocation bytes 0 B
 [ALLOC_TEMP_JOB_1_FRAME]
   Initial Block Size 2.0 MB
@@ -1879,27 +1163,27 @@ Memory Statistics:
     [ALLOC_BUCKET]
       Large Block size 32.0 MB
       Used Block count 1
-      Peak Allocated bytes 7.3 MB
+      Peak Allocated bytes 9.5 MB
     [ALLOC_GFX_MAIN]
       Requested Block Size 16.0 MB
       Peak Block count 1
-      Peak Allocated memory 24.3 MB
-      Peak Large allocation bytes 21.3 MB
+      Peak Allocated memory 3.0 MB
+      Peak Large allocation bytes 0 B
     [ALLOC_GFX_THREAD]
       Requested Block Size 16.0 MB
       Peak Block count 0
       Peak Allocated memory 0 B
       Peak Large allocation bytes 0 B
 [ALLOC_CACHEOBJECTS] Dual Thread Allocator
-  Peak main deferred allocation count 33259
+  Peak main deferred allocation count 0
     [ALLOC_BUCKET]
       Large Block size 32.0 MB
       Used Block count 1
-      Peak Allocated bytes 7.3 MB
+      Peak Allocated bytes 9.5 MB
     [ALLOC_CACHEOBJECTS_MAIN]
       Requested Block Size 4.0 MB
-      Peak Block count 24
-      Peak Allocated memory 87.7 MB
+      Peak Block count 27
+      Peak Allocated memory 102.5 MB
       Peak Large allocation bytes 0 B
     [ALLOC_CACHEOBJECTS_THREAD]
       Requested Block Size 4.0 MB
@@ -1907,15 +1191,15 @@ Memory Statistics:
       Peak Allocated memory 0 B
       Peak Large allocation bytes 0 B
 [ALLOC_TYPETREE] Dual Thread Allocator
-  Peak main deferred allocation count 27531
+  Peak main deferred allocation count 29963
     [ALLOC_BUCKET]
       Large Block size 32.0 MB
       Used Block count 1
-      Peak Allocated bytes 7.3 MB
+      Peak Allocated bytes 9.5 MB
     [ALLOC_TYPETREE_MAIN]
       Requested Block Size 2.0 MB
-      Peak Block count 20
-      Peak Allocated memory 38.1 MB
+      Peak Block count 25
+      Peak Allocated memory 47.9 MB
       Peak Large allocation bytes 0 B
     [ALLOC_TYPETREE_THREAD]
       Requested Block Size 2.0 MB
@@ -1940,4 +1224,4 @@ Memory Statistics:
       Large Block size 32.0 MB
       Used Block count 1
       Peak Allocated bytes 272 B
-##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1650699278947,"processId":413567,"allocatedMemory":102322297,"memoryLabels":[{"Default":36083},{"Permanent":21840},{"Thread":1095904},{"Manager":1819665},{"VertexData":192},{"Geometry":408},{"Particles":17856},{"VFX":768},{"Texture":3027845},{"Shader":761923},{"Material":7724},{"GfxDevice":230672},{"Animation":15006},{"Audio":4508},{"Font":1400},{"Physics":506233},{"Physics2D":304096},{"Serialization":14725640},{"Input":59504},{"JobScheduler":576},{"GarbageCollector":1049152},{"Mono":92},{"ScriptingNativeRuntime":43520},{"BaseObject":1831239},{"Resource":1180},{"Renderer":8296},{"Transform":48},{"File":12853},{"Network":3032},{"WebCam":24},{"Culling":48},{"Terrain":1065},{"TerrainPhysics":8},{"Wind":24},{"Shadow":56},{"STL":2041344},{"String":50899889},{"DynamicArray":6737813},{"HashMap":3707489},{"Utility":2372114},{"Curl":1112},{"PoolAlloc":569192},{"AI":59616},{"TypeTree":2064},{"ScriptManager":1844761},{"RuntimeInitializeOnLoadManager":72},{"AncestorCache":32},{"SpriteAtlas":112},{"GI":15312},{"Unet":16},{"Director":7816},{"WebRequest":720},{"VR":45761},{"SceneManager":992},{"Video":256},{"LazyScriptCache":32},{"ManagedAttributeManager":1},{"TextureStreaming":1416},{"NativeArray":12},{"ScreenCapture":8},{"Camera":25},{"Secure":1},{"CrashReporter":968},{"SerializationCache":624},{"APIUpdating":5872},{"Subsystems":384},{"VirtualTexturing":59424},{"StaticSafetyDebugInfo":327752},{"EditorGui":8100},{"EditorUtility":18375},{"VersionControl":4},{"Undo":450},{"AssetDatabase":7643213},{"AssetImporter":267918},{"RestService":5994},{"EditorGi":23704},{"ProgressiveLightmapper":10832},{"License":48},{"UnityConnect":28584},{"Collab":641},{"Upm":1128},{"DrivenProperties":80},{"HubClient":32},{"LocalIPC":121},{"ProfilerEditor":20157},{"CoreBusinessMetrics":1402},{"AssetReference":32}]}
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1650729573759,"processId":864046,"allocatedMemory":258055709,"memoryLabels":[{"Default":35979},{"Permanent":21840},{"Thread":1095904},{"Manager":2474629},{"Geometry":408},{"Particles":17856},{"VFX":768},{"Texture":3021409},{"Shader":2466791},{"Material":2088},{"GfxDevice":231128},{"Animation":15006},{"Audio":4508},{"Font":1400},{"Physics":267957},{"Physics2D":152912},{"Serialization":20793052},{"Input":59504},{"JobScheduler":576},{"GarbageCollector":1049152},{"Mono":92},{"ScriptingNativeRuntime":43520},{"BaseObject":1808448},{"Resource":1180},{"Renderer":6760},{"Transform":48},{"File":13095},{"Network":3032},{"WebCam":24},{"Culling":48},{"Terrain":1065},{"TerrainPhysics":8},{"Wind":24},{"STL":3154176},{"String":183417789},{"DynamicArray":14765449},{"HashMap":4576836},{"Utility":2372114},{"Curl":1112},{"PoolAlloc":603752},{"AI":59616},{"TypeTree":2064},{"ScriptManager":1893236},{"RuntimeInitializeOnLoadManager":72},{"AncestorCache":32},{"SpriteAtlas":112},{"GI":15312},{"Unet":16},{"Director":7816},{"WebRequest":720},{"VR":45761},{"SceneManager":624},{"Video":256},{"LazyScriptCache":32},{"ManagedAttributeManager":1},{"TextureStreaming":1416},{"NativeArray":12},{"ScreenCapture":8},{"Camera":25},{"Secure":1},{"CrashReporter":968},{"SerializationCache":624},{"APIUpdating":5872},{"Subsystems":384},{"VirtualTexturing":59424},{"StaticSafetyDebugInfo":327752},{"EditorGui":8100},{"EditorUtility":18215},{"VersionControl":4},{"Undo":450},{"AssetDatabase":12766251},{"AssetImporter":266339},{"RestService":5994},{"EditorGi":23704},{"ProgressiveLightmapper":10832},{"License":48},{"UnityConnect":28584},{"Collab":641},{"Upm":1128},{"DrivenProperties":80},{"HubClient":32},{"LocalIPC":121},{"ProfilerEditor":20157},{"CoreBusinessMetrics":1402},{"AssetReference":32}]}
