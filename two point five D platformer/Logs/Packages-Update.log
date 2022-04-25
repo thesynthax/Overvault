@@ -112,3 +112,12 @@ Update Mode: mergeDefaultDependencies
 The following packages were added:
   com.unity.shadergraph@12.1.0
   com.unity.visualscripting@1.7.2
+
+=== Sun Apr 24 22:26:43 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.shadergraph from version 12.1.0 to 12.1.6
+  com.unity.visualscripting from version 1.7.2 to 1.7.6
