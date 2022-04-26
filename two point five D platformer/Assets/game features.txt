@@ -68,6 +68,7 @@ air movement features:
         - 
 
 to do:
+    - plan sandbox level design
     - sandbox level with beautiful assets
     - Feet IK
     - editing transition exit times using script to improve vault accuracy
