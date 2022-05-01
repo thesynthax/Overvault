@@ -67,6 +67,12 @@ air movement features:
     falling:
         - 
 
+sandbox level:
+    - low poly art style
+    - evening time (orangish tint/vibes)
+    - terrain with mountains, waterfalls, rocks, trees, grass, roads
+    - 
+
 to do:
     - plan sandbox level design
     - sandbox level with beautiful assets
